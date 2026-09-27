@@ -19,8 +19,8 @@
   /* Typography */
   --font-display: 'Inter', 'Noto Sans TC', sans-serif;
   --font-body: 'Noto Sans TC', sans-serif;
-  --text-display-xl: clamp(3.5rem, 6.12vw, 5.5rem); /* 56 → 88 */
-  --text-h1: clamp(2rem, 3.4vw, 3rem);             /* 32 → 48 */
+  --text-display-xl: 5.5rem;   /* 88 */
+  --text-h1: 3rem;            /* 48 */
   --text-h3: 1.5rem;          /* 24 */
   --text-quote: 1.75rem;      /* 28 */
   --text-contact: 1.5625rem;  /* 25 */
@@ -28,16 +28,16 @@
   --text-body-lead: 1.125rem; /* 18 */
   --text-body-m: 0.9375rem;   /* 15 */
   --text-caption: 0.75rem;    /* 12 */
-  --leading-display: 92px;
-  --leading-h1: 56px;
-  --leading-h1-cjk: 52px;
-  --leading-quote: 36px;
-  --leading-h3: 32px;
-  --leading-body-l: 24px;
-  --leading-body-m: 28px;
-  --leading-lead: 22px;
-  --leading-caption: 18px;
-  --leading-contact: 46px;
+  --leading-display: 5.75rem;   /* 92 */
+  --leading-h1: 3.5rem;         /* 56 */
+  --leading-h1-cjk: 3.25rem;    /* 52 */
+  --leading-quote: 2.25rem;     /* 36 */
+  --leading-h3: 2rem;           /* 32 */
+  --leading-body-l: 1.5rem;     /* 24 */
+  --leading-body-m: 1.75rem;    /* 28 */
+  --leading-lead: 1.375rem;     /* 22 */
+  --leading-caption: 1.125rem;  /* 18 */
+  --leading-contact: 2.875rem;  /* 46 */
   --leading-body: 1.7;
   --weight-light: 350;
   --weight-regular: 400;
@@ -85,8 +85,8 @@
   --index-col: 80px;               /* content edge → work title */
   --avatar-width: 160px;
   --about-text-width: 540px;
-  --pill-width: 135px;
-  --pill-height: 33px;
+  --pill-width: 8.4375rem;         /* 135, scales with its text */
+  --pill-height: 2.0625rem;        /* 33 */
   --placeholder-surface-height: 500px;
   --placeholder-subtle-height: 1000px;
   --rule-hairline: 0.5px solid var(--color-text-muted);
@@ -94,7 +94,9 @@
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+/* Fluid root: 1rem = 16px at the 1440 design width, shrinking to 14px on narrower screens.
+   All type is in rem, so text keeps its Figma proportions at any width. */
+html { font-size: clamp(0.875rem, 1.1111vw, 1rem); scroll-behavior: smooth; }
 body {
   color: var(--color-text-primary);
   background: var(--color-bg-default);
@@ -302,7 +304,7 @@ img { display: block; }
 }
 
 @media (max-width: 800px) {
-  :root { --page-margin: 20px; --nav-height: 60px; --hero-height: 100svh; --hero-offset: 160px; --index-col: 40px; --avatar-width: 120px; }
+  :root { --text-display-xl: 3.5rem; --text-h1: 2rem; --page-margin: 20px; --nav-height: 60px; --hero-height: 100svh; --hero-offset: 160px; --index-col: 40px; --avatar-width: 120px; }
   .navbar nav { gap: var(--space-4); }
   .logo .logo-text { display: none; }
   .hero-title { line-height: 1.05; }
