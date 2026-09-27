@@ -79,6 +79,7 @@
 
   /* Components */
   --nav-height: 72px;
+  --logo-optical-offset: -2px;     /* hair tuft makes the box taller than the face; lift to look centered */
   --hero-height: 800px;
   --hero-offset: 245px;            /* title top in Figma */
   --index-col: 80px;               /* content edge → work title */
@@ -125,6 +126,7 @@ img { display: block; }
   display: flex; align-items: center; gap: var(--space-3);
   font: var(--weight-medium) var(--text-body-l) / var(--leading-body-m) var(--font-display);
 }
+.logo img { transform: translateY(var(--logo-optical-offset)); }
 .navbar nav { display: flex; gap: var(--space-7); font: var(--weight-medium) var(--text-body-m) / var(--leading-body-m) var(--font-display); }
 .navbar nav a { position: relative; transition: color var(--motion-micro); }
 .navbar nav a.is-active, .navbar nav a:hover { color: var(--color-accent-hover); }
