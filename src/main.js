@@ -99,7 +99,8 @@ document.querySelector('#app').innerHTML = `
 
   <footer class="contact" id="contact">
     <div class="shell reveal">
-      <h2>LET'S WORK TOGETHER Digital Designer Based in Taipei</h2>
+      <h2>LET'S WORK TOGETHER</h2>
+      <p class="contact-sub">Design-to-code · Based in Taipei</p>
       <p class="contact-line">
         <a href="mailto:zingbay0624@gmail.com">Email : zingbay0624@gmail.com</a>
         <span>Portfolio</span>

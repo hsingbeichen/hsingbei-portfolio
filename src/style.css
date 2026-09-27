@@ -23,6 +23,7 @@
   --text-h1: 3rem;            /* 48 */
   --text-h3: 1.5rem;          /* 24 */
   --text-quote: 1.75rem;      /* 28 */
+  --text-h2: 2rem;            /* 32 */
   --text-contact: 1.5625rem;  /* 25 */
   --text-body-l: 1.0625rem;   /* 17 */
   --text-body-lead: 1.125rem; /* 18 */
@@ -33,6 +34,7 @@
   --leading-h1-cjk: 3.25rem;    /* 52 */
   --leading-quote: 2.25rem;     /* 36 */
   --leading-h3: 2rem;           /* 32 */
+  --leading-h2: 2.5rem;         /* 40 */
   --leading-body-l: 1.5rem;     /* 24 */
   --leading-body-m: 1.75rem;    /* 28 */
   --leading-lead: 1.375rem;     /* 22 */
@@ -280,6 +282,11 @@ img { display: block; }
   color: var(--color-bg-surface);
   font: var(--weight-extrabold) var(--text-h1) / var(--leading-h1) var(--font-display);
 }
+.contact-sub {
+  margin-top: var(--space-3);
+  color: var(--color-bg-surface);
+  font: var(--weight-medium) var(--text-h2) / var(--leading-h2) var(--font-display);
+}
 .contact-line {
   display: flex; flex-wrap: wrap; justify-content: center; column-gap: var(--space-3);
   margin-top: var(--space-7);
@@ -326,6 +333,7 @@ img { display: block; }
   .placeholder--surface, .placeholder--subtle { height: var(--space-12); }
   .contact { padding-block: var(--space-10); }
   .contact h2 { font-size: var(--text-quote); line-height: var(--leading-quote); }
+  .contact-sub { font-size: var(--text-body-lead); line-height: var(--leading-body-m); }
   .contact-line { font-size: var(--text-body-l); line-height: var(--leading-body-m); flex-direction: column; }
 }
 
