@@ -87,6 +87,7 @@
   --about-text-width: 540px;
   --pill-width: 8.4375rem;         /* 135, scales with its text */
   --pill-height: 2.0625rem;        /* 33 */
+  --pill-label-offset: -0.0375rem; /* CJK glyphs sit ~0.6px below the line box center */
   --placeholder-surface-height: 500px;
   --placeholder-subtle-height: 1000px;
   --rule-hairline: 0.5px solid var(--color-text-muted);
@@ -205,7 +206,7 @@ img { display: block; }
   font: var(--weight-light) var(--text-body-l) / var(--leading-body-l) var(--font-body);
   transition: background var(--motion-normal), border-color var(--motion-normal), color var(--motion-normal);
 }
-.pill-label { text-align: center; white-space: nowrap; }
+.pill-label { position: relative; top: var(--pill-label-offset); text-align: center; white-space: nowrap; }
 .pill-arrow { position: relative; transition: transform var(--motion-normal); }
 .pill-arrow .is-hover { position: absolute; inset: 0; opacity: 0; transition: opacity var(--motion-normal); }
 .pill-btn:hover, .pill-btn:focus-visible, .featured-row:hover .pill-btn, .featured-row:focus-visible .pill-btn {
