@@ -1,70 +1,134 @@
 import './style.css'
 
-const projects = [
-  { title: 'Giant', type: 'Brand experience / Digital', year: '2024', className: 'project-giant' },
-  { title: 'Letao', type: 'E-commerce / Product', year: '2023', className: 'project-letao' },
-  { title: 'Coucou', type: 'Identity / Campaign', year: '2022', className: 'project-coucou' },
+const IMG = `${import.meta.env.BASE_URL}images/home`
+
+const featured = [
+  { slug: 'giant', title: '巨匠旅遊', tags: 'Branding × Web × UI × RWD × Team', period: '2016.12 – 2021.01' },
+  { slug: 'letao', title: '樂淘', tags: 'Digital Campaign × Web × Design-to-Code', period: '2021.01-至今(在職中)' },
+  { slug: 'coucou', title: 'Coucoubei', tags: 'Illustration × Character × GIF × Sticker × Personal Branding', period: '2026.02-至今(持續創作中)', latin: true },
 ]
 
+const values = [
+  { label: 'Question', icon: 'icon-question.svg', w: 25.1921, h: 27.0303 },
+  { label: 'Notice', icon: 'icon-notice.svg', w: 21, h: 17 },
+  { label: 'Discover', icon: 'icon-discover.svg', w: 5.28917, h: 22.6679 },
+  { label: 'Create', icon: 'icon-create.svg', w: 20.0015, h: 20.0015 },
+]
+
+const pad = (n) => String(n).padStart(2, '0')
+
+// Pill button (Figma component "View Case Study"): outline by default, filled on hover.
+const pillInner = (label) => `
+  <span class="pill-label">${label}</span>
+  <span class="pill-arrow" aria-hidden="true">
+    <img src="${IMG}/arrow-outline.svg" width="8" height="14" alt="" />
+    <img class="is-hover" src="${IMG}/arrow-hover.svg" width="8" height="14" alt="" />
+  </span>
+`
+
 document.querySelector('#app').innerHTML = `
-  <header class="site-header">
-    <a class="brand" href="#home">HC<span>.</span></a>
-    <nav aria-label="Primary navigation">
-      <a href="#works">Works</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <button class="menu-button" type="button" aria-label="Open menu">Menu</button>
+  <header class="navbar" id="navbar">
+    <div class="shell navbar-inner">
+      <a class="logo" href="#home" aria-label="Hsingbei Chen home">
+        <img src="${IMG}/logo-header.svg" width="29.809" height="32" alt="" />
+        <span class="logo-text">HSINGBEI CHEN</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="#works" data-section="works">WORK</a>
+        <a href="#about" data-section="about">ABOUT</a>
+        <a href="#contact" data-section="contact">CONTACT</a>
+      </nav>
+    </div>
   </header>
 
   <main>
-    <section class="hero section-shell" id="home">
-      <p class="eyebrow">Designer / Developer</p>
-      <h1>Turning ideas<br /><em>into interfaces.</em></h1>
-      <div class="hero-footer">
-        <p>設計與程式之間，<br />建立清晰、好用且有感的數位體驗。</p>
-        <a class="text-link" href="#works">Scroll to explore <span>↓</span></a>
+    <section class="hero" id="home">
+      <div class="shell hero-inner">
+        <h1 class="hero-title rise">Design-to-<br /><span class="accent">Code</span></h1>
+        <p class="hero-skills rise">Visual Design · Web · UI · Digital Experience</p>
+        <p class="hero-quote rise">用設計把好看延伸到<br />真正能被使用<span class="stop">。</span></p>
+        <div class="scroll-hint rise" aria-hidden="true"><span class="line"></span>Scroll</div>
       </div>
     </section>
 
-    <section class="works section-shell" id="works">
-      <div class="section-heading">
-        <p class="eyebrow">Selected works</p>
-        <p class="section-index">01 — 03</p>
-      </div>
-      <div class="project-list">
-        ${projects.map((project, index) => `
-          <a class="project-card" href="#case-${project.title.toLowerCase()}" aria-label="View ${project.title} case study">
-            <div class="project-visual ${project.className}"><span>0${index + 1}</span></div>
-            <div class="project-meta">
-              <div><h2>${project.title}</h2><p>${project.type}</p></div>
-              <p>${project.year} <span>↗</span></p>
-            </div>
-          </a>
-        `).join('')}
-      </div>
-    </section>
-
-    <section class="about section-shell" id="about">
-      <div class="section-heading"><p class="eyebrow">About me</p><p class="section-index">02</p></div>
-      <div class="about-content">
-        <h2>From pixels<br />to <em>possibilities.</em></h2>
-        <div>
-          <p class="lead">我是 Hsingbei，一名專注於 Design-to-Code 的設計師。</p>
-          <p>我喜歡把複雜的問題拆解成簡單的系統，從研究、策略、視覺設計到前端實作，讓每一個細節都能被看見，也能真正被使用。</p>
-          <a class="text-link" href="#contact">More about me <span>↗</span></a>
+    <section class="section works" id="works">
+      <div class="shell">
+        <h2 class="section-title reveal">精選作品 <span>SELECTED WORKS</span></h2>
+        <div class="featured-list">
+          ${featured.map((work, index) => `
+            <a class="featured-row reveal" href="#case-${work.slug}">
+              <span class="num">${pad(index + 1)}</span>
+              <div class="info">
+                <h3 class="${work.latin ? 'is-latin' : ''}">${work.title}</h3>
+                <p class="tags">${work.tags}</p>
+              </div>
+              <span class="period">${work.period}</span>
+              <span class="pill-btn">${pillInner('查看案例')}</span>
+            </a>
+          `).join('')}
         </div>
       </div>
     </section>
 
-    <section class="contact section-shell" id="contact">
-      <p class="eyebrow">Have a project in mind?</p>
-      <h2>Let's make something<br /><em>meaningful.</em></h2>
-      <a class="contact-link" href="mailto:hello@hsingbei.design">hello@hsingbei.design <span>↗</span></a>
+    <section class="section about" id="about">
+      <div class="shell">
+        <h2 class="section-title reveal">關於我 <span>ABOUT</span></h2>
+        <div class="about-body reveal">
+          <img class="avatar" src="${IMG}/logo-avatar.svg" width="160.131" height="171.901" alt="Hsingbei 插畫頭像" />
+          <div class="about-text">
+            <p class="about-title">I believe good design starts with a question.</p>
+            <p class="about-intro">Since2016 of visual design, now bridging design and code.</p>
+            <ul class="values">
+              ${values.map((v) => `
+                <li>
+                  <img src="${IMG}/${v.icon}" width="${v.w}" height="${v.h}" alt="" />
+                  <span>${v.label}</span>
+                </li>
+              `).join('')}
+            </ul>
+          </div>
+          <a class="pill-btn pill-btn--wide" href="#about-full">${pillInner('認識我更多')}</a>
+        </div>
+      </div>
     </section>
+
+    <!-- Figma 目前為空白底色區塊，保留版面位置待補內容 -->
+    <section class="placeholder placeholder--surface" aria-hidden="true"></section>
+    <section class="placeholder placeholder--subtle" aria-hidden="true"></section>
   </main>
 
-  <footer class="site-footer section-shell">
-    <p>© 2024 Hsingbei Chen</p><p>Design / Code / Curiosity</p>
+  <footer class="contact" id="contact">
+    <div class="shell reveal">
+      <h2>LET'S WORK TOGETHER Digital Designer Based in Taipei</h2>
+      <p class="contact-line">
+        <a href="mailto:zingbay0624@gmail.com">Email : zingbay0624@gmail.com</a>
+        <span>Portfolio</span>
+        <span>© 2026 Hsingbei</span>
+      </p>
+    </div>
   </footer>
 `
+
+const navbar = document.querySelector('#navbar')
+const updateNavbar = () => navbar.classList.toggle('is-scrolled', window.scrollY > 40)
+window.addEventListener('scroll', updateNavbar, { passive: true })
+updateNavbar()
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) return
+    entry.target.classList.add('in')
+    observer.unobserve(entry.target)
+  })
+}, { threshold: 0.15 })
+document.querySelectorAll('.reveal').forEach((el) => observer.observe(el))
+
+// Highlight the nav link of the section currently in view.
+const navLinks = document.querySelectorAll('.navbar nav a')
+const spy = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) return
+    navLinks.forEach((link) => link.classList.toggle('is-active', link.dataset.section === entry.target.id))
+  })
+}, { rootMargin: '-45% 0px -50% 0px' })
+document.querySelectorAll('#home, #works, #about, #contact').forEach((el) => spy.observe(el))
