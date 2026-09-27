@@ -34,9 +34,9 @@ document.querySelector('#app').innerHTML = `
         <span class="logo-text">HSINGBEI CHEN</span>
       </a>
       <nav aria-label="Primary navigation">
-        <a href="#works" data-section="works">WORK</a>
-        <a href="#about" data-section="about">ABOUT</a>
-        <a href="#contact" data-section="contact">CONTACT</a>
+        <a href="#works" data-section="works" data-label="WORK">WORK</a>
+        <a href="#about" data-section="about" data-label="ABOUT">ABOUT</a>
+        <a href="#contact" data-section="contact" data-label="CONTACT">CONTACT</a>
       </nav>
     </div>
   </header>

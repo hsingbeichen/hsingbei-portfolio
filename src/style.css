@@ -45,6 +45,7 @@
   --weight-regular: 400;
   --weight-medium: 500;
   --weight-semibold: 600;
+  --weight-bold: 700;
   --weight-extrabold: 800;
   --weight-black: 900;
   --tracking-label: 0.04em;
@@ -133,8 +134,14 @@ img { display: block; }
 }
 .logo img { transform: translateY(var(--logo-optical-offset)); }
 .navbar nav { display: flex; gap: var(--space-7); font: var(--weight-medium) var(--text-body-m) / var(--leading-body-m) var(--font-display); }
-.navbar nav a { position: relative; transition: color var(--motion-micro); }
+.navbar nav a {
+  position: relative; display: inline-flex; flex-direction: column; align-items: center;
+  transition: color var(--motion-micro), font-weight var(--motion-normal);
+}
+/* Reserve the bold width so the active link doesn't push its neighbours */
+.navbar nav a::before { content: attr(data-label); height: 0; overflow: hidden; visibility: hidden; font-weight: var(--weight-bold); }
 .navbar nav a.is-active, .navbar nav a:hover { color: var(--color-accent-hover); }
+.navbar nav a.is-active { font-weight: var(--weight-bold); }
 .navbar nav a::after {
   content: ''; position: absolute; left: 0; bottom: calc(var(--space-1) * -0.5);
   width: 0; height: 2px; background: var(--color-accent-hover);
