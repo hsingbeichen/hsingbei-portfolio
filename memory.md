@@ -1,7 +1,7 @@
 # Hsingbei Chen Portfolio
 
 求職用設計作品集，定位「Design-to-Code」。
-頁面：Home / Works / About / Contact，另有 Case_Giant、Case_Letao、Case_Coucou 案例頁。
+頁面：Home / Works / About / Contact，另有 Case_Giant、Case_Letao、Case_Azaleah、Case_Coucou 案例頁。
 版面基準 1440px，需同時做 Desktop 與 Mobile。
 
 ## Color Tokens

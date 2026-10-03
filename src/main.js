@@ -3,9 +3,10 @@ import './style.css'
 const IMG = `${import.meta.env.BASE_URL}images/home`
 
 const featured = [
-  { slug: 'giant', title: '巨匠旅遊', tags: 'Branding × Web × UI × RWD × Team', period: '2016.12 – 2021.01' },
-  { slug: 'letao', title: '樂淘', tags: 'Digital Campaign × Web × Design-to-Code', period: '2021.01-至今(在職中)' },
-  { slug: 'coucou', title: 'Coucoubei', tags: 'Illustration × Character × GIF × Sticker × Personal Branding', period: '2026.02-至今(持續創作中)', latin: true },
+  { slug: 'giant', title: '巨匠旅遊', subtitle: 'Artisan Tour', tags: 'Banner / GDN / 網站UI / DM設計', period: '2016.12 – 2021.01' },
+  { slug: 'letao', title: '樂淘', subtitle: 'Letao', tags: 'Banner / GDN / 活動頁面 / 視覺優化 / Design-to-Code', period: '2021.01 - 至今(在職中)' },
+  { slug: 'azaleah', title: '杜鵑花開了', subtitle: 'Azaleah studio', tags: '品牌識別設計 / LOGO / 名片設計', period: '2021.06 - 2022.12' },
+  { slug: 'coucou', title: 'Coucoubei', tags: 'Illustration × Character × GIF × Sticker × Personal Branding', period: '2026.02 - 至今(持續創作中)' },
 ]
 
 const values = [
@@ -59,10 +60,13 @@ document.querySelector('#app').innerHTML = `
             <a class="featured-row reveal" href="#case-${work.slug}">
               <span class="num">${pad(index + 1)}</span>
               <div class="info">
-                <h3 class="${work.latin ? 'is-latin' : ''}">${work.title}</h3>
-                <p class="tags">${work.tags}</p>
+                <h3>${work.title}</h3>
+                ${work.subtitle ? `<p class="subtitle">${work.subtitle}</p>` : ''}
               </div>
-              <span class="period">${work.period}</span>
+              <div class="meta">
+                <p class="tags">${work.tags}</p>
+                <p class="period">${work.period}</p>
+              </div>
               <span class="pill-btn">${pillInner('查看案例')}</span>
             </a>
           `).join('')}
@@ -92,9 +96,15 @@ document.querySelector('#app').innerHTML = `
       </div>
     </section>
 
-    <!-- Figma 目前為空白底色區塊，保留版面位置待補內容 -->
-    <section class="placeholder placeholder--surface" aria-hidden="true"></section>
-    <section class="placeholder placeholder--subtle" aria-hidden="true"></section>
+    <section class="section other-works" id="other-works">
+      <div class="shell">
+        <h2 class="section-title reveal">其他作品 <span>OTHER WORKS</span></h2>
+        <!-- 卡片內容待補，先保留 Figma 尺寸 -->
+        <ul class="other-works-grid reveal">
+          ${Array.from({ length: 4 }, () => '<li class="other-work-card"></li>').join('')}
+        </ul>
+      </div>
+    </section>
   </main>
 
   <footer class="contact" id="contact">
