@@ -67,7 +67,10 @@ export const footer = (active) => `
           </ul>
         </div>
       </div>
-      <div class="footer-bottom">
+    </div>
+    <!-- Full-bleed rule: the divider runs edge to edge, content stays on the grid -->
+    <div class="footer-bottom">
+      <div class="shell footer-bottom-inner">
         <small>© 2026 Hsingbei Chen</small>
         <a class="back-top" href="#top">
           Back To Top
