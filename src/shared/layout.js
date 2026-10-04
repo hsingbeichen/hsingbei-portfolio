@@ -26,18 +26,32 @@ export const pillInner = (label, arrow = 'arrow-outline.svg') => `
   </span>
 `
 
-export const header = (active) => `
+const primaryNav = (active) => `
+  <nav aria-label="Primary navigation">
+    ${navItems.map((item) => `
+      <a href="${item.href}" data-section="${item.key}" data-label="${item.label}"${item.key === active ? ' class="is-active" aria-current="page"' : ''}>${item.label}</a>
+    `).join('')}
+  </nav>
+`
+
+const backHome = `
+  <a class="back-home" href="${BASE}">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M19 12H5M12 19l-7-7 7-7" />
+    </svg>
+    BACK TO HOME
+  </a>
+`
+
+// Inner pages pass { back: true } to swap the nav for a "Back to home" link.
+export const header = (active, { back = false } = {}) => `
   <header class="navbar" id="navbar">
     <div class="shell navbar-inner">
       <a class="logo" href="${BASE}" aria-label="Hsingbei Chen home">
         <img src="${IMG}/home/logo-header.svg" width="29.809" height="32" alt="" />
         <span class="logo-text">HSINGBEI CHEN</span>
       </a>
-      <nav aria-label="Primary navigation">
-        ${navItems.map((item) => `
-          <a href="${item.href}" data-section="${item.key}" data-label="${item.label}"${item.key === active ? ' class="is-active" aria-current="page"' : ''}>${item.label}</a>
-        `).join('')}
-      </nav>
+      ${back ? backHome : primaryNav(active)}
     </div>
   </header>
 `

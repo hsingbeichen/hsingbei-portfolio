@@ -51,6 +51,14 @@ img { display: block; }
   transition: width var(--motion-normal);
 }
 .navbar nav a:hover::after, .navbar nav a:focus-visible::after { width: 100%; }
+.back-home {
+  display: inline-flex; align-items: center; gap: var(--space-2);
+  font: var(--weight-medium) var(--text-body-m) / var(--leading-body-m) var(--font-display);
+  transition: color var(--motion-micro);
+}
+.back-home svg { transition: transform var(--motion-normal); }
+.back-home:hover, .back-home:focus-visible { color: var(--color-accent-hover); }
+.back-home:hover svg { transform: translateX(-3px); }
 
 /* ===== Pill button ===== */
 .pill-btn {

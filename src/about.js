@@ -40,7 +40,7 @@ const tag = (t) => typeof t === 'string'
   : `<li class="skill-tag skill-tag--more">${t.label}<img src="${IMG}/about/chevron-right.svg" width="19" height="19" alt="" /></li>`
 
 document.querySelector('#app').innerHTML = `
-  ${header('about')}
+  ${header('about', { back: true })}
 
   <main class="about-page" id="top">
     <section class="about-section profile">
