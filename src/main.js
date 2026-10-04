@@ -61,7 +61,7 @@ document.querySelector('#app').innerHTML = `
           <img class="avatar" src="${IMG}/logo-avatar.svg" width="160.131" height="171.901" alt="Hsingbei 插畫頭像" />
           <div class="about-text">
             <p class="about-title">I believe good design starts with a question.</p>
-            <p class="about-intro">Since2016 of visual design, now bridging design and code.</p>
+            <p class="about-intro">Since 2016 of visual design, now bridging design and code.</p>
             <ul class="values">
               ${values.map((v) => `
                 <li>
