@@ -46,7 +46,7 @@ document.querySelector('#app').innerHTML = `
     <section class="about-section profile">
       <div class="about-shell">
         ${title('01', '自我介紹', 'PROFILE')}
-        <div class="about-col reveal">
+        <div class="about-col profile-col reveal">
           <div class="profile-lead">
             <img class="profile-avatar" src="${IMG}/home/logo-avatar.svg" width="160.131" height="171.901" alt="Hsingbei 插畫頭像" />
             <div>

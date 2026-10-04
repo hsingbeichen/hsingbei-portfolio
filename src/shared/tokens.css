@@ -116,7 +116,6 @@
   /* About page */
   --about-width: 1096px;           /* section title + tools row span 172–1268 */
   --about-col: 209px;              /* section edge → content column (x 381) */
-  --about-text-col: 678px;         /* intro paragraph width */
   --profile-avatar-width: 126px;
   --story-rule: 3px;
   --quote-offset: 147px;           /* quote marks sit 147px outside the paragraph */

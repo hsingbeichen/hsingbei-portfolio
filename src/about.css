@@ -19,6 +19,9 @@
 }
 .about-col { margin-left: var(--about-col); }
 
+/* Column is as wide as the headline; the story fills it without widening it,
+   so the paragraph's right edge lines up with "…體驗。" */
+.profile-col { width: fit-content; }
 .profile-lead { display: flex; align-items: center; gap: 20px; }
 .profile-avatar { flex: none; width: var(--profile-avatar-width); height: auto; }
 .profile-quote { font: var(--weight-bold) var(--text-h2) / var(--leading-h2-cjk) var(--font-body); }
@@ -30,7 +33,7 @@
 }
 .profile-story {
   position: relative;
-  max-width: var(--about-text-col);
+  width: 0; min-width: 100%;
   margin-top: 37px; padding-top: 23px;
   border-top: var(--story-rule) solid var(--color-bg-surface);
   color: var(--color-text-secondary);
@@ -103,7 +106,8 @@
   .about-heading .num { font-size: var(--text-h2); line-height: var(--leading-h2); }
   .profile-lead { flex-direction: column; align-items: flex-start; }
   .profile-quote { font-size: var(--text-body-lead); line-height: var(--leading-body-m); }
-  .profile-story { margin-top: var(--space-5); }
+  .profile-col { width: auto; }
+  .profile-story { margin-top: var(--space-5); width: auto; }
   .skill-row { grid-template-columns: 1fr; row-gap: var(--space-3); }
   .skill-row dt br { display: none; }
   .tools { justify-content: flex-start; }
