@@ -119,12 +119,11 @@
   --profile-avatar-width: 126px;
   --story-rule: 3px;
   --quote-offset: 147px;           /* quote marks sit 147px outside the paragraph */
-  --skill-label-col: 210px;        /* Figma 228; trimmed 18px so tag rows fit inside the section rule */
+  --skill-label-col: 228px;
   --tag-pad-y: 5px;
-  --tag-pad-x: 15px;
-  --tag-pad-more: 23px;
+  --tag-pad-x: 13px;
+  --tag-pad-more: 21px;
   --tag-gap-row: 12px;
   --tag-gap-col: 10px;
   --tool-size: 84px;
-  --job-width: 875px;
 }
