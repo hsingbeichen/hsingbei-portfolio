@@ -46,7 +46,6 @@
 .quote-mark--open { left: calc(var(--quote-offset) * -1); top: -20px; }
 .quote-mark--close { right: calc(var(--quote-offset) * -1); bottom: -33px; }
 
-.skills { margin-right: calc(var(--skill-overhang) * -1); }
 .skill-row {
   display: grid; grid-template-columns: var(--skill-label-col) 1fr; align-items: center;
   padding-block: var(--space-4);
@@ -95,7 +94,6 @@
 
 @media (max-width: 1024px) {
   .about-col { margin-left: 0; }
-  .skills { margin-right: 0; }
   .quote-mark { display: none; }
 }
 
