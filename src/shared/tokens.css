@@ -116,6 +116,9 @@
 
   /* About page */
   --about-width: 1096px;           /* section title + tools row span 172–1268 */
+  --about-section-top: var(--space-8);     /* section rule → heading (64) */
+  --about-heading-gap: var(--space-7);     /* heading rule → content (48) */
+  --about-section-bottom: var(--space-8);  /* content → next section rule (64) */
   --about-col: 209px;              /* section edge → content column (x 381) */
   --profile-avatar-width: 126px;
   --story-rule: 3px;

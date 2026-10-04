@@ -1,11 +1,11 @@
 /* ===== About page ===== */
 .about-shell { width: min(100% - var(--page-margin) * 2, var(--about-width)); margin-inline: auto; }
-.about-section { padding-block: var(--space-6) var(--space-7); border-bottom: var(--rule-section); }
+.about-section { padding-block: var(--about-section-top) var(--about-section-bottom); border-bottom: var(--rule-section); }
 .about-section.profile { padding-top: calc(var(--nav-height) + var(--space-9) - var(--space-2)); }
 .about-section.resume { border-bottom: 0; padding-bottom: var(--space-9); }
 .about-heading {
   display: flex; align-items: center; gap: var(--space-1);
-  margin-bottom: var(--space-6); padding-bottom: var(--space-2);
+  margin-bottom: var(--about-heading-gap); padding-bottom: var(--space-2);
   border-bottom: var(--rule-subtle-thin);
 }
 .about-heading .num {
@@ -98,7 +98,7 @@
 
 @media (max-width: 800px) {
   :root { --tool-size: 56px; }
-  .about-section { padding-block: var(--space-5) var(--space-6); }
+  :root { --about-section-top: var(--space-6); --about-heading-gap: var(--space-5); --about-section-bottom: var(--space-7); }
   .about-section.profile { padding-top: calc(var(--nav-height) + var(--space-6)); }
   .about-heading .num { font-size: var(--text-h2); line-height: var(--leading-h2); }
   .profile-lead { flex-direction: column; align-items: flex-start; }
