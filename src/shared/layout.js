@@ -12,6 +12,11 @@ const navItems = [
   { key: 'contact', label: 'CONTACT', href: '#contact' },
 ]
 
+const socials = [
+  { label: 'GitHub', icon: 'icon-github.svg', href: 'https://github.com/hsingbeichen' },
+  { label: 'Instagram', icon: 'icon-instagram.svg', href: 'https://www.instagram.com/coucou.bei/' },
+]
+
 // Pill button (Figma component "View Case Study"): outline by default, filled on hover.
 export const pillInner = (label, arrow = 'arrow-outline.svg') => `
   <span class="pill-label">${label}</span>
@@ -47,11 +52,20 @@ export const footer = (active) => `
           <img src="${IMG}/layout/icon-mail.svg" width="22.0002" height="18" alt="" />
           zingbay0624@gmail.com
         </a>
-        <nav class="footer-nav" aria-label="Footer navigation">
-          ${navItems.map((item) => `
-            <a href="${item.href}"${item.key === active ? ' class="is-current" aria-current="page"' : ''}>${item.label}</a>
-          `).join('')}
-        </nav>
+        <div class="footer-links">
+          <nav class="footer-nav" aria-label="Footer navigation">
+            ${navItems.map((item) => `
+              <a href="${item.href}"${item.key === active ? ' class="is-current" aria-current="page"' : ''}>${item.label}</a>
+            `).join('')}
+          </nav>
+          <ul class="footer-social">
+            ${socials.map((s) => `
+              <li><a href="${s.href}" target="_blank" rel="noopener" aria-label="${s.label}">
+                <img src="${IMG}/layout/${s.icon}" width="24" height="24" alt="" />
+              </a></li>
+            `).join('')}
+          </ul>
+        </div>
       </div>
       <div class="footer-bottom">
         <small>© 2026 Hsingbei Chen</small>
