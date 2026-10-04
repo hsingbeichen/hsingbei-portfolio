@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400..900&family=Noto+Sans+TC:wght@300..900&display=swap');
+
+:root {
+  /* Color */
+  --color-text-primary: #111111;
+  --color-text-secondary: #666666;
+  --color-text-muted: #999999;
+  --color-bg-default: #f7f7f5;
+  --color-bg-surface: #eeeeec;
+  --color-bg-subtle: #f3f3f3;
+  --color-border-default: #dcdcd8;
+  --color-border-subtle: rgb(220 220 216 / 0.75);
+  --color-accent-default: #04374a;
+  --color-accent-hover: #06536c;
+  --color-accent-dark: #022936;
+  --color-nav-bg: rgb(247 247 245 / 0.72);
+  --color-nav-bg-scrolled: rgb(247 247 245 / 0.94);
+
+  /* Typography */
+  --font-display: 'Inter', 'Noto Sans TC', sans-serif;
+  --font-body: 'Noto Sans TC', sans-serif;
+  --text-display-xl: 5.5rem;   /* 88 */
+  --text-h1: 3rem;            /* 48 */
+  --text-h3: 1.5rem;          /* 24 */
+  --text-quote: 1.75rem;      /* 28 */
+  --text-h2: 2rem;            /* 32 */
+  --text-body-l: 1.0625rem;   /* 17 */
+  --text-body-lead: 1.125rem; /* 18 */
+  --text-body-m: 0.9375rem;   /* 15 */
+  --text-body-s: 0.8125rem;   /* 13 */
+  --text-caption: 0.75rem;    /* 12 */
+  --leading-display: 5.75rem;   /* 92 */
+  --leading-h1: 3.5rem;         /* 56 */
+  --leading-h1-cjk: 3.25rem;    /* 52 */
+  --leading-quote: 2.25rem;     /* 36 */
+  --leading-h3: 2rem;           /* 32 */
+  --leading-h2: 2.5rem;         /* 40 */
+  --leading-h2-cjk: 3rem;       /* 48 */
+  --leading-body-l: 1.5rem;     /* 24 */
+  --leading-body-m: 1.75rem;    /* 28 */
+  --leading-body-m-tight: 1.25rem; /* 20 */
+  --leading-lead: 1.375rem;     /* 22 */
+  --leading-caption: 1.125rem;  /* 18 */
+  --leading-footer-sub: 2.5625rem; /* 41 */
+  --leading-label: 1.1875rem;   /* 19, stacked zh/en section label */
+  --leading-body: 1.7;
+  --weight-light: 350;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --weight-extrabold: 800;
+  --weight-black: 900;
+  --tracking-label: 0.04em;
+
+  /* Spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 32px;
+  --space-6: 40px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 80px;
+  --space-10: 96px;
+  --space-11: 120px;
+  --space-12: 160px;
+
+  /* Grid */
+  --content-width: 1200px;
+  --page-margin: var(--space-11);
+  --gutter: var(--space-4);
+
+  /* Radius */
+  --radius-image: 2px;
+  --radius-card: 6px;
+  --radius-pill: 999px;
+
+  /* Motion */
+  --ease: ease-out;
+  --motion-micro: 150ms var(--ease);
+  --motion-normal: 250ms var(--ease);
+  --motion-transition: 500ms var(--ease);
+
+  /* Components */
+  --nav-height: 72px;
+  --logo-optical-offset: -2px;     /* hair tuft makes the box taller than the face; lift to look centered */
+  --hero-height: 800px;
+  --hero-offset: 245px;            /* title top in Figma */
+  --index-col: 80px;               /* content edge → work title */
+  --work-title-col: 196px;         /* work title → divider line */
+  --work-row-padding: 34px;        /* rows repeat every 136px in Figma */
+  --work-meta-indent: 13px;        /* divider line → tags/period text */
+  --work-divider-width: 2px;
+  --avatar-width: 160px;
+  --about-text-width: 540px;
+  --pill-width: 8.4375rem;         /* 135, scales with its text */
+  --pill-height: 2.0625rem;        /* 33 */
+  --pill-label-offset: -0.0375rem; /* CJK glyphs sit ~0.6px below the line box center */
+  --other-work-ratio: 285 / 230;   /* card is 285×230 at 1200 content width */
+  --other-works-gap: 20px;
+  --rule-hairline: 0.5px solid var(--color-text-muted);
+  --rule-soft: 1px solid var(--color-border-default);
+  --rule-subtle: 1px solid var(--color-border-subtle);
+  --rule-subtle-thin: 0.5px solid var(--color-border-subtle);
+  --rule-section: 0.5px solid var(--color-text-primary);
+
+  /* Footer */
+  --footer-pad-top: 71px;
+  --footer-pad-bottom: 29px;
+  --footer-sub-gap: 10px;
+  --footer-mail-gap: 35px;
+  --footer-nav-gap: 63px;
+
+  /* About page */
+  --about-width: 1096px;           /* section title + tools row span 172–1268 */
+  --about-col: 209px;              /* section edge → content column (x 381) */
+  --about-text-col: 678px;         /* intro paragraph width */
+  --profile-avatar-width: 126px;
+  --story-rule: 3px;
+  --quote-offset: 147px;           /* quote marks sit 147px outside the paragraph */
+  --skill-label-col: 228px;
+  --skill-overhang: 18px;          /* tag rows run 18px past the section rule in Figma */
+  --tag-pad-y: 5px;
+  --tag-pad-x: 15px;
+  --tag-pad-more: 23px;
+  --tag-gap-row: 12px;
+  --tag-gap-col: 10px;
+  --tool-size: 84px;
+  --job-width: 875px;
+}

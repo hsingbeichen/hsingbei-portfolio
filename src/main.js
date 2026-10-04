@@ -1,6 +1,7 @@
-import './style.css'
+import { BASE, header, footer, initLayout, pillInner } from './shared/layout.js'
+import './home.css'
 
-const IMG = `${import.meta.env.BASE_URL}images/home`
+const IMG = `${BASE}images/home`
 
 const featured = [
   { slug: 'giant', title: '巨匠旅遊', subtitle: 'Artisan Tour', tags: 'Banner / GDN / 網站UI / DM設計', period: '2016.12 – 2021.01' },
@@ -18,29 +19,8 @@ const values = [
 
 const pad = (n) => String(n).padStart(2, '0')
 
-// Pill button (Figma component "View Case Study"): outline by default, filled on hover.
-const pillInner = (label) => `
-  <span class="pill-label">${label}</span>
-  <span class="pill-arrow" aria-hidden="true">
-    <img src="${IMG}/arrow-outline.svg" width="8" height="14" alt="" />
-    <img class="is-hover" src="${IMG}/arrow-hover.svg" width="8" height="14" alt="" />
-  </span>
-`
-
 document.querySelector('#app').innerHTML = `
-  <header class="navbar" id="navbar">
-    <div class="shell navbar-inner">
-      <a class="logo" href="#home" aria-label="Hsingbei Chen home">
-        <img src="${IMG}/logo-header.svg" width="29.809" height="32" alt="" />
-        <span class="logo-text">HSINGBEI CHEN</span>
-      </a>
-      <nav aria-label="Primary navigation">
-        <a href="#works" data-section="works" data-label="WORK">WORK</a>
-        <a href="#about" data-section="about" data-label="ABOUT">ABOUT</a>
-        <a href="#contact" data-section="contact" data-label="CONTACT">CONTACT</a>
-      </nav>
-    </div>
-  </header>
+  ${header()}
 
   <main>
     <section class="hero" id="home">
@@ -91,7 +71,7 @@ document.querySelector('#app').innerHTML = `
               `).join('')}
             </ul>
           </div>
-          <a class="pill-btn pill-btn--wide" href="#about-full">${pillInner('認識我更多')}</a>
+          <a class="pill-btn pill-btn--wide" href="${BASE}about.html">${pillInner('認識我更多')}</a>
         </div>
       </div>
     </section>
@@ -107,32 +87,10 @@ document.querySelector('#app').innerHTML = `
     </section>
   </main>
 
-  <footer class="contact" id="contact">
-    <div class="shell reveal">
-      <h2>LET'S WORK TOGETHER</h2>
-      <p class="contact-sub">Design-to-Code · Based in Taipei</p>
-      <p class="contact-line">
-        <a href="mailto:zingbay0624@gmail.com">Email : zingbay0624@gmail.com</a>
-        <span>Portfolio</span>
-        <span>© 2026 Hsingbei</span>
-      </p>
-    </div>
-  </footer>
+  ${footer()}
 `
 
-const navbar = document.querySelector('#navbar')
-const updateNavbar = () => navbar.classList.toggle('is-scrolled', window.scrollY > 40)
-window.addEventListener('scroll', updateNavbar, { passive: true })
-updateNavbar()
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (!entry.isIntersecting) return
-    entry.target.classList.add('in')
-    observer.unobserve(entry.target)
-  })
-}, { threshold: 0.15 })
-document.querySelectorAll('.reveal').forEach((el) => observer.observe(el))
+initLayout()
 
 // Highlight the nav link of the section currently in view.
 const navLinks = document.querySelectorAll('.navbar nav a')

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <linearGradient id="pc-top" x1="212" y1="760" x2="810" y2="240" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#7EE08F"/>
+      <stop offset="0.35" stop-color="#3FB0E6"/>
+      <stop offset="0.7" stop-color="#4A72E0"/>
+      <stop offset="1" stop-color="#5B4FD0"/>
+    </linearGradient>
+    <linearGradient id="pc-mid" x1="230" y1="760" x2="810" y2="330" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFF6D2"/>
+      <stop offset="0.35" stop-color="#F8B8C8"/>
+      <stop offset="0.65" stop-color="#E25BD0"/>
+      <stop offset="1" stop-color="#9A5CF2"/>
+    </linearGradient>
+    <linearGradient id="pc-low" x1="215" y1="800" x2="720" y2="500" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFF3B0"/>
+      <stop offset="0.35" stop-color="#FFB341"/>
+      <stop offset="0.65" stop-color="#FF5F45"/>
+      <stop offset="1" stop-color="#E8306E"/>
+    </linearGradient>
+  </defs>
+  <rect width="1024" height="1024" rx="230" fill="#000"/>
+  <!-- Back layer: blue/teal upper edge of the brush stroke -->
+  <path fill="url(#pc-top)" d="M212 815C222 690 285 580 390 520C475 472 580 455 668 415C748 378 795 305 803 207C822 300 812 400 745 470C670 545 560 580 450 605C350 628 255 690 212 815Z"/>
+  <!-- Middle layer: pink/purple body -->
+  <path fill="url(#pc-mid)" d="M212 815C226 712 292 618 395 562C480 516 585 500 672 462C740 432 792 385 810 300C815 390 790 450 735 495C665 552 560 580 455 603C355 625 255 690 212 815Z"/>
+  <!-- Front layer: cream to orange/red lower edge -->
+  <path fill="url(#pc-low)" d="M212 815C235 728 295 655 380 620C460 588 560 582 640 548C680 530 710 505 728 485C680 545 580 578 470 601C360 624 258 688 212 815Z"/>
+</svg>
