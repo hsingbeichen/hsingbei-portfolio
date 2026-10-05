@@ -11,6 +11,7 @@ export default defineConfig({
       input: {
         main: page('./index.html'),
         about: page('./about.html'),
+        caseAzaleah: page('./case-azaleah.html'),
       },
     },
   },

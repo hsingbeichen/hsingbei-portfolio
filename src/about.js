@@ -1,9 +1,8 @@
-import { BASE, IMG, header, footer, initLayout, pillInner } from './shared/layout.js'
+import { BASE, IMG, BACK_HOME, header, footer, initLayout, pillInner } from './shared/layout.js'
 import './about.css'
 
 const skills = [
-  // Brand Identity 之後連到 Case_Azaleah 案例頁（頁面完成後補上 href）
-  { group: 'Visual Design', tags: [{ label: 'Brand Identity', more: true }, 'Graphic Design', 'Illustration'] },
+  { group: 'Visual Design', tags: [{ label: 'Brand Identity', href: `${BASE}case-azaleah.html` }, 'Graphic Design', 'Illustration'] },
   { group: 'Marketing &amp; <br />Campaign Design', tags: ['GDN', 'EDM', 'Landing Page', 'Event Visual', 'Social Media', 'Print Design', 'GIF / Animation'] },
   { group: 'UI / Web', tags: ['Design System', 'Responsive Layout', 'Auto Layout', 'Component', 'Variant', 'Prototype', 'Dev Mode'] },
   { group: 'Front-end &amp; AI-assisted <br />Development', tags: ['HTML', 'CSS', 'RWD', 'Design-to-Code Workflow'] },
@@ -37,10 +36,10 @@ const title = (num, zh, en) => `
 
 const tag = (t) => typeof t === 'string'
   ? `<li class="skill-tag">${t}</li>`
-  : `<li class="skill-tag skill-tag--more">${t.label}<img src="${IMG}/about/chevron-right.svg" width="19" height="19" alt="" /></li>`
+  : `<li><a class="skill-tag skill-tag--more" href="${t.href}">${t.label}<img src="${IMG}/about/chevron-right.svg" width="19" height="19" alt="" /></a></li>`
 
 document.querySelector('#app').innerHTML = `
-  ${header('about', { back: true })}
+  ${header('about', { back: BACK_HOME })}
 
   <main class="about-page" id="top">
     <section class="about-section profile">

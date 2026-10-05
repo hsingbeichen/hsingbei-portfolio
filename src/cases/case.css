@@ -1,0 +1,174 @@
+/* ===== Case study pages ===== */
+.case-shell { padding-left: var(--case-indent); }
+.case-hero { padding-block: var(--case-hero-top) var(--space-9); }
+
+.case-title { display: flex; flex-direction: column; gap: var(--case-title-gap); }
+.case-title-zh { font: var(--weight-black) var(--text-h1) / var(--leading-h1-cjk) var(--font-body); }
+.case-title-en { font: var(--weight-black) var(--text-case-title) / 1 var(--font-display); }
+
+.case-hero-body {
+  display: grid; grid-template-columns: auto 1fr var(--case-meta-width); align-items: start;
+  margin-top: var(--case-body-gap);
+}
+.case-gallery { display: flex; gap: var(--case-gallery-gap); }
+.case-shot {
+  display: grid; place-items: center;
+  height: var(--case-shot-height);
+  background: #FFFFFF;
+  border-radius: var(--radius-image);
+  overflow: hidden;
+}
+.case-shot--square { width: var(--case-shot-height); }
+.case-shot--card { width: var(--case-card-width); }
+.case-shot img { width: 100%; height: 100%; object-fit: contain; }
+.case-shot--square img { width: auto; height: var(--case-logo-height); } /* logo art 218.5 tall, centred in the 320 white square */
+
+.case-meta { grid-column: 3; display: flex; flex-direction: column; gap: var(--case-meta-gap); padding-top: 4px; }
+.case-meta dt {
+  color: var(--color-text-secondary);
+  font: var(--weight-medium) var(--text-body-s) / var(--leading-lead) var(--font-body);
+}
+.case-meta dd { font: var(--weight-regular) var(--text-body-lead) / var(--leading-body-l) var(--font-body); }
+
+@media (max-width: 1024px) {
+  .case-shell { padding-left: 0; }
+  .case-hero-body { grid-template-columns: 1fr; row-gap: var(--space-6); }
+  .case-meta { grid-column: 1; display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-4); }
+}
+
+@media (max-width: 800px) {
+  :root { --text-case-title: 2.5rem; --case-shot-height: 200px; --case-card-width: 125px; --case-hero-top: calc(var(--nav-height) + var(--space-8)); }
+  .case-gallery { flex-wrap: wrap; }
+  .case-meta { grid-template-columns: 1fr; }
+}
+
+/* ----- Body: sticky TOC + sections (content column x 510, 603 wide) ----- */
+.case-body {
+  display: grid; grid-template-columns: var(--case-toc-col) minmax(0, var(--case-content-width));
+  padding-bottom: var(--space-11);
+}
+.case-toc { position: sticky; top: calc(var(--nav-height) + var(--space-6)); align-self: start; }
+.case-toc-name {
+  color: var(--color-text-primary);
+  font: var(--weight-medium) var(--text-body-m) / var(--leading-lead) var(--font-display);
+}
+.case-toc ol { margin-top: var(--space-4); border-left: var(--rule-subtle); }
+.case-toc a {
+  position: relative; display: block;
+  padding: 11px 0 11px 27px;
+  color: var(--color-text-muted);
+  font: var(--weight-medium) var(--text-body-s) / var(--leading-lead) var(--font-body);
+  transition: color var(--motion-micro);
+}
+.case-toc a::before {
+  content: ''; position: absolute; left: -1px; top: 0; bottom: 0; width: 2px;
+  background: var(--color-accent-hover); transform: scaleY(0); transition: transform var(--motion-normal);
+}
+.case-toc a:hover, .case-toc a.is-active { color: var(--color-accent-hover); }
+.case-toc a.is-active { font-weight: var(--weight-bold); }
+.case-toc a.is-active::before { transform: scaleY(1); }
+
+.case-section { padding-block: var(--space-4) var(--space-5); border-bottom: var(--rule-subtle); scroll-margin-top: calc(var(--nav-height) + var(--space-4)); }
+.case-section:first-child { padding-top: 0; }
+.case-section:last-child { border-bottom: 0; }
+.case-heading {
+  position: relative; display: flex; align-items: baseline; gap: 12px;
+  margin-bottom: calc(var(--case-heading-gap) - var(--space-1)); /* first paragraph adds its own 4px */
+  font: var(--weight-bold) var(--text-h3) / var(--leading-h3) var(--font-body);
+}
+.case-heading .num {
+  /* Shares the title's baseline, then lifts so its top lines up with the CJK glyph tops */
+  width: calc(32px - 12px); margin-left: -32px; transform: translateY(calc(-1 * var(--case-num-lift)));
+  color: var(--color-text-muted);
+  font: var(--weight-medium) var(--text-body-m) / var(--leading-lead) var(--font-display);
+}
+.case-heading .en {
+  color: var(--color-text-muted);
+  font: var(--weight-medium) var(--text-body-m) / var(--leading-h3) var(--font-display);
+  letter-spacing: var(--tracking-label);
+  transform: translateY(calc(-1 * var(--case-en-lift))); /* centre the caps on the CJK title */
+}
+
+.case-section p.case-text {
+  margin-top: var(--space-1);
+  color: var(--color-text-secondary);
+  font: var(--weight-regular) var(--text-body-m) / var(--leading-lead) var(--font-body);
+  text-align: justify;
+}
+.case-note {
+  margin-top: var(--space-3); padding: 18px 35px;
+  background: var(--color-bg-surface); border-radius: var(--radius-card);
+  color: var(--color-text-secondary);
+  font: var(--weight-medium) var(--text-body-m) / var(--leading-lead) var(--font-body);
+}
+.case-quote-bar { position: relative; margin-top: var(--space-6); padding-left: 13px; }
+.case-quote-bar::before {
+  content: ''; position: absolute; left: 0; top: 6px; bottom: 6px; width: 3px;
+  border-radius: var(--radius-pill); background: var(--color-accent-dark);
+}
+.case-label {
+  margin-top: var(--space-6);
+  color: var(--color-accent-default);
+  font: var(--weight-medium) var(--text-caption) / 1.25 var(--font-display);
+  letter-spacing: var(--tracking-label);
+}
+.case-media { margin-top: var(--space-3); }
+.case-media-frame {
+  display: grid; place-items: center; overflow: hidden;
+  background: #FFFFFF; border-radius: var(--radius-image);
+}
+.case-media-frame img { width: 100%; height: 100%; }
+.case-media-frame.is-bare { background: none; } /* transparent artwork sits on the page colour */
+.case-media-frame.is-placeholder { background: var(--color-bg-surface); color: var(--color-text-muted); font-size: var(--text-caption); }
+.case-media figcaption {
+  margin-top: var(--space-2);
+  color: var(--color-text-secondary);
+  font: var(--weight-medium) var(--text-caption) / 1.25 var(--font-body);
+}
+.case-media figcaption strong { margin-right: var(--space-3); color: var(--color-text-primary); }
+.case-grid { display: grid; gap: var(--case-gallery-gap); }
+.case-grid--2 { grid-template-columns: 1fr 1fr; }
+.case-grid--3 { grid-template-columns: repeat(3, 1fr); }
+.case-grid--wide { grid-template-columns: 253fr 341fr; }
+.case-section .skill-tags { margin-top: var(--space-4); }
+.case-testimonial {
+  margin-top: var(--space-5); padding: 22px 43px;
+  background: var(--color-bg-surface); border-radius: var(--radius-card);
+  color: var(--color-text-secondary);
+  font: var(--weight-medium) var(--text-body-m) / var(--leading-lead) var(--font-body);
+}
+.case-testimonial cite { display: block; text-align: right; font-style: normal; color: var(--color-text-muted); }
+
+@media (max-width: 1024px) {
+  .case-body { grid-template-columns: 1fr; }
+  .case-toc { display: none; }
+  .case-heading .num { width: auto; margin-left: 0; }
+}
+@media (max-width: 800px) {
+  .case-heading { flex-wrap: wrap; row-gap: 0; }
+  .case-grid--3, .case-grid--wide { grid-template-columns: 1fr 1fr; }
+}
+
+/* ----- Proposals (Figma 445:904 / 445:931) ----- */
+.case-proposals { margin-top: var(--space-3); }
+.case-proposal {
+  display: flex; flex-direction: column;
+  padding: 3px;
+  background: #FFFFFF;
+  border: 1px solid var(--color-text-muted);
+  border-radius: var(--radius-image);
+}
+.case-proposal.is-chosen { border: 2px solid var(--color-accent-hover); padding: 2px; }
+.case-proposal-art {
+  display: grid; place-items: center; aspect-ratio: 292 / 271;
+  background: var(--color-bg-default); /* matches the artwork's own #F7F7F5 */
+  color: var(--color-text-muted); font-size: var(--text-caption);
+}
+.case-proposal-art img { width: 100%; height: 100%; object-fit: contain; }
+.case-proposal figcaption {
+  display: flex; justify-content: space-between; align-items: baseline; gap: var(--space-2);
+  padding: 8px 10px 6px;
+  color: var(--color-text-muted);
+  font: var(--weight-medium) var(--text-caption) / var(--leading-caption) var(--font-body);
+}
+.case-proposal figcaption strong { color: var(--color-text-primary); font-weight: var(--weight-medium); }

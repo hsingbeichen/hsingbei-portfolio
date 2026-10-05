@@ -54,17 +54,6 @@
 .skill-row:last-child { padding-bottom: 0; }
 .skill-row + .skill-row { border-top: var(--rule-subtle); }
 .skill-row dt { font: var(--weight-medium) var(--text-body-m) / var(--leading-body-m-tight) var(--font-display); }
-.skill-tags { display: flex; flex-wrap: wrap; gap: var(--tag-gap-row) var(--tag-gap-col); }
-.skill-tag {
-  display: inline-flex; align-items: center;
-  padding: var(--tag-pad-y) var(--tag-pad-x);
-  border: 1px solid var(--color-text-muted); border-radius: var(--radius-pill);
-  background: var(--color-tag-bg); color: var(--color-text-secondary);
-  font: var(--weight-medium) var(--text-body-m) / var(--leading-body-m-tight) var(--font-display);
-  white-space: nowrap;
-}
-.skill-tag--more { padding-left: var(--tag-pad-more); }
-
 .tools { display: grid; grid-template-columns: repeat(auto-fill, var(--tool-size)); justify-content: space-between; gap: var(--space-3); }
 .tools img { width: var(--tool-size); height: var(--tool-size); object-fit: contain; }
 

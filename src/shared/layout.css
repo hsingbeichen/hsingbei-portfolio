@@ -85,6 +85,19 @@ img { display: block; }
   font: var(--weight-medium) var(--text-body-m) / var(--leading-body-m-tight) var(--font-display);
 }
 
+/* ===== Tag (pill label) — skills on About, scope on case pages ===== */
+.skill-tags { display: flex; flex-wrap: wrap; gap: var(--tag-gap-row) var(--tag-gap-col); }
+.skill-tag {
+  display: inline-flex; align-items: center;
+  padding: var(--tag-pad-y) var(--tag-pad-x);
+  border: 1px solid var(--color-text-muted); border-radius: var(--radius-pill);
+  background: var(--color-tag-bg); color: var(--color-text-secondary);
+  font: var(--weight-medium) var(--text-body-m) / var(--leading-body-m-tight) var(--font-display);
+  white-space: nowrap;
+}
+.skill-tag--more { padding-left: var(--tag-pad-more); transition: border-color var(--motion-micro), color var(--motion-micro); }
+.skill-tag--more:hover, .skill-tag--more:focus-visible { border-color: var(--color-accent-hover); color: var(--color-accent-hover); }
+
 /* ===== Footer ===== */
 .site-footer { background: var(--color-accent-dark); padding-block: var(--footer-pad-top) var(--footer-pad-bottom); }
 .site-footer h2 {

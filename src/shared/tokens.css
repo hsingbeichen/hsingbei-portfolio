@@ -114,6 +114,24 @@
   --footer-mail-gap: 35px;
   --footer-nav-gap: 63px;
 
+  /* Case study pages (Figma node 353:313) */
+  --case-indent: 60px;              /* title & gallery start at x 180 */
+  --case-hero-top: calc(var(--nav-height) + 91px); /* zh title top at y 163 */
+  --case-title-gap: 20px;
+  --text-case-title: 4.5rem;        /* 72 */
+  --case-body-gap: var(--space-5);  /* EN title → gallery (32) */
+  --case-shot-height: 320px;
+  --case-card-width: 200.5px;
+  --case-logo-height: 218.5px;
+  --case-gallery-gap: 15px;
+  --case-meta-width: 278px;         /* x 1042 → content edge 1320 */
+  --case-meta-gap: var(--space-3);
+  --case-toc-col: 330px;            /* x 180 → content column x 510 */
+  --case-content-width: 603px;
+  --case-heading-gap: var(--space-3);  /* section heading → first paragraph (16) */
+  --case-en-lift: 3.5px;            /* CJK centre 9.0 − caps centre 5.45 above baseline */
+  --case-num-lift: 9.35px;          /* CJK 24px ink top 20.4 − Inter 15px digit top 11.06 above baseline */
+
   /* About page */
   --about-width: 1096px;           /* section title + tools row span 172–1268 */
   --about-section-top: var(--space-8);     /* section rule → heading (64) */

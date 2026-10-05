@@ -6,7 +6,7 @@ const IMG = `${BASE}images/home`
 const featured = [
   { slug: 'giant', title: '巨匠旅遊', subtitle: 'Artisan Tour', tags: 'Banner / GDN / 網站UI / DM設計', period: '2016.12 – 2021.01' },
   { slug: 'letao', title: '樂淘', subtitle: 'Letao', tags: 'Banner / GDN / 活動頁面 / 視覺優化 / Design-to-Code', period: '2021.01 - 至今(在職中)' },
-  { slug: 'azaleah', title: '杜鵑花開了', subtitle: 'Azaleah studio', tags: '品牌識別設計 / LOGO / 名片設計', period: '2021.06 - 2022.12' },
+  { slug: 'azaleah', page: `${BASE}case-azaleah.html`, title: '杜鵑花開了', subtitle: 'Azaleah studio', tags: '品牌識別設計 / LOGO / 名片設計', period: '2021.06 - 2022.12' },
   { slug: 'coucou', title: 'Coucoubei', tags: 'Illustration × Character × GIF × Sticker × Personal Branding', period: '2026.02 - 至今(持續創作中)' },
 ]
 
@@ -37,7 +37,7 @@ document.querySelector('#app').innerHTML = `
         <h2 class="section-title reveal">精選作品 <span>SELECTED WORKS</span></h2>
         <div class="featured-list">
           ${featured.map((work, index) => `
-            <a class="featured-row reveal" href="#case-${work.slug}">
+            <a class="featured-row reveal" href="${work.page ?? `#case-${work.slug}`}">
               <span class="num">${pad(index + 1)}</span>
               <div class="info">
                 <h3>${work.title}</h3>

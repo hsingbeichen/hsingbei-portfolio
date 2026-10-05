@@ -34,24 +34,28 @@ const primaryNav = (active) => `
   </nav>
 `
 
-const backHome = `
-  <a class="back-home" href="${BASE}">
+// "← BACK TO …" link that replaces the primary nav on inner pages.
+const backLink = ({ label, href }) => `
+  <a class="back-home" href="${href}">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
       <path d="M19 12H5M12 19l-7-7 7-7" />
     </svg>
-    BACK TO HOME
+    ${label}
   </a>
 `
 
-// Inner pages pass { back: true } to swap the nav for a "Back to home" link.
-export const header = (active, { back = false } = {}) => `
+export const BACK_HOME = { label: 'BACK TO HOME', href: BASE }
+export const BACK_WORK = { label: 'BACK TO WORK', href: `${BASE}#works` }
+
+// Inner pages pass { back: BACK_HOME | BACK_WORK } to swap the nav for a back link.
+export const header = (active, { back } = {}) => `
   <header class="navbar" id="navbar">
     <div class="shell navbar-inner">
       <a class="logo" href="${BASE}" aria-label="Hsingbei Chen home">
         <img src="${IMG}/home/logo-header.svg" width="29.809" height="32" alt="" />
         <span class="logo-text">HSINGBEI CHEN</span>
       </a>
-      ${back ? backHome : primaryNav(active)}
+      ${back ? backLink(back) : primaryNav(active)}
     </div>
   </header>
 `
