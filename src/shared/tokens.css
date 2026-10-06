@@ -122,7 +122,7 @@
   --case-body-gap: var(--space-5);  /* EN title → gallery (32) */
   --case-shot-height: 320px;
   --case-card-width: 200.5px;
-  --case-logo-height: 218.5px;
+  --case-logo-height: calc(var(--case-shot-height) * 218.5 / 320); /* logo art scales with its square */
   --case-gallery-gap: 15px;
   --case-meta-width: 278px;         /* x 1042 → content edge 1320 */
   --case-meta-gap: var(--space-3);

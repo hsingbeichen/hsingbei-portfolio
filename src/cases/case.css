@@ -37,8 +37,13 @@
 }
 
 @media (max-width: 800px) {
-  :root { --text-case-title: 2.5rem; --case-shot-height: 200px; --case-card-width: 125px; --case-hero-top: calc(var(--nav-height) + var(--space-8)); }
-  .case-gallery { flex-wrap: wrap; }
+  :root { --text-case-title: 2.5rem; --case-shot-height: 240px; --case-hero-top: calc(var(--nav-height) + var(--space-8)); --case-title-gap: var(--space-1); }
+  .case-title-zh { line-height: 1.25; } /* desktop's 52px line box is too loose at the mobile size */
+  /* Logo on its own row, the two cards side by side underneath */
+  .case-gallery { display: grid; grid-template-columns: 1fr 1fr; }
+  .case-shot { background: none; } /* mobile: artwork sits on the page colour */
+  .case-shot--square { grid-column: 1 / -1; width: 100%; }
+  .case-shot--card { width: 100%; height: auto; aspect-ratio: 200.5 / 320.6; }
   .case-meta { grid-template-columns: 1fr; }
 }
 
