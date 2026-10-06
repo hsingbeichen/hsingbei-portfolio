@@ -76,6 +76,7 @@
   /* Radius */
   --radius-image: 2px;
   --radius-card: 6px;
+  --radius-photo: 5px;             /* photos inside case-study sections */
   --radius-pill: 999px;
 
   /* Motion */
@@ -116,17 +117,24 @@
 
   /* Case study pages (Figma node 353:313) */
   --case-indent: 60px;              /* title & gallery start at x 180 */
-  --case-hero-top: calc(var(--nav-height) + 91px); /* zh title top at y 163 */
-  --case-title-gap: 20px;
+  --case-hero-top: calc(var(--nav-height) + var(--space-10) + var(--space-3)); /* kicker title ~y 185 */
+  --case-title-gap: var(--space-2);
   --text-case-title: 4.5rem;        /* 72 */
-  --case-body-gap: var(--space-5);  /* EN title → gallery (32) */
+  --case-body-gap: var(--space-3);  /* EN title → grey panel */
+  --case-panel-pad: 31px;           /* panel top → images (y 339) */
+  --case-panel-gap: 60px;           /* cards → meta column (x 957 → 1017) */
+  --case-logo-box: 346px;           /* logo area x 180 → 526, cards start x 541 */
+  --case-gallery-width: 777px;      /* 346 + 15 + 200.5 + 15 + 200.5 */
+  --case-meta-min: 240px;
   --case-shot-height: 320px;
   --case-card-width: 200.5px;
-  --case-logo-height: calc(var(--case-shot-height) * 218.5 / 320); /* logo art scales with its square */
   --case-gallery-gap: 15px;
-  --case-meta-width: 278px;         /* x 1042 → content edge 1320 */
   --case-meta-gap: var(--space-3);
-  --case-toc-col: 330px;            /* x 180 → content column x 510 */
+  --text-pager-prev: 2.25rem;       /* 36 */
+  --case-next-arrow-drop: 7px;      /* x-height centre of the 48px title sits 7px below the line-box centre */
+  --case-toc-track: 3px;
+  --case-toc-col: 330px;
+  --case-toc-min: 180px;            /* x 180 → content column x 510 */
   --case-content-width: 603px;
   --case-heading-gap: var(--space-3);  /* section heading → first paragraph (16) */
   --case-en-lift: 3.5px;            /* CJK centre 9.0 − caps centre 5.45 above baseline */

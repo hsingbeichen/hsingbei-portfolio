@@ -36,7 +36,7 @@ export const caseBody = ({ name, sections }) => `
     <nav class="case-toc" aria-label="${name} 段落">
       <p class="case-toc-name">${name}</p>
       <ol>
-        ${sections.map((s) => `<li><a href="#${s.id}" data-toc="${s.id}">${s.num} ${s.zh}</a></li>`).join('')}
+        ${sections.map((s) => `<li><a href="#${s.id}" data-toc="${s.id}">${s.num} ${s.toc ?? s.zh}</a></li>`).join('')}
       </ol>
     </nav>
     <div class="case-sections">
@@ -86,4 +86,22 @@ export const caseProposals = (items) => `
       </figure>
     `).join('')}
   </div>
+`
+
+// Prev / next project pager under the last section, centred on the content column.
+// Next is the primary path (large, dark); prev is quieter (smaller, muted).
+export const casePager = ({ prev, next }) => `
+  <nav class="shell case-shell case-pager-wrap" aria-label="其他作品">
+    <div class="case-pager">
+      <a class="case-pager-link case-pager-prev" href="${prev.href}">
+        <span class="case-pager-label">PREV PROJECT — P.${prev.num}</span>
+        <span class="case-pager-title"><svg width="34" height="30" viewBox="0 0 34 30" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M30 15H6M16 5L6 15l10 10" /></svg>${prev.title}</span>
+      </a>
+      <span class="case-pager-divider" aria-hidden="true"></span>
+      <a class="case-pager-link case-pager-next" href="${next.href}">
+        <span class="case-pager-label">NEXT PROJECT — P.${next.num}</span>
+        <span class="case-pager-title">${next.title}<svg width="34" height="30" viewBox="0 0 34 30" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 15h24M18 5l10 10-10 10" /></svg></span>
+      </a>
+    </div>
+  </nav>
 `
