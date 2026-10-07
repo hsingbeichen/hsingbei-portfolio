@@ -68,7 +68,7 @@ const sections = [
     id: 'business-card', num: '06', zh: '名片設計', en: 'BUSINESS CARD',
     content: `
       ${lead('LOGO 完成一年半後，業主回頭請託延伸設計名片，沿用同一套色彩與造型邏輯。')}
-      ${caseLabel('業主實際發印、使用中的現場照片')}
+      ${caseLabel('業主實際發印')}
       <div class="case-grid case-grid--3">
         ${[1, 2, 3].map((n) => caseMedia({ src: `${img}/print-${n}.jpg`, alt: `名片印刷實拍 ${n}`, ratio: '223 / 262' })).join('')}
       </div>

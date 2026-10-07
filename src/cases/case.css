@@ -163,8 +163,24 @@
   .case-heading .num { width: auto; margin-left: 0; }
 }
 @media (max-width: 800px) {
-  .case-heading { flex-wrap: wrap; row-gap: 0; }
-  .case-grid--3, .case-grid--wide { grid-template-columns: 1fr 1fr; }
+  /* Mobile: Chinese and English stay on one line (sizes trimmed so it fits down to 320px) */
+  .case-heading {
+    gap: var(--space-2); white-space: nowrap; font-size: 1.25rem; line-height: 1.75rem;
+    /* mobile root is 14px → title 17.5, number 13.1, caps 10.5:
+       CJK ink top 14.9 − digit top 9.7; CJK centre 6.6 − caps centre 3.9 */
+    --case-num-lift: 5.2px; --case-en-lift: 2.7px;
+  }
+  .case-heading .en { font-size: var(--text-caption); }
+  .case-section p.case-text { text-align: left; } /* justify leaves wide gaps in short mobile lines */
+  .case-grid--wide { grid-template-columns: 1fr 1fr; }
+  /* Three photos become a swipeable row; the next photo peeks in to hint at scrolling */
+  .case-grid--3 {
+    display: flex; overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain;
+    margin-right: calc(var(--page-margin) * -1); padding-right: var(--page-margin); /* run to the screen edge */
+    scrollbar-width: none;
+  }
+  .case-grid--3::-webkit-scrollbar { display: none; }
+  .case-grid--3 > .case-media { flex: 0 0 72%; scroll-snap-align: start; }
   /* Proposal captions stack (name, then description) so both cards read the same */
   .case-proposal figcaption { flex-direction: column; align-items: flex-start; gap: 2px; }
 }
@@ -270,4 +286,12 @@
   .case-pager-divider { width: 100%; height: 1px; align-self: auto; }
   .case-pager-prev, .case-pager-next { align-items: center; text-align: center; }
   .case-pager-prev .case-pager-title { justify-content: center; }
+}
+
+/* Below 320px: English drops under the Chinese, both left-aligned */
+@media (max-width: 319px) {
+  .case-heading { display: grid; grid-template-columns: auto 1fr; column-gap: var(--space-2); row-gap: 0; align-items: baseline; }
+  .case-heading .num { grid-row: 1; }
+  .case-heading .zh { grid-column: 2; }
+  .case-heading .en { grid-column: 2; transform: none; line-height: 1.25rem; }
 }
