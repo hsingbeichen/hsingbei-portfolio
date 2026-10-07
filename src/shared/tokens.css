@@ -136,6 +136,7 @@
   --case-toc-col: 330px;
   --case-toc-min: 180px;            /* x 180 → content column x 510 */
   --case-content-width: 603px;
+  --case-para-gap: 12px;            /* between body paragraphs (about half a line) */
   --case-heading-gap: var(--space-3);  /* section heading → first paragraph (16) */
   --case-en-lift: 3.5px;            /* CJK centre 9.0 − caps centre 5.45 above baseline */
   --case-num-lift: 9.35px;          /* CJK 24px ink top 20.4 − Inter 15px digit top 11.06 above baseline */

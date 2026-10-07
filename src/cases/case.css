@@ -81,7 +81,7 @@
 .case-toc a:hover { color: var(--color-accent-hover); }
 .case-toc a.is-active::before { transform: scaleY(1); }
 
-.case-section { padding-block: var(--space-6); border-bottom: 1px solid var(--color-text-muted); scroll-margin-top: calc(var(--nav-height) + var(--space-4)); }
+.case-section { padding-block: var(--space-6); border-bottom: 1px solid var(--color-border-subtle); scroll-margin-top: calc(var(--nav-height) + var(--space-4)); }
 .case-section:first-child { padding-top: 0; }
 .case-section:last-child { border-bottom: 0; }
 .case-heading {
@@ -107,9 +107,11 @@
   color: var(--color-text-secondary);
   font: var(--weight-regular) var(--text-body-s) / var(--leading-lead) var(--font-body); /* 13/22 per Figma (lead and body) */
   text-align: justify;
+  text-wrap: pretty; /* avoid a lone character on the last line */
 }
 .case-section p.case-lead { color: var(--color-text-primary); font-weight: var(--weight-medium); }
 .case-section p.case-lead + p.case-text { margin-top: var(--space-3); }
+.case-section p.case-text + p.case-text { margin-top: var(--case-para-gap); } /* paragraph break inside a section */
 .case-note {
   margin-top: var(--space-5); padding: var(--space-4) 36px;
   background: var(--color-bg-surface);
@@ -173,6 +175,8 @@
   .case-heading .en { font-size: var(--text-caption); }
   .case-section p.case-text { text-align: left; } /* justify leaves wide gaps in short mobile lines */
   .case-grid--wide { grid-template-columns: 1fr 1fr; }
+  /* Equal-width columns on mobile: give both photos the left one's ratio so heights match (cover crops the sides) */
+  .case-grid--wide .case-media-frame { aspect-ratio: 253 / 201 !important; }
   /* Three photos become a swipeable row; the next photo peeks in to hint at scrolling */
   .case-grid--3 {
     display: flex; overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain;
