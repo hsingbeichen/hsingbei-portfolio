@@ -69,7 +69,8 @@ const sections = [
   {
     id: 'business-card', num: '06', zh: '名片設計', en: 'BUSINESS CARD',
     content: `
-      ${lead('LOGO 完成一年半後，業主回頭請託延伸設計名片，沿用同一套色彩與造型邏輯。')}
+      ${lead('LOGO 完成一年半後，業主主動回頭，請我延伸設計名片。')}
+      ${text('名片沿用同一套品牌色彩與花瓣造型：正面以 LOGO 為主角；背面用簡潔的線條地圖標出工作室位置，搭配手寫體姓名與嵌入 LOGO 的 QR code，讓識別系統從店面招牌一路延續到隨身的小卡上。')}
       ${caseLabel('業主實際發印')}
       <div class="case-grid case-grid--3">
         ${[1, 2, 3].map((n) => caseMedia({ src: `${img}/print-${n}.jpg`, alt: `名片印刷實拍 ${n}`, ratio: '223 / 262' })).join('')}

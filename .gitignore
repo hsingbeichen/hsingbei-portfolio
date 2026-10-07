@@ -5,3 +5,6 @@ dist/
 # Claude Code personal settings
 .claude/settings.local.json
 .claude/hooks/
+
+# Design source files (Figma exports, originals) — not deployed
+design-assets/
