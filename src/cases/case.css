@@ -244,13 +244,30 @@
 }
 @media (max-width: 800px) {
   .case-pager-wrap { padding-block: var(--space-8); }
-  /* Stack in reading order: prev, then next */
-  .case-pager { grid-template-columns: 1fr; justify-items: center; row-gap: var(--space-6); }
-  .case-pager-divider { display: none; }
-  .case-pager-next { align-items: center; }
-  .case-pager-prev { align-items: center; text-align: center; }
-  .case-pager-title { font-size: var(--text-h2); line-height: var(--leading-h2); }
-  .case-pager-prev .case-pager-title { align-self: center; justify-content: center; font-size: var(--text-h3); line-height: var(--leading-h3); }
-  .case-pager-title svg { width: 24px; height: auto; }
-  .case-pager-next svg { top: 3px; }
+  /* Same prev | next layout as desktop, scaled down and centred as a group */
+  .case-pager { grid-template-columns: auto auto auto; justify-content: center; column-gap: var(--space-3); }
+  .case-pager-divider { margin-inline: 0; }
+  .case-pager-label { font-size: var(--text-caption); line-height: 1rem; letter-spacing: 0.02em; } /* ~10.5px at the mobile root size */
+  .case-pager-prev .case-pager-label { font-size: var(--text-caption); }
+  .case-pager-title { gap: 6px; font-size: var(--text-h3); line-height: var(--leading-h3); }
+  .case-pager-prev .case-pager-title { justify-content: flex-end; font-size: var(--text-body-lead); line-height: var(--leading-h3); } /* arrow hugs the name on mobile */
+  .case-pager-title svg { width: 18px; height: auto; }
+  .case-pager-next svg { top: 2px; }
+}
+
+/* Very narrow phones (≤400px): tighten the pager so "next" and its arrow always fit */
+@media (max-width: 400px) {
+  .case-pager { column-gap: var(--space-2); }
+  .case-pager-label, .case-pager-prev .case-pager-label { font-size: 0.6875rem; letter-spacing: 0; }
+  .case-pager-title { font-size: 1.25rem; }
+  .case-pager-prev .case-pager-title { font-size: 1rem; }
+  .case-pager-title svg { width: 16px; }
+}
+
+/* ≤320px: stack prev above next, with a light rule between */
+@media (max-width: 320px) {
+  .case-pager { grid-template-columns: auto; justify-items: center; row-gap: var(--space-3); }
+  .case-pager-divider { width: 100%; height: 1px; align-self: auto; }
+  .case-pager-prev, .case-pager-next { align-items: center; text-align: center; }
+  .case-pager-prev .case-pager-title { justify-content: center; }
 }
