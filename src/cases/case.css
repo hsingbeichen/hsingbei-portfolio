@@ -173,7 +173,10 @@
     --case-num-lift: 5.2px; --case-en-lift: 2.7px;
   }
   .case-heading .en { font-size: var(--text-caption); }
-  .case-section p.case-text { text-align: left; } /* justify leaves wide gaps in short mobile lines */
+  /* Justified on mobile too so both edges stay flush; plain wrapping, since Safari's
+     text-wrap: pretty shortens lines. Very narrow screens fall back to left-aligned below. */
+  .case-section p.case-text { text-wrap: wrap; }
+  .case-note { padding: var(--space-4) var(--space-4); }
   .case-grid--wide { grid-template-columns: 1fr 1fr; }
   /* Equal-width columns on mobile: give both photos the left one's ratio so heights match (cover crops the sides) */
   .case-grid--wide .case-media-frame { aspect-ratio: 253 / 201 !important; }
@@ -298,4 +301,9 @@
   .case-heading .num { grid-row: 1; }
   .case-heading .zh { grid-column: 2; }
   .case-heading .en { grid-column: 2; transform: none; line-height: 1.25rem; }
+}
+
+/* Very narrow phones: too few characters per line for justify, so mixed English words would stretch */
+@media (max-width: 340px) {
+  .case-section p.case-text { text-align: left; }
 }
