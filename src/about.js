@@ -30,7 +30,7 @@ const jobs = [
 const title = (num, zh, en) => `
   <h2 class="about-heading">
     <span class="num">${num}</span>
-    <span class="label">${zh}<span>${en}</span></span>
+    <span class="label"><span class="zh">${zh}</span><span class="en">${en}</span></span>
   </h2>
 `
 

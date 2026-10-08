@@ -34,7 +34,7 @@ document.querySelector('#app').innerHTML = `
 
     <section class="section works" id="works">
       <div class="shell">
-        <h2 class="section-title reveal">精選作品 <span>SELECTED WORKS</span></h2>
+        <h2 class="section-title reveal"><span class="zh">精選作品</span><span class="en">SELECTED WORKS</span><span class="count">${pad(featured.length)} PROJECTS</span></h2>
         <div class="featured-list">
           ${featured.map((work, index) => `
             <a class="featured-row reveal" href="${work.page ?? `#case-${work.slug}`}">
@@ -56,7 +56,7 @@ document.querySelector('#app').innerHTML = `
 
     <section class="section about" id="about">
       <div class="shell">
-        <h2 class="section-title reveal">關於我 <span>ABOUT</span></h2>
+        <h2 class="section-title reveal"><span class="zh">關於我</span><span class="en">ABOUT</span></h2>
         <div class="about-body reveal">
           <img class="avatar" src="${IMG}/logo-avatar.svg" width="160.131" height="171.901" alt="Hsingbei 插畫頭像" />
           <div class="about-text">
@@ -78,7 +78,7 @@ document.querySelector('#app').innerHTML = `
 
     <section class="section other-works" id="other-works">
       <div class="shell">
-        <h2 class="section-title reveal">其他作品 <span>OTHER WORKS</span></h2>
+        <h2 class="section-title reveal"><span class="zh">其他作品</span><span class="en">OTHER WORKS</span></h2>
         <!-- 卡片內容待補，先保留 Figma 尺寸 -->
         <ul class="other-works-grid reveal">
           ${Array.from({ length: 4 }, () => '<li class="other-work-card"></li>').join('')}

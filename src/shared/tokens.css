@@ -18,8 +18,10 @@
   --color-nav-bg-scrolled: rgb(247 247 245 / 0.94);
 
   /* Typography */
+  /* Site-wide rule: Latin letters and digits in Inter, Chinese in Noto Sans TC.
+     Inter has no CJK glyphs, so Chinese characters fall through to Noto Sans TC. */
   --font-display: 'Inter', 'Noto Sans TC', sans-serif;
-  --font-body: 'Noto Sans TC', sans-serif;
+  --font-body: 'Inter', 'Noto Sans TC', sans-serif;
   --text-display-xl: 5.5rem;   /* 88 */
   --text-h1: 3rem;            /* 48 */
   --text-h3: 1.5rem;          /* 24 */

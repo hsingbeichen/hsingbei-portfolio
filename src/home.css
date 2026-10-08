@@ -49,10 +49,25 @@
 
 /* ===== Section ===== */
 .section-title {
-  color: var(--color-accent-dark);
-  font: var(--weight-medium) var(--text-h3) / var(--leading-h3) var(--font-display);
+  /* Same language as the case-page headings: bold Chinese title, small muted caps beside it */
+  display: flex; align-items: baseline; gap: 12px;
+  color: var(--color-accent-dark); /* deep green, as in the Figma home design */
+  font: var(--weight-bold) var(--text-h3) / var(--leading-h3) var(--font-body);
 }
-.section-title span { font: var(--weight-regular) var(--text-body-lead) / var(--leading-lead) var(--font-display); }
+.section-title .en {
+  color: var(--color-text-muted);
+  font: var(--weight-medium) var(--text-body-m) / var(--leading-h3) var(--font-display);
+  letter-spacing: var(--tracking-label);
+  transform: translateY(calc(-1 * var(--case-en-lift))); /* centre the caps on the CJK title */
+}
+.section-title .count {
+  margin-left: auto;
+  color: var(--color-text-muted);
+  font: var(--weight-medium) var(--text-caption) / var(--leading-h3) var(--font-display);
+  letter-spacing: var(--tracking-label);
+  transform: translateY(calc(-1 * var(--case-en-lift)));
+}
+
 
 /* ===== Featured works ===== */
 .works { background: var(--color-bg-surface); padding-block: var(--space-8) var(--space-7); }
