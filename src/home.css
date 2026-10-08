@@ -22,7 +22,7 @@
 }
 .hero-quote .stop { font-size: var(--text-h3); }
 .hero-quote::before {
-  content: ''; position: absolute; left: 0; top: var(--space-2); bottom: var(--space-2);
+  content: ''; position: absolute; left: 0; top: var(--quote-bar-top); bottom: var(--quote-bar-bottom); /* matches the CJK ink, top of line 1 to bottom of line 2 */
   width: 4px; border-radius: var(--radius-pill); background: var(--color-accent-default);
 }
 .scroll-hint {
@@ -159,9 +159,11 @@
   :root { --hero-height: 100svh; --hero-offset: 160px; --index-col: 40px; --avatar-width: 120px; }
   .hero-title { line-height: 1.05; }
   .hero-skills { font-size: var(--text-body-m); }
-  .hero-quote { font-size: var(--text-body-lead); line-height: var(--leading-body-m); }
+  .hero-quote { font-size: var(--text-body-lead); line-height: var(--leading-body-m); --quote-bar-top: 0.29em; } /* looser mobile leading */
   .works { padding-block: var(--space-8); }
   .works .section-title { margin-bottom: var(--space-4); }
+  .section-title { --case-en-lift: 4px; } /* recentre for mobile: CJK 21px centre 7.9 − caps 10.5px centre 3.9 */
+  .section-title .en { font-size: var(--text-caption); } /* 12, same as the case-page headings on mobile */
   .featured-row { grid-template-columns: var(--index-col) 1fr; padding-right: 0; row-gap: var(--space-2); }
   .featured-row .num { padding-left: 0; }
   .featured-row .meta { grid-column: 2; }

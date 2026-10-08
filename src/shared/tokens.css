@@ -91,6 +91,8 @@
   --nav-height: 72px;
   --logo-optical-offset: -2px;     /* hair tuft makes the box taller than the face; lift to look centered */
   --hero-height: 800px;
+  --quote-bar-top: 0.16em;          /* em: follows the quote size; CJK ink top of line 1 */
+  --quote-bar-bottom: 0.21em;       /* CJK ink bottom of the last line */
   --hero-offset: 245px;            /* title top in Figma */
   --index-col: 80px;               /* content edge → work title */
   --work-title-col: 196px;         /* work title → divider line */
