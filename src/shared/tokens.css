@@ -93,7 +93,7 @@
   --index-col: 80px;               /* content edge → work title */
   --work-title-col: 196px;         /* work title → divider line */
   --work-row-padding: 34px;        /* rows repeat every 136px in Figma */
-  --work-meta-indent: 13px;        /* divider line → tags/period text */
+  --work-meta-indent: calc(var(--work-divider-width) + var(--space-3)); /* 2px line + 16px gap to the text */
   --work-divider-width: 2px;
   --avatar-width: 160px;
   --about-text-width: 540px;
