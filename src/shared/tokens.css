@@ -10,6 +10,7 @@
   --color-bg-subtle: #f3f3f3;
   --color-border-default: #dcdcd8;
   --color-border-subtle: rgb(220 220 216 / 0.75);
+  --color-quote-mark: color-mix(in srgb, var(--color-accent-hover) 18%, transparent); /* tint of the quote's own green, so the box adds no new colour */
   --color-tag-bg: rgb(238 238 236 / 0.5);   /* surface #EEEEEC at 50% */
   --color-accent-default: #04374a;
   --color-accent-hover: #06536c;
@@ -136,6 +137,7 @@
   --case-meta-gap: var(--space-3);
   --text-pager-prev: 2.25rem;       /* 36 */
   --case-next-arrow-drop: 7px;      /* x-height centre of the 48px title sits 7px below the line-box centre */
+  --quote-gutter: var(--space-5);    /* testimonial: outer margin left and right (32) */
   --case-toc-track: 3px;
   --case-toc-col: 330px;
   --case-toc-min: 180px;            /* x 180 → content column x 510 */

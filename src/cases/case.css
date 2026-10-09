@@ -152,12 +152,14 @@
 .case-grid + .case-text { margin-top: var(--space-4); }
 .case-section .skill-tags { margin-top: var(--space-4); }
 .case-testimonial {
-  margin-top: 21px; padding: 22px 43px;
+  /* Equal outer margins: box edge → open mark on the left equals text → box edge on the right */
+  margin-top: 21px; padding: 22px var(--quote-gutter) 22px calc(var(--quote-gutter) + 24px + var(--space-2));
   background: var(--color-bg-surface);
   color: var(--color-accent-hover);
+  text-align: justify; /* first line runs flush to the right padding */
   font: var(--weight-medium) var(--text-body-s) / var(--leading-lead) var(--font-body); /* 13 per Figma */
 }
-.case-testimonial cite { margin-left: var(--space-2); font-style: normal; color: var(--color-text-secondary); }
+.case-testimonial cite { font-style: normal; color: var(--color-text-secondary); }
 
 @media (max-width: 1024px) {
   .case-body { grid-template-columns: 1fr; }
@@ -177,6 +179,7 @@
      text-wrap: pretty shortens lines. Very narrow screens fall back to left-aligned below. */
   .case-section p.case-text { text-wrap: wrap; }
   .case-note { padding: var(--space-4) var(--space-4); }
+  .case-testimonial { --quote-gutter: var(--space-3); }
   .case-grid--wide { grid-template-columns: 1fr 1fr; }
   /* Equal-width columns on mobile: give both photos the left one's ratio so heights match (cover crops the sides) */
   .case-grid--wide .case-media-frame { aspect-ratio: 253 / 201 !important; }
@@ -306,4 +309,24 @@
 /* Very narrow phones: too few characters per line for justify, so mixed English words would stretch */
 @media (max-width: 340px) {
   .case-section p.case-text { text-align: left; }
+}
+
+/* Testimonial quote marks: open in the left gutter, close between the quote and the attribution */
+.case-testimonial { position: relative; }
+.case-testimonial::before,
+.case-testimonial cite::before {
+  content: ''; width: 24px; height: 20px;
+  background: var(--color-quote-mark); /* light, decorative only */
+  -webkit-mask: var(--quote-mark) center / contain no-repeat;
+          mask: var(--quote-mark) center / contain no-repeat;
+  pointer-events: none;
+}
+.case-testimonial::before {
+  --quote-mark: url('/hsingbei-portfolio/images/about/quote-open.svg');
+  position: absolute; left: var(--quote-gutter); top: 20px; /* hugs the first line */
+}
+.case-testimonial cite::before {
+  --quote-mark: url('/hsingbei-portfolio/images/about/quote-close.svg');
+  display: inline-block; margin-inline: 6px 12px;
+  vertical-align: -3px; margin-block: -4px; /* keep the 88px box height */
 }
