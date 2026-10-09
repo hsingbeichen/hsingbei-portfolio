@@ -50,7 +50,7 @@
 /* ===== Section ===== */
 .section-title {
   /* Same language as the case-page headings: bold Chinese title, small muted caps beside it */
-  display: flex; align-items: baseline; gap: 12px;
+  display: flex; align-items: baseline; gap: 12px; white-space: nowrap; /* never break the title words */
   color: var(--color-accent-dark); /* deep green, as in the Figma home design */
   font: var(--weight-bold) var(--text-h3) / var(--leading-h3) var(--font-body);
 }
@@ -135,7 +135,14 @@
   color: var(--color-text-muted);
   font: var(--weight-medium) var(--text-body-m) / var(--leading-body-m) var(--font-display);
 }
-.values span { margin-left: 10px; padding-left: 10px; border-left: 1px solid var(--color-border-subtle); }
+/* Icons sit in one square box; --icon-scale evens out their optical size (they're drawn at different sizes) */
+.value-icon { display: grid; place-items: center; width: var(--value-icon-box); height: var(--value-icon-box); }
+.value-icon img { width: auto; height: calc(var(--value-icon-box) * var(--icon-scale)); opacity: 0.5; } /* softer: #999 at half strength */
+.value-label { position: relative; margin-left: 10px; padding-left: 10px; }
+.value-label::before { /* divider only as tall as the text, not the whole line box */
+  content: ''; position: absolute; left: 0; top: 50%; height: 1.1em; translate: 0 -50%;
+  border-left: 1px solid var(--color-border-subtle);
+}
 .about-body .pill-btn { align-self: end; }
 
 /* ===== Other works ===== */
@@ -170,10 +177,36 @@
   .featured-row .pill-btn { grid-column: 2; margin: var(--space-2) 0 0; }
   .about { padding-block: var(--space-8); }
   .about-body { grid-template-columns: 1fr; padding-right: 0; justify-items: start; }
-  .about-text { padding-left: 0; }
+  .about-text { padding-left: 0; max-width: 100%; min-width: 0; } /* don't let the one-line values widen the column */
   .about-title { font-size: var(--text-quote); line-height: var(--leading-quote); }
   .about-body .pill-btn { grid-column: 1; margin-left: 0; }
+  /* Centre the About block on mobile: avatar, title, intro, values and button */
+  .about-body { justify-items: center; text-align: center; }
+  .about-body .avatar { grid-column: 1; }
+  .values { justify-content: center; }
+  .about-body .pill-btn { justify-self: center; }
+  /* Keep the four values on one line */
+  .values { flex-wrap: nowrap; gap: var(--space-3); }
+  .values li { font-size: var(--text-caption); white-space: nowrap; }
+  .values { --value-icon-box: 16px; }
+  .value-label { margin-left: 6px; padding-left: 6px; }
   .other-works { padding-block: var(--space-8); }
   .other-works .section-title { margin-bottom: var(--space-4); }
   .other-works-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Narrow phones: tighten the values row further so all four still fit on one line */
+@media (max-width: 380px) {
+  .section-title { gap: var(--space-2); font-size: 1.25rem; --case-en-lift: 2.7px; } /* 17.5px title: recentre the caps */
+  .values { gap: var(--space-2); }
+  .values li { font-size: 0.6875rem; }
+  .values { --value-icon-box: 13px; }
+  .value-label { margin-left: 4px; padding-left: 4px; }
+}
+
+/* ≤320px: Chinese title on its own line, English label and project count drop to the line below */
+@media (max-width: 320px) {
+  .section-title { flex-wrap: wrap; row-gap: 0; font-size: var(--text-h3); }
+  .section-title .zh { flex-basis: 100%; }
+  .section-title .en, .section-title .count { transform: none; line-height: 1.25rem; }
 }

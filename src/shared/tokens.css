@@ -101,6 +101,7 @@
   --work-meta-indent: calc(var(--work-divider-width) + var(--space-3)); /* 2px line + 16px gap to the text */
   --work-divider-width: 2px;
   --avatar-width: 160px;
+  --value-icon-box: 22px;          /* home About values: common icon box */
   --about-text-width: 540px;
   --pill-width: 8.4375rem;         /* 135, scales with its text */
   --pill-height: 2.0625rem;        /* 33 */

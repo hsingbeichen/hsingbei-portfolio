@@ -11,10 +11,10 @@ const featured = [
 ]
 
 const values = [
-  { label: 'Question', icon: 'icon-question.svg', w: 25.1921, h: 27.0303 },
-  { label: 'Notice', icon: 'icon-notice.svg', w: 21, h: 17 },
-  { label: 'Discover', icon: 'icon-discover.svg', w: 5.28917, h: 22.6679 },
-  { label: 'Create', icon: 'icon-create.svg', w: 20.0015, h: 20.0015 },
+  { label: 'Question', icon: 'icon-question.svg', w: 25.1921, h: 27.0303, scale: 0.86 },
+  { label: 'Notice', icon: 'icon-notice.svg', w: 21, h: 17, scale: 0.74 },
+  { label: 'Discover', icon: 'icon-discover.svg', w: 5.28917, h: 22.6679, scale: 0.8 },
+  { label: 'Create', icon: 'icon-create.svg', w: 20.0015, h: 20.0015, scale: 0.78 },
 ]
 
 const pad = (n) => String(n).padStart(2, '0')
@@ -64,9 +64,9 @@ document.querySelector('#app').innerHTML = `
             <p class="about-intro">Since 2016 of visual design, now bridging design and code.</p>
             <ul class="values">
               ${values.map((v) => `
-                <li>
-                  <img src="${IMG}/${v.icon}" width="${v.w}" height="${v.h}" alt="" />
-                  <span>${v.label}</span>
+                <li style="--icon-scale:${v.scale}">
+                  <span class="value-icon"><img src="${IMG}/${v.icon}" width="${v.w}" height="${v.h}" alt="" /></span>
+                  <span class="value-label">${v.label}</span>
                 </li>
               `).join('')}
             </ul>
