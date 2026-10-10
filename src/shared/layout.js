@@ -89,7 +89,7 @@ export const footer = (active) => `
     <!-- Full-bleed rule: the divider runs edge to edge, content stays on the grid -->
     <div class="footer-bottom">
       <div class="shell footer-bottom-inner">
-        <small>© 2026 Hsingbei Chen</small>
+        <small>© 2026 Hsingbei Chen. All artwork is copyrighted; please do not reproduce without permission.</small>
         <a class="back-top" href="#top">
           Back To Top
           <img src="${IMG}/layout/icon-back-top.svg" width="13.3333" height="13.3333" alt="" />
@@ -99,7 +99,16 @@ export const footer = (active) => `
   </footer>
 `
 
+// Deter casual saving of artwork (right-click "Save image", drag-out). Not real protection —
+// anything on screen can be captured — but it stops the one-click copy. Text stays selectable.
+const guardMedia = () => {
+  const isMedia = (el) => el instanceof Element && el.closest('img, video, picture, svg, .cc-detail')
+  document.addEventListener('contextmenu', (e) => { if (isMedia(e.target)) e.preventDefault() })
+  document.addEventListener('dragstart', (e) => { if (isMedia(e.target)) e.preventDefault() })
+}
+
 export const initLayout = () => {
+  guardMedia()
   const navbar = document.querySelector('#navbar')
   const updateNavbar = () => navbar.classList.toggle('is-scrolled', window.scrollY > 40)
   window.addEventListener('scroll', updateNavbar, { passive: true })

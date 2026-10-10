@@ -1,0 +1,174 @@
+/* ===== Coucoubei case page (Figma 429:569) — page-specific components ===== */
+
+/* Hero: single big title, tagline + tags, and a wide panel for the key visual */
+.cc-title { font: var(--weight-black) var(--text-case-title) / 1 var(--font-display); }
+.cc-hero-sub { display: flex; justify-content: space-between; align-items: baseline; gap: var(--space-4); margin-top: 5px; padding-right: var(--case-panel-outset); /* tags end at the panel's right edge */ }
+.cc-tagline { font: var(--weight-bold) var(--text-h3) / var(--leading-h3) var(--font-body); }
+.cc-tags { color: var(--color-text-secondary); font: var(--weight-regular) var(--text-body-s) / var(--leading-lead) var(--font-body); }
+.cc-hero-panel {
+  aspect-ratio: 1140 / 382; margin: 26px var(--case-panel-outset) 0 calc(var(--case-panel-outset) * -1); /* x150–1290, like the Azaleah panel */
+  background: var(--color-bg-surface);
+}
+
+/* Grids of artwork */
+.cc-grid { display: grid; gap: var(--space-2); margin-top: var(--space-3); }
+.cc-grid--3 { grid-template-columns: repeat(3, 1fr); }
+.cc-grid--4 { grid-template-columns: repeat(4, 1fr); }
+.cc-grid--5 { grid-template-columns: repeat(5, 1fr); }
+.cc-cell { margin: 0; }
+.cc-cell-frame { overflow: hidden; border-radius: var(--radius-photo); background: #FFFFFF; aspect-ratio: 199 / 162; }
+.cc-cell-frame.is-placeholder { background: var(--color-bg-surface); }
+.cc-cell-frame img, .cc-cell-frame video { display: block; width: 100%; height: 100%; object-fit: cover; }
+.cc-grid--tall .cc-cell-frame { aspect-ratio: 143 / 194; }
+.cc-grid--square .cc-cell-frame { aspect-ratio: 1; }
+.cc-grid--sticker .cc-cell-frame { aspect-ratio: 1; border: 1px solid var(--color-border-default); background: var(--color-bg-default); }
+.cc-grid--captioned .cc-cell { overflow: hidden; border-radius: var(--radius-photo); background: var(--color-bg-surface); }
+.cc-grid--captioned .cc-cell-frame { border-radius: 0; aspect-ratio: 199 / 231; }
+.cc-grid--captioned.cc-grid--scene .cc-cell-frame { aspect-ratio: 199 / 162; }
+.cc-cell figcaption {
+  padding: 6px 8px; text-align: center;
+  color: var(--color-text-secondary);
+  font: var(--weight-medium) var(--text-caption) / 1.25 var(--font-body);
+}
+
+/* Block heading with an Instagram pill on the right */
+.cc-head { display: flex; justify-content: space-between; align-items: flex-end; gap: var(--space-3); margin-top: var(--space-7); }
+.cc-kicker { display: flex; flex-direction: column; }
+.cc-kicker strong { font: var(--weight-bold) var(--text-body-l) / var(--leading-body-l) var(--font-display); }
+.cc-kicker span { color: var(--color-accent-default); font: var(--weight-medium) var(--text-body-s) / var(--leading-lead) var(--font-body); }
+.cc-kicker--label strong { color: var(--color-accent-default); font: var(--weight-medium) var(--text-body-s) / var(--leading-lead) var(--font-body); }
+.cc-kicker--label span { color: var(--color-text-secondary); }
+.cc-social {
+  flex: none; display: inline-flex; align-items: center; gap: 8px;
+  padding: 6px 12px; border-radius: var(--radius-pill);
+  background: var(--color-bg-surface); color: var(--color-text-muted);
+  font: var(--weight-medium) var(--text-body-s) / 1.4 var(--font-body);
+  transition: color var(--motion-micro);
+}
+.cc-social:hover, .cc-social:focus-visible { color: var(--color-accent-hover); }
+
+/* Competition block — spacing taken from Figma (label y1339 → image 1365 → card 1798–1953 → details 1960) */
+.case-label + .cc-competition { margin-top: var(--space-3); } /* label → artwork, same as other labels */
+.cc-competition { margin: var(--space-3) 0 0; }
+.cc-competition img { display: block; width: 100%; aspect-ratio: 604 / 423; object-fit: cover; }
+
+.cc-entry {
+  display: grid; grid-template-columns: max-content 202px; justify-content: space-between; column-gap: 20px; /* screenshot stays 202 wide */
+  margin: 10px 11px 0;                                          /* artwork → card 10, card inset 11 each side */
+  padding: 32px 50px 24px 36px;                                 /* screenshot group sits a little further in from the right */
+  border-radius: 35px 35px 0 0; background: #FFFFFF;
+}
+.cc-entry > div { align-self: stretch; display: flex; flex-direction: column; align-items: flex-start; } /* button sinks to the screenshot's bottom edge */
+.cc-entry-title { color: var(--color-accent-default); font: var(--weight-medium) var(--text-caption) / 22px var(--font-display); }
+.cc-entry-title strong { margin-right: 4px; color: var(--color-text-primary); font: var(--weight-bold) var(--text-body-l) / 22px var(--font-body); }
+.cc-entry-meta {                                                /* title → meta 4, meta → rule 9 */
+  margin-top: 6px; padding-bottom: 10px; white-space: nowrap;
+  border-bottom: 3px solid var(--color-bg-surface);
+  color: var(--color-text-muted); font: var(--weight-regular) var(--text-body-s) / 18px var(--font-body);
+}
+.cc-entry-colors {                                              /* rule → key colours 7, chips 3 apart */
+  display: flex; align-items: center; gap: 4px; margin: 12px 0;
+  color: var(--color-text-muted); font: var(--weight-regular) var(--text-body-s) / 1 var(--font-body);
+}
+.cc-entry-colors span { margin-right: 6px; }
+.cc-entry-colors i {
+  padding: 5px 7px; border: 1px solid var(--color-border-default); border-radius: var(--radius-pill);
+  font: normal var(--weight-medium) 0.625rem / 1 var(--font-display);
+}
+.cc-entry-link {                                                /* chips → button 4, button 18 tall */
+  display: inline-block; margin-top: auto; padding: 1px 8px;
+  /* Same as the "View Case Study" Variant3 pill (e.g. 下載履歷PDF): light border, muted text */
+  border: 1px solid var(--color-border-default); border-radius: var(--radius-pill);
+  background: var(--color-bg-default);
+  color: var(--color-text-muted); font: var(--weight-medium) var(--text-caption) / 1.5 var(--font-body);
+  transition: color var(--motion-micro), border-color var(--motion-micro);
+}
+.cc-entry-link:hover, .cc-entry-link:focus-visible { color: var(--color-accent-hover); border-color: var(--color-accent-hover); }
+.cc-entry figure { margin: 4px 0 0; align-self: start; }        /* caption top lines up with the 無聲的盟約 title */
+.cc-entry figcaption { text-align: right; color: var(--color-text-muted); font: var(--weight-regular) var(--text-caption) / 16px var(--font-body); }
+.cc-entry img { display: block; width: 100%; margin-top: 10px; } /* breathing room under the caption */
+
+.cc-grid--flush { gap: 6px; margin-top: 10px; }                 /* card → detail squares 10, squares 6 apart */
+.cc-grid--flush .cc-cell-frame { border-radius: 0; }
+.cc-detail { background-size: 330% auto; background-repeat: no-repeat; }
+
+/* 2024 → 2026 timeline */
+.cc-timeline { display: grid; grid-template-columns: 232fr 172fr 199fr; margin-top: var(--space-5); }
+.cc-timeline li { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+.cc-timeline b { color: var(--color-accent-dark); font: var(--weight-medium) var(--text-body-s) / 1 var(--font-display); }
+.cc-timeline span {
+  align-self: stretch; padding: 7px 0; text-align: center; background: var(--color-bg-surface);
+  color: var(--color-text-muted); font: var(--weight-regular) var(--text-body-s) / var(--leading-lead) var(--font-body);
+}
+.cc-timeline li:first-child span { border-radius: var(--radius-pill) 0 0 var(--radius-pill); }
+.cc-timeline li:last-child span { border-radius: 0 var(--radius-pill) var(--radius-pill) 0; }
+.cc-timeline li + li span { border-left: 1px solid var(--color-bg-default); }
+
+/* Small label with a short accent bar, e.g. "Tiny friends. Big feelings." */
+.cc-bar-label {
+  position: relative; margin-top: var(--space-5); padding-left: 10px;
+  color: var(--color-accent-dark); font: var(--weight-medium) var(--text-caption) / 1.4 var(--font-body);
+}
+.cc-bar-label::before { content: ''; position: absolute; left: 0; top: 2px; bottom: 2px; width: 2px; background: var(--color-accent-dark); }
+.cc-bar-label + .case-media, .cc-bar-label + .cc-chars { margin-top: 14px; }
+
+/* Character cards (two per row) */
+.cc-chars { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; margin-top: 20px; }
+.cc-chars + .cc-chars { margin-top: 20px; }
+.cc-char { padding: 10px 10px 16px; background: #FFFFFF; }
+.cc-char-art { aspect-ratio: 283 / 258; border: 1px solid var(--color-text-muted); display: grid; place-items: center; overflow: hidden; }
+.cc-char-art.is-placeholder { background: var(--color-bg-default); }
+.cc-char-art img { width: 84%; height: 84%; object-fit: contain; }
+.cc-char-name { display: flex; align-items: baseline; gap: 4px; margin-top: 8px; }
+.cc-char-name .tag, .cc-char-name .note { color: var(--color-text-muted); font: var(--weight-regular) 0.625rem / 1.2 var(--font-body); }
+.cc-char-name strong { color: var(--color-accent-default); font: var(--weight-medium) var(--text-body-s) / 1.4 var(--font-display); }
+.cc-char-desc { margin-top: 6px; color: var(--color-text-secondary); font: var(--weight-regular) 0.625rem / 1.3 var(--font-body); }
+
+/* GIPHY stats row */
+.cc-stats { display: flex; align-items: baseline; gap: var(--space-4); margin-top: var(--space-4); }
+.cc-stats p { display: flex; align-items: baseline; gap: 6px; }
+.cc-stats span { color: var(--color-text-secondary); font: var(--weight-medium) var(--text-body-s) / 1 var(--font-body); }
+.cc-stats b { font: var(--weight-semibold) var(--text-body-lead) / 1 var(--font-display); }
+.cc-stats small { margin-left: auto; color: var(--color-accent-dark); font: var(--weight-regular) var(--text-caption) / 1 var(--font-body); }
+.cc-stats .cc-social { margin-left: 0; }
+
+/* Follow block before the pager */
+.cc-follow { padding-bottom: var(--space-2); }
+.cc-follow-inner { margin-left: var(--case-toc-col); max-width: var(--case-content-width); }
+.cc-follow-kicker { color: var(--color-accent-dark); font: var(--weight-medium) var(--text-caption) / 1.2 var(--font-body); }
+.cc-follow-title { font: var(--weight-regular) var(--text-h3) / var(--leading-h3) var(--font-display); }
+.cc-follow-links { display: flex; gap: var(--space-4); margin-top: var(--space-4); }
+.cc-follow-links > div + div { padding-left: var(--space-4); border-left: 3px solid var(--color-border-subtle); }
+.cc-follow-label { display: flex; align-items: center; gap: 4px; color: var(--color-accent-dark); font: var(--weight-medium) var(--text-caption) / 1.2 var(--font-body); }
+.cc-follow-label svg { width: 16px; height: 16px; }
+.cc-follow-links div { flex: none; display: flex; flex-wrap: wrap; gap: 8px; align-content: flex-start; max-width: 100%; }
+.cc-follow-label { flex-basis: 100%; }
+.cc-chip {
+  padding: 3px 10px; border: 1px solid var(--color-text-muted); border-radius: var(--radius-pill);
+  color: var(--color-text-muted); font: var(--weight-regular) var(--text-body-s) / 1.4 var(--font-body);
+  transition: color var(--motion-micro), border-color var(--motion-micro);
+}
+.cc-chip span { margin-right: 4px; }
+.cc-chip:hover, .cc-chip:focus-visible { color: var(--color-accent-hover); border-color: var(--color-accent-hover); }
+
+@media (max-width: 1024px) {
+  .cc-hero-panel { margin-inline: 0; }
+  .cc-hero-sub { padding-right: 0; }
+  .cc-follow-inner { margin-left: 0; }
+}
+@media (max-width: 800px) {
+  .cc-title { font-size: var(--text-case-title); }
+  .cc-hero-sub { flex-direction: column; gap: 4px; }
+  .cc-tagline { font-size: var(--text-body-l); line-height: var(--leading-body-l); }
+  .cc-grid--5 { grid-template-columns: repeat(2, 1fr); }
+  .cc-entry { grid-template-columns: 1fr; margin-inline: 0; padding: 24px 20px 11px; row-gap: var(--space-3); }
+  .cc-entry figure { margin-top: 0; }
+  .cc-entry-meta { white-space: normal; }
+  .cc-timeline { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .cc-timeline span { font-size: var(--text-caption); line-height: 1.4; padding: 6px 4px; height: 100%; }
+  .cc-chars { grid-template-columns: 1fr; gap: var(--space-3); }
+  .cc-stats { flex-wrap: wrap; row-gap: var(--space-2); }
+  .cc-stats small { margin-left: 0; flex-basis: 100%; }
+  .cc-follow-links { flex-direction: column; }
+  .cc-follow-links > div + div { padding-left: 0; border-left: 0; }
+}

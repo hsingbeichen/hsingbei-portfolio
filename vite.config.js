@@ -12,6 +12,7 @@ export default defineConfig({
         main: page('./index.html'),
         about: page('./about.html'),
         caseAzaleah: page('./case-azaleah.html'),
+        caseCoucou: page('./case-coucou.html'),
       },
     },
   },

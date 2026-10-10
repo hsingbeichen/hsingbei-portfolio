@@ -99,10 +99,10 @@ document.querySelector('#app').innerHTML = `
       ],
     })}
     ${caseBody({ name: 'Azaleah Studio', sections })}
-    ${/* TODO: point at case-letao.html / case-coucou.html once those pages exist */ ''}
+    ${/* TODO: point prev at case-letao.html once that page exists */ ''}
     ${casePager({
       prev: { num: '02', title: '樂淘Letao', href: `${BASE}#works` },
-      next: { num: '04', title: 'Coucou.bei', href: `${BASE}#works` },
+      next: { num: '04', title: 'Coucou.bei', href: `${BASE}case-coucou.html` },
     })}
   </main>
   ${footer()}

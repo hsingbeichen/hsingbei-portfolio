@@ -127,6 +127,7 @@
   --case-title-gap: var(--space-2);
   --text-case-title: 4.5rem;        /* 72 */
   --case-body-gap: var(--space-3);  /* EN title → grey panel */
+  --case-panel-outset: 30px;        /* hero panel starts 30px left of the content (x150) */
   --case-panel-pad: 31px;           /* panel top → images (y 339) */
   --case-panel-gap: 60px;           /* cards → meta column (x 957 → 1017) */
   --case-logo-box: 346px;           /* logo area x 180 → 526, cards start x 541 */

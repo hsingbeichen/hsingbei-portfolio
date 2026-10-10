@@ -11,7 +11,9 @@
   display: grid; grid-template-columns: minmax(0, var(--case-gallery-width)) minmax(var(--case-meta-min), 1fr);
   align-items: center; column-gap: var(--case-panel-gap);
   margin-top: var(--case-body-gap);
+  margin-inline: calc(var(--case-panel-outset) * -1) var(--case-panel-outset); /* panel spans x150–1290 (1140 wide) */
   padding-block: var(--case-panel-pad);
+  padding-left: var(--case-panel-outset); /* artwork still starts at x180 */
   background: var(--color-bg-surface); /* square on desktop: the deliberate square-vs-pill contrast */
 }
 .case-gallery {
@@ -37,7 +39,7 @@
 
 @media (max-width: 1024px) {
   .case-shell { padding-left: 0; }
-  .case-hero-body { grid-template-columns: 1fr; row-gap: var(--space-6); padding-inline: var(--space-4); border-radius: var(--radius-card); }
+  .case-hero-body { grid-template-columns: 1fr; row-gap: var(--space-6); margin-inline: 0; padding-inline: var(--space-4); border-radius: var(--radius-card); }
   .case-meta { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-4); padding-right: 0; }
 }
 
@@ -95,6 +97,12 @@
   color: var(--color-text-muted);
   font: var(--weight-medium) var(--text-body-m) / var(--leading-lead) var(--font-display);
 }
+.case-heading .aside { /* optional meta on the right of a section heading */
+  margin-left: auto; display: flex; gap: 10px;
+  color: var(--color-accent-default);
+  font: var(--weight-medium) var(--text-body-s) / var(--leading-lead) var(--font-body);
+}
+.case-heading .aside span + span { padding-left: 10px; border-left: 1px solid var(--color-border-subtle); }
 .case-heading .en {
   color: var(--color-text-muted);
   font: var(--weight-medium) var(--text-body-m) / var(--leading-h3) var(--font-display);
@@ -162,7 +170,7 @@
 .case-testimonial cite { font-style: normal; color: var(--color-text-secondary); }
 
 @media (max-width: 1024px) {
-  .case-body { grid-template-columns: 1fr; }
+  .case-body { grid-template-columns: minmax(0, 1fr); } /* minmax: wide children can't push past the screen */
   .case-toc { display: none; }
   .case-heading .num { width: auto; margin-left: 0; }
 }
@@ -178,6 +186,8 @@
   /* Justified on mobile too so both edges stay flush; plain wrapping, since Safari's
      text-wrap: pretty shortens lines. Very narrow screens fall back to left-aligned below. */
   .case-section p.case-text { text-wrap: wrap; }
+  .case-heading:has(.aside) { flex-wrap: wrap; row-gap: 2px; }
+  .case-heading .aside { flex-basis: 100%; margin-left: 0; } /* heading meta drops to its own line */
   .case-note { padding: var(--space-4) var(--space-4); }
   .case-testimonial { --quote-gutter: var(--space-3); }
   .case-grid--wide { grid-template-columns: 1fr 1fr; }
