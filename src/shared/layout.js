@@ -89,7 +89,7 @@ export const footer = (active) => `
     <!-- Full-bleed rule: the divider runs edge to edge, content stays on the grid -->
     <div class="footer-bottom">
       <div class="shell footer-bottom-inner">
-        <small>© 2026 Hsingbei Chen. All artwork is copyrighted; please do not reproduce without permission.</small>
+        <small>© 2026 Hsingbei Chen. All rights reserved.</small>
         <a class="back-top" href="#top">
           Back To Top
           <img src="${IMG}/layout/icon-back-top.svg" width="13.3333" height="13.3333" alt="" />
