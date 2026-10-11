@@ -26,6 +26,7 @@
 .profile-lead { display: flex; align-items: center; gap: 20px; }
 .profile-avatar { flex: none; width: var(--profile-avatar-width); height: auto; }
 .profile-quote { font: var(--weight-bold) var(--text-h2) / var(--leading-h2-cjk) var(--font-body); }
+.profile-quote span { display: inline-block; } /* narrow screens break between phrases, never mid-phrase */
 .profile-quote-en {
   margin-top: 6px;
   color: var(--color-text-muted);
@@ -90,14 +91,25 @@
   :root { --tool-size: 56px; }
   :root { --about-section-top: var(--space-6); --about-heading-gap: var(--space-5); --about-section-bottom: var(--space-7); }
   .about-section.profile { padding-top: calc(var(--nav-height) + var(--space-6)); }
-  .about-heading .num { font-size: var(--text-h2); line-height: var(--leading-h2); }
+  .about-heading .num { font-size: 2.75rem; line-height: 1; } /* digits as tall as the zh/en label beside them */
   .profile-lead { flex-direction: column; align-items: flex-start; }
-  .profile-quote { font-size: var(--text-body-lead); line-height: var(--leading-body-m); }
+  .profile-lead { gap: var(--space-5); }
+  .profile-avatar { align-self: center; margin-top: var(--space-2); } /* logo centred on mobile with a little more room above and below */
+  /* Mobile intro reads like a cover: logo, big centred quote, centred English line */
+  .profile-lead { align-items: center; text-align: center; }
+  .profile-avatar { width: 140px; }
+  .profile-quote { font-size: 1.75rem; line-height: 1.45; }
+  .profile-quote br { display: none; }
+  .profile-quote span { display: inline; }
+  .profile-quote { text-wrap: balance; } /* text flows freely; lines are evened out so no line ends with just a character or two */
+  .profile-quote-en { margin-top: var(--space-3); }
   .profile-col { width: auto; }
   .profile-story { margin-top: var(--space-5); width: auto; }
   .skill-row { grid-template-columns: 1fr; row-gap: var(--space-3); }
   .skill-row dt br { display: none; }
-  .tools { justify-content: flex-start; }
+  /* 11 tool icons in two rows: 6 columns that shrink with the screen */
+  .tools { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: var(--space-3) var(--space-2); justify-items: center; }
+  .tools img { width: 100%; max-width: 44px; height: auto; aspect-ratio: 1; }
   .job h3 { flex-wrap: wrap; row-gap: var(--space-1); }
   .resume-row { flex-direction: column; align-items: flex-start; }
 }

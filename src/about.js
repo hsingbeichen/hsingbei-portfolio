@@ -49,7 +49,7 @@ document.querySelector('#app').innerHTML = `
           <div class="profile-lead">
             <img class="profile-avatar" src="${IMG}/home/logo-avatar.svg" width="160.131" height="171.901" alt="Hsingbei 插畫頭像" />
             <div>
-              <p class="profile-quote">從問題開始，理解需求、整理資訊，<br />再把視覺轉化成真正可以使用的體驗。</p>
+              <p class="profile-quote"><span>從問題開始，</span><span>理解需求、整理資訊，</span><br /><span>再把視覺轉化成</span><span>真正可以使用的體驗。</span></p>
               <p class="profile-quote-en">For me, design starts with listening, questioning, and finding the idea behind it.</p>
             </div>
           </div>
