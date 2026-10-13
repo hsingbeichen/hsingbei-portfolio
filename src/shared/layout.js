@@ -102,7 +102,7 @@ export const footer = (active) => `
 // Deter casual saving of artwork (right-click "Save image", drag-out). Not real protection —
 // anything on screen can be captured — but it stops the one-click copy. Text stays selectable.
 const guardMedia = () => {
-  const isMedia = (el) => el instanceof Element && el.closest('img, video, picture, svg, .cc-detail')
+  const isMedia = (el) => el instanceof Element && el.closest('img, video, picture, svg')
   document.addEventListener('contextmenu', (e) => { if (isMedia(e.target)) e.preventDefault() })
   document.addEventListener('dragstart', (e) => { if (isMedia(e.target)) e.preventDefault() })
 }

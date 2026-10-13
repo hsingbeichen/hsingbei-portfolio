@@ -90,7 +90,6 @@
 
 .cc-grid--flush { gap: 6px; margin-top: 10px; }                 /* card → detail squares 10, squares 6 apart */
 .cc-grid--flush .cc-cell-frame { border-radius: 0; }
-.cc-detail { background-size: 330% auto; background-repeat: no-repeat; }
 
 /* 2024 → 2026 timeline */
 .cc-timeline { display: grid; grid-template-columns: 232fr 172fr 199fr; margin-top: var(--space-5); }

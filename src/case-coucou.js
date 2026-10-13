@@ -74,10 +74,7 @@ const sections = [
         </figure>
       </div>
       <div class="cc-grid cc-grid--4 cc-grid--square cc-grid--flush">
-        ${/* Temporary detail crops cut from the main artwork (CSS background) until the real detail images arrive */ ''}
-        ${['32% 92%', '22% 38%', '62% 70%', '74% 12%'].map((pos, i) => `
-          <figure class="cc-cell"><div class="cc-cell-frame cc-detail" role="img" aria-label="參賽作品細節 ${i + 1}" style="background-image:url(${img}/competition.jpg);background-position:${pos}"></div></figure>
-        `).join('')}
+        ${[1, 2, 3, 4].map((n) => cell({ src: `${img}/competition-${n}.jpg`, alt: `參賽作品細節 ${n}` })).join('')}
       </div>
     `,
   },
