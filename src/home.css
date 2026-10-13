@@ -130,24 +130,22 @@
   color: var(--color-text-secondary);
   font: var(--weight-medium) var(--text-body-m) / var(--leading-body-m-tight) var(--font-display);
 }
-.about-name { color: var(--color-accent-dark); }
+.about-name { color: var(--color-accent-default); font-weight: var(--weight-semibold); } /* the name reads like a signature */
 /* The four values spread across the full text width */
 .values { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-4); margin-top: 10px; }
 .values li {
   display: flex; align-items: center;
-  color: var(--color-value);
+  color: var(--color-value-text);
   font: var(--weight-medium) var(--text-body-m) / var(--leading-body-m) var(--font-display);
 }
-/* Icons keep their own Figma size; the SVGs are used as masks so they take the teal fill */
-.value-icon {
-  flex: none;
-  width: calc(var(--w) * var(--value-icon-zoom)); height: calc(var(--h) * var(--value-icon-zoom));
-  background: var(--color-value); mask: var(--icon) center / contain no-repeat;
-}
+/* Icons sit in one square box; --icon-scale evens out their optical size (they're drawn at different sizes) */
+.value-icon { display: grid; place-items: center; width: var(--value-icon-box); height: var(--value-icon-box); }
+/* The SVGs are used as masks so they take the teal fill */
+.value-icon i { height: calc(var(--value-icon-box) * var(--icon-scale)); background: var(--color-value-icon); mask: var(--icon) center / contain no-repeat; }
 .value-label { position: relative; margin-left: var(--value-gap); padding-left: var(--value-gap); }
 .value-label::before { /* near full-height divider, as in Figma */
   content: ''; position: absolute; left: 0; inset-block: 1px;
-  border-left: 1px solid var(--color-border-subtle);
+  border-left: 1px solid color-mix(in srgb, var(--color-value-icon) 50%, transparent);
 }
 .about-body .pill-btn { align-self: end; }
 
@@ -194,7 +192,7 @@
   /* Keep the four values on one line */
   .values { flex-wrap: nowrap; gap: var(--space-3); }
   .values li { font-size: var(--text-caption); white-space: nowrap; }
-  .values { --value-icon-zoom: 0.65; }
+  .values { --value-icon-box: 16px; }
   .value-label { margin-left: 6px; padding-left: 6px; }
   .other-works { padding-block: var(--space-8); }
   .other-works .section-title { margin-bottom: var(--space-4); }
@@ -206,7 +204,7 @@
   .section-title { gap: var(--space-2); font-size: 1.25rem; --case-en-lift: 2.7px; } /* 17.5px title: recentre the caps */
   .values { gap: var(--space-2); }
   .values li { font-size: 0.6875rem; }
-  .values { --value-icon-zoom: 0.55; }
+  .values { --value-icon-box: 13px; }
   .value-label { margin-left: 4px; padding-left: 4px; }
 }
 
