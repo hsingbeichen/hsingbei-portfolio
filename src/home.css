@@ -150,8 +150,8 @@
 .about-body .pill-btn { align-self: end; }
 
 /* ===== Other works ===== */
-.other-works { background: var(--color-bg-surface); padding-block: var(--space-10); }
-.other-works .section-title { margin-bottom: var(--space-7); }
+.other-works { background: var(--color-bg-surface); padding-block: var(--other-works-pad-top) var(--space-10); }
+.other-works .section-title { margin-bottom: var(--space-5); }
 .other-works-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--other-works-gap); }
 .other-work-card {
   aspect-ratio: var(--other-work-ratio);

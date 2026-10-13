@@ -55,7 +55,7 @@ document.querySelector('#app').innerHTML = `
           </div>
           <div class="profile-story">
             <img class="quote-mark quote-mark--open" src="${IMG}/about/quote-open.svg" width="94.3945" height="77.6156" alt="" />
-            <p>2016 年從平面與活動視覺踏入設計這行，後來一路到參與網站介面。在巨匠旅遊的四年多，我負責版位規劃與頁面設計，也跟前端反覆討論切版邏輯、緊盯畫面還原的細節——直到現在，那套介面仍有大半留在線上使用。</p>
+            <p>我是陳星蓓(Hsingbei)，2016 年從平面與活動視覺踏入設計這行，後來一路到參與網站介面。在巨匠旅遊的四年多，我負責版位規劃與頁面設計，也跟前端反覆討論切版邏輯、緊盯畫面還原的細節——直到現在，那套介面仍有大半留在線上使用。</p>
             <p>這段經驗讓我發現，好看的設計稿只是起點，能被準確實作、被使用者順利操作，才算完成。所以我開始學習 HTML、CSS，目前在樂淘負責電商頁面視覺優化，並用 Claude Code 加速原型與驗證，把「發現問題、做設計判斷、用 Code 解決、驗證結果」串成自己的工作方式。</p>
             <p>同時，我也持續創作個人插畫 Coucoubei——沒有客戶、沒有截稿日，單純練習觀察與表達，讓自己在解決問題之外，還留一點空間純粹地畫畫。</p>
             <img class="quote-mark quote-mark--close" src="${IMG}/about/quote-close.svg" width="94.3945" height="77.6156" alt="" />

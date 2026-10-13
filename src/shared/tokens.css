@@ -100,7 +100,7 @@
   --index-col: 80px;               /* content edge → work title */
   --work-title-col: 196px;         /* work title → divider line */
   --work-row-padding: var(--space-5); /* rows repeat every 132px in Figma */
-  --work-meta-indent: calc(var(--work-divider-width) + var(--space-3)); /* 2px line + 16px gap to the text */
+  --work-meta-indent: var(--space-4); /* line at x396, text at x420 in Figma: 2px line + 22px gap */
   --work-divider-width: 2px;
   --avatar-width: 160px;
   --value-gap: 15px;               /* home About values: icon → divider → label */
@@ -111,7 +111,8 @@
   --pill-width: 8.4375rem;         /* 135, scales with its text */
   --pill-height: 2.0625rem;        /* 33 */
   --pill-label-offset: -0.0375rem; /* CJK glyphs sit ~0.6px below the line box center */
-  --other-work-ratio: 285 / 230;   /* card is 285×230 at 1200 content width */
+  --other-work-ratio: 285 / 386;   /* portrait card, 285×386 at 1200 content width */
+  --other-works-pad-top: 75px;     /* section top → title in Figma */
   --other-works-gap: 20px;
   --rule-hairline: 0.5px solid var(--color-text-muted);
   --rule-soft: 1px solid var(--color-border-default);
