@@ -1,5 +1,6 @@
 import { BASE, IMG, BACK_WORK, header, footer, initLayout } from './shared/layout.js'
 import { caseBody, caseLabel, caseMedia, casePager, initCaseToc } from './cases/case.js'
+import { pagerFor } from './shared/works.js'
 import './case-coucou.css'
 
 const img = `${IMG}/coucou`
@@ -192,11 +193,7 @@ document.querySelector('#app').innerHTML = `
         </div>
       </div>
     </section>
-    ${/* Coucoubei is P.04: prev is Azaleah, next loops back to Artisan Tour (page not built yet) */ ''}
-    ${casePager({
-      prev: { num: '03', title: '杜鵑花開了', href: `${BASE}case-azaleah.html` },
-      next: { num: '01', title: '巨匠旅遊', href: `${BASE}#works` },
-    })}
+    ${casePager(pagerFor('coucou'))}
   </main>
   ${footer()}
 `

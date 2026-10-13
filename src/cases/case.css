@@ -235,11 +235,9 @@
   padding-block: var(--space-9);
 }
 .case-pager {
-  /* Spans the text column: prev flush to its left edge, next flush to its right edge */
+  /* Sits in the text column with the divider on its centre line: prev to its left, next to its right */
   grid-column: 2;
-  display: grid; grid-template-columns: 1fr auto auto; align-items: end; column-gap: var(--space-4);
-}
-.case-pager-divider { margin-inline: 6px 0; /* ~26 | 22 around the divider, as in Figma */
+  display: grid; grid-template-columns: 1fr auto 1fr; align-items: end; column-gap: var(--space-5);
 }
 .case-pager-link { display: flex; flex-direction: column; gap: var(--space-1); }
 .case-pager-prev { align-items: flex-end; text-align: right; color: var(--color-text-muted); }
@@ -248,20 +246,19 @@
 .case-pager-label {
   white-space: nowrap;
   color: var(--color-text-muted);
-  font: var(--weight-medium) var(--text-body-l) / var(--leading-body-l) var(--font-display);
+  font: var(--weight-medium) var(--text-body-m) / var(--leading-body-l) var(--font-display);
   letter-spacing: var(--tracking-label);
 }
-.case-pager-prev .case-pager-label { font-size: var(--text-body-m); }
+.case-pager-prev .case-pager-label { font-size: var(--text-body-s); }
 .case-pager-title {
-  display: inline-flex; align-items: center; gap: 10px;
-  font: var(--weight-black) var(--text-h1) / var(--leading-h1) var(--font-body);
+  display: inline-flex; align-items: center; gap: var(--space-2);
+  font: var(--weight-black) var(--text-h2) / var(--leading-h2) var(--font-body);
   white-space: nowrap; /* never break a project name onto two lines */
   transition: color var(--motion-normal);
 }
-.case-pager-prev .case-pager-title { align-self: stretch; justify-content: space-between; font-size: var(--text-pager-prev); line-height: var(--leading-h2-cjk); } /* arrow sits on the column's left edge */
-.case-pager-title svg { position: relative; color: currentColor; transition: color var(--motion-normal), transform var(--motion-normal); } /* arrow matches its title */
+.case-pager-prev .case-pager-title { font-size: var(--text-pager-prev); line-height: var(--leading-h3); } /* arrow hugs the name, same gap as next */
+.case-pager-title svg { position: relative; top: -2px; /* the CJK ink sits ~2px above the line-box centre */ width: 24px; height: auto; color: currentColor; transition: color var(--motion-normal), transform var(--motion-normal); } /* arrow matches its title */
 .case-pager-next svg {
-  top: var(--case-next-arrow-drop); /* centred on the lowercase x-height */
   animation: case-next-push 2.4s ease-in-out infinite; /* rests, then two quick nudges */
 }
 @keyframes case-next-push {
@@ -288,7 +285,6 @@
   .case-pager-title { gap: 6px; font-size: var(--text-h3); line-height: var(--leading-h3); }
   .case-pager-prev .case-pager-title { justify-content: flex-end; font-size: var(--text-body-lead); line-height: var(--leading-h3); } /* arrow hugs the name on mobile */
   .case-pager-title svg { width: 18px; height: auto; }
-  .case-pager-next svg { top: 2px; }
 }
 
 /* Very narrow phones (≤400px): tighten the pager so "next" and its arrow always fit */

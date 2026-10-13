@@ -137,8 +137,7 @@
   --case-card-width: 200.5px;
   --case-gallery-gap: 15px;
   --case-meta-gap: var(--space-3);
-  --text-pager-prev: 2.25rem;       /* 36 */
-  --case-next-arrow-drop: 7px;      /* x-height centre of the 48px title sits 7px below the line-box centre */
+  --text-pager-prev: 1.5rem;        /* 24 */
   --quote-gutter: var(--space-5);    /* testimonial: outer margin left and right (32) */
   --case-toc-track: 3px;
   --case-toc-col: 330px;

@@ -1,5 +1,6 @@
 import { BASE, IMG, BACK_WORK, header, footer, initLayout } from './shared/layout.js'
 import { caseHero, caseBody, caseLabel, caseMedia, caseProposals, casePager, initCaseToc } from './cases/case.js'
+import { pagerFor } from './shared/works.js'
 
 const img = `${IMG}/azaleah`
 const text = (t) => `<p class="case-text">${t}</p>`
@@ -98,12 +99,9 @@ document.querySelector('#app').innerHTML = `
         { label: '專案範圍', value: ['LOGO設計・字體組合・名片設計'] },
       ],
     })}
-    ${caseBody({ name: 'Azaleah Studio', sections })}
+    ${caseBody({ name: 'AZALEAH STUDIO', sections })}
     ${/* TODO: point prev at case-letao.html once that page exists */ ''}
-    ${casePager({
-      prev: { num: '02', title: '樂淘Letao', href: `${BASE}#works` },
-      next: { num: '04', title: 'Coucou.bei', href: `${BASE}case-coucou.html` },
-    })}
+    ${casePager(pagerFor('azaleah'))}
   </main>
   ${footer()}
 `

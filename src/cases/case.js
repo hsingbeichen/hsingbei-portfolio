@@ -6,8 +6,8 @@ export const caseHero = ({ titleZh, titleEn, images, meta }) => `
   <section class="case-hero" id="top">
     <div class="shell case-shell">
       <h1 class="case-title rise">
-        <span class="case-title-zh">${titleZh}</span>
         <span class="case-title-en">${titleEn}</span>
+        <span class="case-title-zh">${titleZh}</span>
       </h1>
       <div class="case-hero-body reveal">
         <div class="case-gallery">

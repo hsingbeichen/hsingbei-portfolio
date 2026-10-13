@@ -1,14 +1,8 @@
 import { BASE, header, footer, initLayout, pillInner } from './shared/layout.js'
+import { works as featured, pad } from './shared/works.js'
 import './home.css'
 
 const IMG = `${BASE}images/home`
-
-const featured = [
-  { slug: 'giant', title: '巨匠旅遊', subtitle: 'Artisan Tour', tags: 'Banner / GDN / 網站UI / DM設計', period: '2016.12 – 2021.01' },
-  { slug: 'letao', title: '樂淘', subtitle: 'Letao', tags: 'Banner / GDN / 活動頁面 / 視覺優化 / Design-to-Code', period: '2021.01 - 至今(在職中)' },
-  { slug: 'azaleah', page: `${BASE}case-azaleah.html`, title: '杜鵑花開了', subtitle: 'Azaleah studio', tags: '品牌識別設計 / LOGO / 名片設計', period: '2021.06 - 2022.12' },
-  { slug: 'coucou', page: `${BASE}case-coucou.html`, title: 'Coucoubei', tags: 'Illustration × Character × GIF × Sticker × Personal Branding', period: '2026.07 - 至今(持續創作中)' },
-]
 
 const values = [
   { label: 'Question', icon: 'icon-question.svg', w: 25.1921, h: 27.0303, scale: 0.86 },
@@ -16,8 +10,6 @@ const values = [
   { label: 'Discover', icon: 'icon-discover.svg', w: 5.28917, h: 22.6679, scale: 0.8 },
   { label: 'Create', icon: 'icon-create.svg', w: 20.0015, h: 20.0015, scale: 0.78 },
 ]
-
-const pad = (n) => String(n).padStart(2, '0')
 
 document.querySelector('#app').innerHTML = `
   ${header()}
