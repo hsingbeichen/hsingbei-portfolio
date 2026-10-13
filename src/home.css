@@ -70,11 +70,12 @@
 
 
 /* ===== Featured works ===== */
-.works { background: var(--color-bg-surface); padding-block: var(--space-8) var(--space-7); }
-.works .section-title { margin-bottom: var(--space-8); }
+.works { background: var(--color-bg-surface); padding-block: var(--space-9) var(--space-7); }
+.works .section-title { margin-bottom: var(--space-2); }
 .featured-row {
   display: grid; grid-template-columns: var(--index-col) var(--work-title-col) 1fr auto; align-items: center;
   padding: var(--work-row-padding) var(--space-4) var(--work-row-padding) 0;
+  min-height: calc(var(--leading-h2-cjk) + var(--leading-body-m-tight) + var(--work-row-padding) * 2); /* rows without a subtitle keep the 132px pitch */
 }
 .featured-row + .featured-row { border-top: var(--rule-hairline); }
 .featured-row .num {
@@ -116,34 +117,37 @@
 
 /* ===== About ===== */
 .about { background: var(--color-bg-default); padding-block: var(--space-6) var(--space-7); }
-.about .section-title { margin-bottom: var(--space-4); }
+.about .section-title { margin-bottom: var(--space-3); }
 .about-body {
   display: grid; grid-template-columns: var(--index-col) var(--avatar-width) 1fr auto; align-items: center;
   padding-right: var(--space-4);
 }
 .avatar { grid-column: 2; width: var(--avatar-width); height: auto; }
-.about-text { max-width: calc(var(--about-text-width) + var(--space-10)); padding-left: var(--space-10); }
+.about-text { max-width: calc(var(--about-text-width) + var(--space-10)); padding: var(--about-text-pad-y) 0 var(--about-text-pad-y) var(--space-10); }
 .about-title { font: var(--weight-extrabold) var(--text-h1) / var(--leading-h1) var(--font-display); }
 .about-intro {
-  margin-top: 5px;
+  margin-top: var(--about-intro-gap);
   color: var(--color-text-secondary);
-  font: var(--weight-medium) var(--text-body-m) / var(--leading-body-m) var(--font-display);
+  font: var(--weight-medium) var(--text-body-m) / var(--leading-body-m-tight) var(--font-display);
 }
-.about-name { color: var(--color-accent-default); font-weight: var(--weight-semibold); } /* the name reads like a signature */
-.values { display: flex; flex-wrap: wrap; gap: var(--space-4); margin-top: 10px; }
+.about-name { color: var(--color-accent-dark); }
+/* The four values spread across the full text width */
+.values { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-4); margin-top: 10px; }
 .values li {
   display: flex; align-items: center;
-  color: var(--color-value-text);
+  color: var(--color-value);
   font: var(--weight-medium) var(--text-body-m) / var(--leading-body-m) var(--font-display);
 }
-/* Icons sit in one square box; --icon-scale evens out their optical size (they're drawn at different sizes) */
-.value-icon { display: grid; place-items: center; width: var(--value-icon-box); height: var(--value-icon-box); }
-/* The SVGs are used as masks so they take the teal fill */
-.value-icon i { height: calc(var(--value-icon-box) * var(--icon-scale)); background: var(--color-value-icon); mask: var(--icon) center / contain no-repeat; }
-.value-label { position: relative; margin-left: 10px; padding-left: 10px; }
-.value-label::before { /* divider only as tall as the text, not the whole line box */
-  content: ''; position: absolute; left: 0; top: 50%; height: 1.1em; translate: 0 -50%;
-  border-left: 1px solid color-mix(in srgb, var(--color-value-icon) 50%, transparent);
+/* Icons keep their own Figma size; the SVGs are used as masks so they take the teal fill */
+.value-icon {
+  flex: none;
+  width: calc(var(--w) * var(--value-icon-zoom)); height: calc(var(--h) * var(--value-icon-zoom));
+  background: var(--color-value); mask: var(--icon) center / contain no-repeat;
+}
+.value-label { position: relative; margin-left: var(--value-gap); padding-left: var(--value-gap); }
+.value-label::before { /* near full-height divider, as in Figma */
+  content: ''; position: absolute; left: 0; inset-block: 1px;
+  border-left: 1px solid var(--color-border-subtle);
 }
 .about-body .pill-btn { align-self: end; }
 
@@ -173,7 +177,7 @@
   .works .section-title { margin-bottom: var(--space-4); }
   .section-title { --case-en-lift: 4px; } /* recentre for mobile: CJK 21px centre 7.9 − caps 10.5px centre 3.9 */
   .section-title .en { font-size: var(--text-caption); } /* 12, same as the case-page headings on mobile */
-  .featured-row { grid-template-columns: var(--index-col) 1fr; padding-right: 0; row-gap: var(--space-2); }
+  .featured-row { grid-template-columns: var(--index-col) 1fr; padding-right: 0; row-gap: var(--space-2); min-height: 0; }
   .featured-row .num { padding-left: 0; }
   .featured-row .meta { grid-column: 2; }
   .featured-row .pill-btn { grid-column: 2; margin: var(--space-2) 0 0; }
@@ -190,7 +194,7 @@
   /* Keep the four values on one line */
   .values { flex-wrap: nowrap; gap: var(--space-3); }
   .values li { font-size: var(--text-caption); white-space: nowrap; }
-  .values { --value-icon-box: 16px; }
+  .values { --value-icon-zoom: 0.65; }
   .value-label { margin-left: 6px; padding-left: 6px; }
   .other-works { padding-block: var(--space-8); }
   .other-works .section-title { margin-bottom: var(--space-4); }
@@ -202,7 +206,7 @@
   .section-title { gap: var(--space-2); font-size: 1.25rem; --case-en-lift: 2.7px; } /* 17.5px title: recentre the caps */
   .values { gap: var(--space-2); }
   .values li { font-size: 0.6875rem; }
-  .values { --value-icon-box: 13px; }
+  .values { --value-icon-zoom: 0.55; }
   .value-label { margin-left: 4px; padding-left: 4px; }
 }
 

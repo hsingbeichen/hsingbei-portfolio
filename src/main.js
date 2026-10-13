@@ -5,10 +5,10 @@ import './home.css'
 const IMG = `${BASE}images/home`
 
 const values = [
-  { label: 'Question', icon: 'icon-question.svg', w: 25.1921, h: 27.0303, scale: 0.86 },
-  { label: 'Notice', icon: 'icon-notice.svg', w: 21, h: 17, scale: 0.74 },
-  { label: 'Discover', icon: 'icon-discover.svg', w: 5.28917, h: 22.6679, scale: 0.8 },
-  { label: 'Create', icon: 'icon-create.svg', w: 20.0015, h: 20.0015, scale: 0.78 },
+  { label: 'Question', icon: 'icon-question.svg', w: 25.1921, h: 27.0303 },
+  { label: 'Notice', icon: 'icon-notice.svg', w: 21, h: 17 },
+  { label: 'Discover', icon: 'icon-discover.svg', w: 5.28917, h: 22.6679 },
+  { label: 'Create', icon: 'icon-create.svg', w: 20.0015, h: 20.0015 },
 ]
 
 document.querySelector('#app').innerHTML = `
@@ -56,8 +56,8 @@ document.querySelector('#app').innerHTML = `
             <p class="about-intro"><span class="about-name">Hsingbei Chen</span> · Since 2016 · Visual design, now bridging design and code.</p>
             <ul class="values">
               ${values.map((v) => `
-                <li style="--icon-scale:${v.scale}">
-                  <span class="value-icon"><i style="--icon:url(${IMG}/${v.icon});aspect-ratio:${v.w} / ${v.h}"></i></span>
+                <li>
+                  <i class="value-icon" style="--icon:url(${IMG}/${v.icon});--w:${v.w}px;--h:${v.h}px"></i>
                   <span class="value-label">${v.label}</span>
                 </li>
               `).join('')}
