@@ -129,19 +129,21 @@
   color: var(--color-text-secondary);
   font: var(--weight-medium) var(--text-body-m) / var(--leading-body-m) var(--font-display);
 }
+.about-name { color: var(--color-accent-default); font-weight: var(--weight-semibold); } /* the name reads like a signature */
 .values { display: flex; flex-wrap: wrap; gap: var(--space-4); margin-top: 10px; }
 .values li {
   display: flex; align-items: center;
-  color: var(--color-text-muted);
+  color: var(--color-value-text);
   font: var(--weight-medium) var(--text-body-m) / var(--leading-body-m) var(--font-display);
 }
 /* Icons sit in one square box; --icon-scale evens out their optical size (they're drawn at different sizes) */
 .value-icon { display: grid; place-items: center; width: var(--value-icon-box); height: var(--value-icon-box); }
-.value-icon img { width: auto; height: calc(var(--value-icon-box) * var(--icon-scale)); opacity: 0.5; } /* softer: #999 at half strength */
+/* The SVGs are used as masks so they take the teal fill */
+.value-icon i { height: calc(var(--value-icon-box) * var(--icon-scale)); background: var(--color-value-icon); mask: var(--icon) center / contain no-repeat; }
 .value-label { position: relative; margin-left: 10px; padding-left: 10px; }
 .value-label::before { /* divider only as tall as the text, not the whole line box */
   content: ''; position: absolute; left: 0; top: 50%; height: 1.1em; translate: 0 -50%;
-  border-left: 1px solid var(--color-border-subtle);
+  border-left: 1px solid color-mix(in srgb, var(--color-value-icon) 50%, transparent);
 }
 .about-body .pill-btn { align-self: end; }
 

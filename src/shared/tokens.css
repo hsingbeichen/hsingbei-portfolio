@@ -15,6 +15,8 @@
   --color-accent-default: #04374a;
   --color-accent-hover: #06536c;
   --color-accent-dark: #022936;
+  --color-value-icon: #9fb8c1;  /* home About values: pale teal for icons, dividers at half strength */
+  --color-value-text: #5f8492;  /* a deeper teal so the labels stay readable */
   --color-nav-bg: rgb(247 247 245 / 0.72);
   --color-nav-bg-scrolled: rgb(247 247 245 / 0.94);
 

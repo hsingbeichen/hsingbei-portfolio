@@ -53,11 +53,11 @@ document.querySelector('#app').innerHTML = `
           <img class="avatar" src="${IMG}/logo-avatar.svg" width="160.131" height="171.901" alt="Hsingbei 插畫頭像" />
           <div class="about-text">
             <p class="about-title">I believe good design starts with a question.</p>
-            <p class="about-intro">Since 2016 of visual design, now bridging design and code.</p>
+            <p class="about-intro"><span class="about-name">Hsingbei Chen</span> · Since 2016 · Visual design, now bridging design and code.</p>
             <ul class="values">
               ${values.map((v) => `
                 <li style="--icon-scale:${v.scale}">
-                  <span class="value-icon"><img src="${IMG}/${v.icon}" width="${v.w}" height="${v.h}" alt="" /></span>
+                  <span class="value-icon"><i style="--icon:url(${IMG}/${v.icon});aspect-ratio:${v.w} / ${v.h}"></i></span>
                   <span class="value-label">${v.label}</span>
                 </li>
               `).join('')}
