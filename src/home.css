@@ -131,7 +131,9 @@
   font: var(--weight-medium) var(--text-body-m) / var(--leading-body-m-tight) var(--font-display);
 }
 .about-name { color: var(--color-accent-default); font-weight: var(--weight-semibold); } /* the name reads like a signature */
-/* The four values spread across the full text width */
+/* Intro and values share one box sized to the intro line, so the values end where the intro ends */
+.about-meta { width: fit-content; max-width: 100%; }
+/* The four values spread across the intro's width */
 .values { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-4); margin-top: 10px; }
 .values li {
   display: flex; align-items: center;
@@ -188,6 +190,7 @@
   .about-body { justify-items: center; text-align: center; }
   .about-body .avatar { grid-column: 1; }
   .values { justify-content: center; }
+  .about-meta { width: auto; }
   .about-body .pill-btn { justify-self: center; }
   /* Keep the four values on one line */
   .values { flex-wrap: nowrap; gap: var(--space-3); }

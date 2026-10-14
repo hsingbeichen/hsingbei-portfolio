@@ -53,6 +53,7 @@ document.querySelector('#app').innerHTML = `
           <img class="avatar" src="${IMG}/logo-avatar.svg" width="160.131" height="171.901" alt="Hsingbei 插畫頭像" />
           <div class="about-text">
             <p class="about-title">I believe good design starts with a question.</p>
+            <div class="about-meta">
             <p class="about-intro"><span class="about-name">Hsingbei Chen</span> · Since 2016 · Visual design, now bridging design and code.</p>
             <ul class="values">
               ${values.map((v) => `
@@ -62,6 +63,7 @@ document.querySelector('#app').innerHTML = `
                 </li>
               `).join('')}
             </ul>
+            </div>
           </div>
           <a class="pill-btn pill-btn--wide" href="${BASE}about.html">${pillInner('認識我更多')}</a>
         </div>
