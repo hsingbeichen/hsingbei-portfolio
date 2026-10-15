@@ -1,11 +1,9 @@
 import { BASE, IMG, BACK_WORK, header, footer, initLayout } from './shared/layout.js'
-import { caseBody, caseLabel, caseMedia, casePager, initCaseToc } from './cases/case.js'
+import { text, lead, caseBody, caseLabel, caseMedia, casePager, initCaseToc } from './cases/case.js'
 import { pagerFor } from './shared/works.js'
 import './case-coucou.css'
 
 const img = `${IMG}/coucou`
-const text = (t) => `<p class="case-text">${t}</p>`
-const lead = (t) => `<p class="case-text case-lead">${t}</p>`
 
 const IG_DIGITAL = 'https://www.instagram.com/coucou.bei/'
 const IG_HAND = 'https://www.instagram.com/hellohellobeibei/'

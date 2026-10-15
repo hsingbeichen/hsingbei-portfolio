@@ -91,7 +91,7 @@
   font: var(--weight-medium) var(--text-body-m) / var(--leading-body-m-tight) var(--font-display);
   transition: color var(--motion-normal);
 }
-.featured-row:hover :is(h3, .subtitle), .featured-row:focus-visible :is(h3, .subtitle) { color: var(--color-accent-hover); }
+a.featured-row:hover :is(h3, .subtitle), a.featured-row:focus-visible :is(h3, .subtitle) { color: var(--color-accent-hover); }
 .featured-row .meta { position: relative; padding-left: var(--work-meta-indent); }
 .featured-row .meta::before {
   content: ''; position: absolute; left: 0; top: 50%; translate: 0 -50%;
@@ -109,11 +109,17 @@
 }
 
 /* Whole row hovers its pill button */
-.featured-row:hover .pill-btn, .featured-row:focus-visible .pill-btn {
+a.featured-row:hover .pill-btn, a.featured-row:focus-visible .pill-btn {
   background: var(--color-accent-hover); border-color: var(--color-accent-dark); color: var(--color-bg-default);
 }
-.featured-row:hover .is-hover, .featured-row:focus-visible .is-hover { opacity: 1; }
-.featured-row:hover .pill-arrow { transform: translateX(3px); }
+a.featured-row:hover .is-hover, a.featured-row:focus-visible .is-hover { opacity: 1; }
+a.featured-row:hover .pill-arrow { transform: translateX(3px); }
+
+/* Projects without a page yet: not a link, quiet dashed pill */
+.pill-btn--soon {
+  display: flex; justify-content: center;
+  border-style: dashed; border-color: var(--color-border-default); color: var(--color-text-muted);
+}
 
 /* ===== About ===== */
 .about { background: var(--color-bg-default); padding-block: var(--space-6) var(--space-7); }

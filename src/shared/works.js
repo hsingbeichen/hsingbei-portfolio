@@ -10,13 +10,15 @@ export const works = [
 
 export const pad = (n) => String(n).padStart(2, '0')
 
-// Prev/next neighbours of a project, looping at both ends; unbuilt pages fall back to the home list
+// A project is "ready" once it has a page. Unready ones show as 整理中 on the home list and are
+// skipped here, so adding `page` to a project is all it takes to link it in everywhere.
+// Prev/next neighbours among ready projects, looping at both ends.
 export const pagerFor = (slug) => {
-  const i = works.findIndex((w) => w.slug === slug)
+  const ready = works.map((work, index) => ({ ...work, num: pad(index + 1) })).filter((work) => work.page)
+  const i = ready.findIndex((work) => work.slug === slug)
   const at = (j) => {
-    const index = (j + works.length) % works.length
-    const work = works[index]
-    return { num: pad(index + 1), title: work.title, tags: work.tags, cover: work.cover, href: work.page ?? `${BASE}#works` }
+    const { num, title, tags, cover, page } = ready[(j + ready.length) % ready.length]
+    return { num, title, tags, cover, href: page }
   }
   return { prev: at(i - 1), next: at(i + 1) }
 }

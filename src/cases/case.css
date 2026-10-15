@@ -228,80 +228,30 @@
 }
 .case-proposal figcaption strong { flex: none; white-space: nowrap; color: var(--color-text-primary); font-weight: var(--weight-medium); }
 
-/* ----- Prev / next project ----- */
+/* ----- Next project card (prev as a quiet link below) ----- */
 .case-body { padding-bottom: 0; }
 .case-pager-wrap {
   display: grid; grid-template-columns: minmax(var(--case-toc-min), var(--case-toc-col)) minmax(0, var(--case-content-width));
   padding-block: var(--space-9);
 }
-.case-pager {
-  /* Sits in the text column with the divider on its centre line: prev to its left, next to its right */
-  grid-column: 2;
-  display: grid; grid-template-columns: 1fr auto 1fr; align-items: end; column-gap: var(--space-5);
-}
-.case-pager-link { display: flex; flex-direction: column; gap: var(--space-1); }
-.case-pager-prev { align-items: flex-end; text-align: right; color: var(--color-text-muted); }
-.case-pager-next { align-items: flex-start; color: var(--color-accent-default); }
-.case-pager-divider { align-self: stretch; width: 1px; background: var(--color-border-default); }
 .case-pager-label {
   white-space: nowrap;
   color: var(--color-text-muted);
   font: var(--weight-medium) var(--text-body-m) / var(--leading-body-l) var(--font-display);
   letter-spacing: var(--tracking-label);
 }
-.case-pager-prev .case-pager-label { font-size: var(--text-body-s); }
-.case-pager-title {
-  display: inline-flex; align-items: center; gap: var(--space-2);
-  font: var(--weight-black) var(--text-h2) / var(--leading-h2) var(--font-body);
-  white-space: nowrap; /* never break a project name onto two lines */
-  transition: color var(--motion-normal);
-}
-.case-pager-prev .case-pager-title { font-size: var(--text-pager-prev); line-height: var(--leading-h3); } /* arrow hugs the name, same gap as next */
-.case-pager-title svg { position: relative; top: -2px; /* the CJK ink sits ~2px above the line-box centre */ width: 24px; height: auto; color: currentColor; transition: color var(--motion-normal), transform var(--motion-normal); } /* arrow matches its title */
-.case-pager-next svg {
-  animation: case-next-push 2.4s ease-in-out infinite; /* rests, then two quick nudges */
-}
-@keyframes case-next-push {
+@keyframes case-next-push { /* rests, then two quick nudges */
   0%, 60%, 100% { transform: translateX(0); }
   70% { transform: translateX(10px); }
   80% { transform: translateX(0); }
   90% { transform: translateX(6px); }
 }
-.case-pager-link:hover .case-pager-title, .case-pager-link:focus-visible .case-pager-title,
-.case-pager-link:hover svg, .case-pager-link:focus-visible svg { color: var(--color-accent-hover); }
-.case-pager-prev:hover svg { transform: translateX(-6px); }
-
 @media (max-width: 1024px) {
   .case-pager-wrap { grid-template-columns: 1fr; }
-  .case-pager { grid-column: 1; }
 }
 @media (max-width: 800px) {
   .case-pager-wrap { padding-block: var(--space-8); }
-  /* Same prev | next layout as desktop, scaled down and centred as a group */
-  .case-pager { grid-template-columns: auto auto auto; justify-content: center; column-gap: var(--space-3); }
-  .case-pager-divider { margin-inline: 0; }
   .case-pager-label { font-size: var(--text-caption); line-height: 1rem; letter-spacing: 0.02em; } /* ~10.5px at the mobile root size */
-  .case-pager-prev .case-pager-label { font-size: var(--text-caption); }
-  .case-pager-title { gap: 6px; font-size: var(--text-h3); line-height: var(--leading-h3); }
-  .case-pager-prev .case-pager-title { justify-content: flex-end; font-size: var(--text-body-lead); line-height: var(--leading-h3); } /* arrow hugs the name on mobile */
-  .case-pager-title svg { width: 18px; height: auto; }
-}
-
-/* Very narrow phones (≤400px): tighten the pager so "next" and its arrow always fit */
-@media (max-width: 400px) {
-  .case-pager { column-gap: var(--space-2); }
-  .case-pager-label, .case-pager-prev .case-pager-label { font-size: 0.6875rem; letter-spacing: 0; }
-  .case-pager-title { font-size: 1.25rem; }
-  .case-pager-prev .case-pager-title { font-size: 1rem; }
-  .case-pager-title svg { width: 16px; }
-}
-
-/* ≤320px: stack prev above next, with a light rule between */
-@media (max-width: 320px) {
-  .case-pager { grid-template-columns: auto; justify-items: center; row-gap: var(--space-3); }
-  .case-pager-divider { width: 100%; height: 1px; align-self: auto; }
-  .case-pager-prev, .case-pager-next { align-items: center; text-align: center; }
-  .case-pager-prev .case-pager-title { justify-content: center; }
 }
 
 /* Below 320px: English drops under the Chinese, both left-aligned */
@@ -337,7 +287,7 @@
   vertical-align: -3px; margin-block: -4px; /* keep the 88px box height */
 }
 
-/* ----- Trial: mobile reading progress (Azaleah only for now) ----- */
+/* ----- Mobile reading progress: stands in for the TOC at ≤1024px ----- */
 .case-progress { display: none; }
 @media (max-width: 1024px) {
   .case-progress {
@@ -358,7 +308,6 @@
   transform: scaleX(var(--progress, 0)); transform-origin: left;
 }
 
-/* ----- Trial: next-project card (Azaleah only for now) ----- */
 .case-next { grid-column: 2; display: grid; gap: var(--space-4); }
 .case-next-card {
   display: grid; grid-template-columns: 2fr 3fr; align-items: center;

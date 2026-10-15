@@ -29,7 +29,7 @@ document.querySelector('#app').innerHTML = `
         <h2 class="section-title reveal"><span class="zh">精選作品</span><span class="en">SELECTED WORKS</span><span class="count">${pad(featured.length)} PROJECTS</span></h2>
         <div class="featured-list">
           ${featured.map((work, index) => `
-            <a class="featured-row reveal" href="${work.page ?? `#case-${work.slug}`}">
+            <${work.page ? `a class="featured-row reveal" href="${work.page}"` : 'div class="featured-row is-soon reveal"'}>
               <span class="num">${pad(index + 1)}</span>
               <div class="info">
                 <h3>${work.title}</h3>
@@ -39,8 +39,8 @@ document.querySelector('#app').innerHTML = `
                 <p class="tags">${work.tags}</p>
                 <p class="period">${work.period}</p>
               </div>
-              <span class="pill-btn">${pillInner('查看案例')}</span>
-            </a>
+              ${work.page ? `<span class="pill-btn">${pillInner('查看案例')}</span>` : '<span class="pill-btn pill-btn--soon">整理中</span>'}
+            </${work.page ? 'a' : 'div'}>
           `).join('')}
         </div>
       </div>

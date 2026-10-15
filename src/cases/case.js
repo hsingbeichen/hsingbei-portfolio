@@ -32,6 +32,7 @@ export const caseHero = ({ titleZh, titleEn, images, meta }) => `
 
 // Body: sticky table of contents on the left, numbered sections on the right.
 export const caseBody = ({ name, sections }) => `
+  ${caseProgress()}
   <div class="shell case-shell case-body">
     <nav class="case-toc" aria-label="${name} 段落">
       <p class="case-toc-name">${name}</p>
@@ -51,6 +52,9 @@ export const caseBody = ({ name, sections }) => `
     </div>
   </div>
 `
+
+export const text = (t) => `<p class="case-text">${t}</p>`
+export const lead = (t) => `<p class="case-text case-lead">${t}</p>`
 
 export const caseLabel = (text) => `<p class="case-label">${text}</p>`
 
@@ -74,6 +78,7 @@ export const initCaseToc = () => {
     })
   }, { rootMargin: '-30% 0px -60% 0px' })
   document.querySelectorAll('.case-section').forEach((el) => spy.observe(el))
+  initCaseProgress()
 }
 
 // Side-by-side proposals; the chosen one gets the accent frame.
@@ -88,34 +93,16 @@ export const caseProposals = (items) => `
   </div>
 `
 
-// Prev / next project pager under the last section, centred on the content column.
-// Next is the primary path (large, dark); prev is quieter (smaller, muted).
-export const casePager = ({ prev, next }) => `
-  <nav class="shell case-shell case-pager-wrap" aria-label="其他作品">
-    <div class="case-pager">
-      <a class="case-pager-link case-pager-prev" href="${prev.href}">
-        <span class="case-pager-label">PREV PROJECT — P.${prev.num}</span>
-        <span class="case-pager-title"><svg width="34" height="30" viewBox="0 0 34 30" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M30 15H6M16 5L6 15l10 10" /></svg>${prev.title}</span>
-      </a>
-      <span class="case-pager-divider" aria-hidden="true"></span>
-      <a class="case-pager-link case-pager-next" href="${next.href}">
-        <span class="case-pager-label">NEXT PROJECT — P.${next.num}</span>
-        <span class="case-pager-title">${next.title}<svg width="34" height="30" viewBox="0 0 34 30" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 15h24M18 5l10 10-10 10" /></svg></span>
-      </a>
-    </div>
-  </nav>
-`
-
-// Trial (Azaleah only for now): where the TOC is hidden (≤1024px), a slim bar under the navbar
-// names the section in view and fills as you read. Filled in by initCaseProgress().
-export const caseProgress = () => `
+// Where the TOC is hidden (≤1024px), a slim bar under the navbar names the section in view
+// and fills as you read. caseBody() adds it; initCaseToc() starts it.
+const caseProgress = () => `
   <div class="case-progress" aria-hidden="true">
     <div class="shell case-progress-inner"><span class="case-progress-num"></span><span class="case-progress-name"></span></div>
     <span class="case-progress-bar"></span>
   </div>
 `
 
-export const initCaseProgress = () => {
+const initCaseProgress = () => {
   const bar = document.querySelector('.case-progress')
   const body = document.querySelector('.case-body')
   if (!bar || !body) return
@@ -142,8 +129,9 @@ export const initCaseProgress = () => {
   update()
 }
 
-// Trial (Azaleah only for now): the next project as a card with its cover, prev as a quiet link below.
-export const caseNextCard = ({ prev, next }) => `
+// Under the last section: the next project as a card with its cover, prev as a quiet link below
+// (dropped when prev and next are the same project, i.e. only two pages are ready).
+export const casePager = ({ prev, next }) => `
   <nav class="shell case-shell case-pager-wrap" aria-label="其他作品">
     <div class="case-next">
       <a class="case-next-card" href="${next.href}">
@@ -154,10 +142,12 @@ export const caseNextCard = ({ prev, next }) => `
           <span class="case-next-tags">${next.tags}</span>
         </span>
       </a>
-      <a class="case-next-prev" href="${prev.href}">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7" /></svg>
-        PREV PROJECT — P.${prev.num} ${prev.title}
-      </a>
+      ${prev.href === next.href ? '' : `
+        <a class="case-next-prev" href="${prev.href}">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7" /></svg>
+          PREV PROJECT — P.${prev.num} ${prev.title}
+        </a>
+      `}
     </div>
   </nav>
 `
