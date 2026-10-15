@@ -336,3 +336,67 @@
   display: inline-block; margin-inline: 6px 12px;
   vertical-align: -3px; margin-block: -4px; /* keep the 88px box height */
 }
+
+/* ----- Trial: mobile reading progress (Azaleah only for now) ----- */
+.case-progress { display: none; }
+@media (max-width: 1024px) {
+  .case-progress {
+    display: block; position: fixed; top: var(--nav-height); inset-inline: 0; z-index: 199; /* tucks under the navbar */
+    background: var(--color-nav-bg-scrolled); backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--color-border-subtle);
+    transform: translateY(-100%); opacity: 0; visibility: hidden;
+    transition: transform var(--motion-normal), opacity var(--motion-normal), visibility var(--motion-normal);
+  }
+  .case-progress.is-on { transform: none; opacity: 1; visibility: visible; }
+}
+.case-progress-inner { display: flex; align-items: baseline; gap: var(--space-2); padding-block: 8px 7px; }
+.case-progress-num { color: var(--color-text-muted); font: var(--weight-medium) var(--text-caption) / var(--leading-caption) var(--font-display); }
+.case-progress-name { color: var(--color-accent-default); font: var(--weight-bold) var(--text-body-s) / var(--leading-caption) var(--font-body); }
+.case-progress-bar {
+  position: absolute; left: 0; bottom: -1px; width: 100%; height: 2px;
+  background: var(--color-accent-default);
+  transform: scaleX(var(--progress, 0)); transform-origin: left;
+}
+
+/* ----- Trial: next-project card (Azaleah only for now) ----- */
+.case-next { grid-column: 2; display: grid; gap: var(--space-4); }
+.case-next-card {
+  display: grid; grid-template-columns: 2fr 3fr; align-items: center;
+  border-radius: var(--radius-card); background: var(--color-bg-surface); overflow: hidden;
+}
+.case-next-cover { align-self: stretch; aspect-ratio: 4 / 3; overflow: hidden; background: var(--color-border-default); }
+.case-next-cover img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--motion-transition); }
+.case-next-text { display: flex; flex-direction: column; gap: var(--space-1); padding: var(--space-4) var(--space-5); }
+.case-next-title {
+  display: inline-flex; align-items: center; gap: var(--space-2);
+  color: var(--color-accent-default);
+  font: var(--weight-black) var(--text-h2) / var(--leading-h2) var(--font-body);
+  transition: color var(--motion-normal);
+}
+.case-next-title svg { position: relative; top: -2px; width: 24px; height: auto; animation: case-next-push 2.4s ease-in-out infinite; }
+.case-next-tags { color: var(--color-text-secondary); font: var(--weight-medium) var(--text-body-s) / var(--leading-lead) var(--font-body); }
+.case-next-card:hover .case-next-cover img, .case-next-card:focus-visible .case-next-cover img { transform: scale(1.04); }
+.case-next-card:hover .case-next-title, .case-next-card:focus-visible .case-next-title { color: var(--color-accent-hover); }
+.case-next-prev {
+  justify-self: start; display: inline-flex; align-items: center; gap: var(--space-2);
+  color: var(--color-text-muted);
+  font: var(--weight-medium) var(--text-body-s) / var(--leading-lead) var(--font-display);
+  letter-spacing: var(--tracking-label);
+  transition: color var(--motion-normal);
+}
+.case-next-prev svg { transition: transform var(--motion-normal); }
+.case-next-prev:hover { color: var(--color-accent-hover); }
+.case-next-prev:hover svg { transform: translateX(-3px); }
+@media (max-width: 1024px) {
+  .case-next { grid-column: 1; }
+}
+@media (max-width: 800px) {
+  /* Cover on top, text underneath */
+  .case-next-card { grid-template-columns: 1fr; }
+  .case-next-cover { aspect-ratio: 16 / 9; }
+  .case-next-text { padding: var(--space-3) var(--space-3) var(--space-4); }
+  .case-next-title { font-size: var(--text-h3); line-height: var(--leading-h3); }
+  .case-next-title svg { width: 18px; }
+  .case-next-tags { font-size: var(--text-caption); }
+  .case-next-prev { justify-self: center; font-size: var(--text-caption); letter-spacing: 0.02em; }
+}

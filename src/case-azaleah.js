@@ -1,5 +1,5 @@
 import { BASE, IMG, BACK_WORK, header, footer, initLayout } from './shared/layout.js'
-import { caseHero, caseBody, caseLabel, caseMedia, caseProposals, casePager, initCaseToc } from './cases/case.js'
+import { caseHero, caseBody, caseLabel, caseMedia, caseProposals, caseProgress, initCaseProgress, caseNextCard, initCaseToc } from './cases/case.js'
 import { pagerFor } from './shared/works.js'
 
 const img = `${IMG}/azaleah`
@@ -82,6 +82,7 @@ const sections = [
 
 document.querySelector('#app').innerHTML = `
   ${header('works', { back: BACK_WORK })}
+  ${caseProgress()}
   <main>
     ${caseHero({
       titleZh: '杜鵑花開了',
@@ -101,10 +102,11 @@ document.querySelector('#app').innerHTML = `
     })}
     ${caseBody({ name: 'AZALEAH STUDIO', sections })}
     ${/* TODO: point prev at case-letao.html once that page exists */ ''}
-    ${casePager(pagerFor('azaleah'))}
+    ${caseNextCard(pagerFor('azaleah'))}
   </main>
   ${footer()}
 `
 
 initLayout()
 initCaseToc()
+initCaseProgress()

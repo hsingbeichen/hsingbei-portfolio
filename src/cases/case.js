@@ -105,3 +105,59 @@ export const casePager = ({ prev, next }) => `
     </div>
   </nav>
 `
+
+// Trial (Azaleah only for now): where the TOC is hidden (≤1024px), a slim bar under the navbar
+// names the section in view and fills as you read. Filled in by initCaseProgress().
+export const caseProgress = () => `
+  <div class="case-progress" aria-hidden="true">
+    <div class="shell case-progress-inner"><span class="case-progress-num"></span><span class="case-progress-name"></span></div>
+    <span class="case-progress-bar"></span>
+  </div>
+`
+
+export const initCaseProgress = () => {
+  const bar = document.querySelector('.case-progress')
+  const body = document.querySelector('.case-body')
+  if (!bar || !body) return
+  const num = bar.querySelector('.case-progress-num')
+  const name = bar.querySelector('.case-progress-name')
+  const sections = [...document.querySelectorAll('.case-section')]
+  let queued = false
+  const update = () => {
+    queued = false
+    const top = body.getBoundingClientRect().top
+    const height = body.offsetHeight - window.innerHeight * 0.5
+    const progress = Math.min(Math.max(-top / height, 0), 1)
+    // Show while the sections are on screen; hide over the hero and once the pager comes up
+    bar.classList.toggle('is-on', top < window.innerHeight * 0.3 && progress < 1)
+    bar.style.setProperty('--progress', progress)
+    const line = window.innerHeight * 0.35
+    const current = sections.filter((s) => s.getBoundingClientRect().top < line).pop() ?? sections[0]
+    num.textContent = current.querySelector('.num').textContent
+    name.textContent = current.querySelector('.zh').textContent
+  }
+  const queue = () => { if (!queued) { queued = true; requestAnimationFrame(update) } }
+  window.addEventListener('scroll', queue, { passive: true })
+  window.addEventListener('resize', queue)
+  update()
+}
+
+// Trial (Azaleah only for now): the next project as a card with its cover, prev as a quiet link below.
+export const caseNextCard = ({ prev, next }) => `
+  <nav class="shell case-shell case-pager-wrap" aria-label="其他作品">
+    <div class="case-next">
+      <a class="case-next-card" href="${next.href}">
+        <span class="case-next-cover">${next.cover ? `<img src="${next.cover}" alt="" loading="lazy" />` : ''}</span>
+        <span class="case-next-text">
+          <span class="case-pager-label">NEXT PROJECT — P.${next.num}</span>
+          <span class="case-next-title">${next.title}<svg width="34" height="30" viewBox="0 0 34 30" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 15h24M18 5l10 10-10 10" /></svg></span>
+          <span class="case-next-tags">${next.tags}</span>
+        </span>
+      </a>
+      <a class="case-next-prev" href="${prev.href}">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7" /></svg>
+        PREV PROJECT — P.${prev.num} ${prev.title}
+      </a>
+    </div>
+  </nav>
+`
