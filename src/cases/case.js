@@ -129,8 +129,7 @@ const initCaseProgress = () => {
   update()
 }
 
-// Under the last section: the next project as a card with its cover, prev as a quiet link below
-// (dropped when prev and next are the same project, i.e. only two pages are ready).
+// Under the last section: the next project as a card with its cover, prev as a quiet link below.
 export const casePager = ({ prev, next }) => `
   <nav class="shell case-shell case-pager-wrap" aria-label="其他作品">
     <div class="case-next">
@@ -142,12 +141,10 @@ export const casePager = ({ prev, next }) => `
           <span class="case-next-tags">${next.tags}</span>
         </span>
       </a>
-      ${prev.href === next.href ? '' : `
-        <a class="case-next-prev" href="${prev.href}">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7" /></svg>
-          PREV PROJECT — P.${prev.num} ${prev.title}
-        </a>
-      `}
+      <a class="case-next-prev" href="${prev.href}">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7" /></svg>
+        PREV PROJECT — P.${prev.num} ${prev.title}
+      </a>
     </div>
   </nav>
 `
