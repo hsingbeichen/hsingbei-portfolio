@@ -12,7 +12,7 @@ export const caseHero = ({ titleZh, titleEn, images, meta }) => `
       <div class="case-hero-body reveal">
         <div class="case-gallery">
           ${images.map((img) => `
-            <figure class="case-shot case-shot--${img.shape}">
+            <figure class="case-shot case-shot--${img.shape}${img.page ? ' case-shot--page' : ''}">
               <img src="${img.src}" alt="${img.alt}" />
             </figure>
           `).join('')}
@@ -80,6 +80,17 @@ export const initCaseToc = () => {
   document.querySelectorAll('.case-section').forEach((el) => spy.observe(el))
   initCaseProgress()
 }
+
+// A tall page screenshot in a fixed-height frame that scrolls inside, like browsing the real site.
+// phone: narrow frame for a mobile screenshot.
+export const caseScroll = ({ src, alt = '', caption = '', phone = false }) => `
+  <figure class="case-media">
+    <div class="case-media-frame case-scroll${phone ? ' case-scroll--phone' : ''}${src ? '' : ' is-placeholder'}" tabindex="0" aria-label="${alt}（可在框內捲動）">
+      ${src ? `<img src="${src}" alt="${alt}" loading="lazy" />` : `<span>${alt}（圖片待補）</span>`}
+    </div>
+    ${caption ? `<figcaption>${caption}</figcaption>` : ''}
+  </figure>
+`
 
 // Side-by-side proposals; the chosen one gets the accent frame.
 export const caseProposals = (items) => `
