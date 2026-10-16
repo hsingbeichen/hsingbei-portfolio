@@ -129,22 +129,28 @@ const initCaseProgress = () => {
   update()
 }
 
+const soon = '<span class="case-soon">整理中</span>'
+
 // Under the last section: the next project as a card with its cover, prev as a quiet link below.
-export const casePager = ({ prev, next }) => `
+// A project without a page yet still shows in its place, as 整理中 and not a link.
+export const casePager = ({ prev, next }) => {
+  const link = (item, cls, inner) => item.href ? `<a class="${cls}" href="${item.href}">${inner}</a>` : `<div class="${cls} is-soon">${inner}</div>`
+  return `
   <nav class="shell case-shell case-pager-wrap" aria-label="其他作品">
     <div class="case-next">
-      <a class="case-next-card" href="${next.href}">
+      ${link(next, 'case-next-card', `
         <span class="case-next-cover">${next.cover ? `<img src="${next.cover}" alt="" loading="lazy" />` : ''}</span>
         <span class="case-next-text">
           <span class="case-pager-label">NEXT PROJECT — P.${next.num}</span>
-          <span class="case-next-title">${next.title}<svg width="34" height="30" viewBox="0 0 34 30" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 15h24M18 5l10 10-10 10" /></svg></span>
+          <span class="case-next-title">${next.title}${next.href ? '<svg width="34" height="30" viewBox="0 0 34 30" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 15h24M18 5l10 10-10 10" /></svg>' : soon}</span>
           <span class="case-next-tags">${next.tags}</span>
         </span>
-      </a>
-      <a class="case-next-prev" href="${prev.href}">
+      `)}
+      ${link(prev, 'case-next-prev', `
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7" /></svg>
-        PREV PROJECT — P.${prev.num} ${prev.title}
-      </a>
+        PREV PROJECT — P.${prev.num} ${prev.title}${prev.href ? '' : soon}
+      `)}
     </div>
   </nav>
 `
+}

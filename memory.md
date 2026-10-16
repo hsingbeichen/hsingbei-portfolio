@@ -36,6 +36,6 @@ Micro 150ms、Normal 250ms、Transition 400–600ms，ease-out
 1. 複製 `case-azaleah.html` → `case-xxx.html`，改 `<title>`、description、og 標籤與 script 路徑（vite 會自動把根目錄的 .html 都當成頁面，不用改 `vite.config.js`）
 2. 新增 `src/case-xxx.js`：用 `cases/case.js` 的 `caseHero` / `caseBody` / `text` / `lead` / `caseMedia` 等組內容，最後放 `casePager(pagerFor('xxx'))`，結尾呼叫 `initLayout()`、`initCaseToc()`
 3. 在 `src/shared/works.js` 那一筆補上 `page` 與 `cover`（下一篇卡片的封面）
-   - 有 `page` 才算完成：首頁那列才會變成可點，上一篇／下一篇也才會接上它
-   - 沒有 `page` 的作品在首頁顯示「整理中」，pager 自動跳過
+   - 有 `page` 才算完成：首頁那列與上一篇／下一篇才會變成可點
+   - 沒有 `page` 的作品照編號仍出現在原位，但顯示「整理中」、不能點
 4. 圖片放 `public/images/xxx/`
