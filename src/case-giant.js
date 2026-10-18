@@ -90,6 +90,12 @@ const sections = [
         ${caseScroll({ src: `${img}/air-ticket.png`, alt: '國際機票 AIR TICKET 產品專頁', caption: '國際機票（設計稿示意）' })}
       </div>
       ${text('「兩人成行」以主視覺文案說明賣點，「快速熱搜」用分類標籤切換海島、古文明等主題，搭配大小交錯的目的地拼貼；「國際機票」把查詢表單直接放進主視覺，以分頁切換國際機票與機＋酒，下方再用「推薦行程／優惠行程」分頁延伸。版面依產品個性調整，頁首、麵包屑、卡片與頁尾仍沿用同一套系統。')}
+      ${caseLabel('內容專區：匠子旅遊誌 TRAVEL MAGAZINE')}
+      <div class="case-grid" style="grid-template-columns: minmax(0, 1fr) 160px; align-items: start">
+        ${caseScroll({ src: `${img}/blog-desktop.png`, alt: '匠子旅遊誌（電腦版）', caption: '電腦版' })}
+        ${phone(`${img}/blog-mobile.png`, '匠子旅遊誌（手機版）')}
+      </div>
+      ${text('匠子旅遊誌集合玩家部落格、領隊、VLOG 與 Podcast。文章可依主題與國家篩選：電腦版的主題是一整排分類標籤；到了手機上，主題與國家並排成兩個下拉選單，不佔版面也一樣好篩。')}
       ${caseLabel('其他內頁：企業專區、我的訂單 MORE PAGES')}
       <div class="case-grid" style="grid-template-columns: minmax(0, 1fr) 110px; align-items: start">
         ${caseScroll({ src: `${img}/corporate-desktop.png`, alt: '企業專區（電腦版）', caption: '企業專區' })}
