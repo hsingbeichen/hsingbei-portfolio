@@ -147,7 +147,6 @@ const soon = '<span class="case-soon">整理中</span>'
 export const casePager = ({ prev, next }) => {
   const link = (item, cls, inner) => item.href ? `<a class="${cls}" href="${item.href}">${inner}</a>` : `<div class="${cls} is-soon">${inner}</div>`
   return `
-  <div class="case-pager-band">
   <nav class="shell case-shell case-pager-wrap" aria-label="其他作品">
     <div class="case-next">
       ${link(next, 'case-next-card', `
@@ -164,6 +163,5 @@ export const casePager = ({ prev, next }) => {
       `)}
     </div>
   </nav>
-  </div>
 `
 }
