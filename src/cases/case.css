@@ -150,7 +150,7 @@
 .case-scroll { display: block; height: var(--case-scroll-height, 480px); overflow-y: auto; overscroll-behavior: contain; background: #ffffff; }
 .case-scroll img { display: block; height: auto; }
 .case-scroll.is-placeholder { display: grid; place-items: center; }
-.case-scroll--phone { width: min(100%, 240px); margin-inline: auto; }
+.case-scroll--phone { width: min(100%, 240px); height: auto; max-height: var(--case-scroll-height, 480px); margin-inline: auto; } /* short screens (e.g. a menu) end where the image ends */
 .case-media-frame.is-placeholder { background: var(--color-bg-surface); color: var(--color-text-muted); font-size: var(--text-caption); }
 .case-media figcaption {
   margin-top: var(--space-2);
