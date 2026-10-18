@@ -11,7 +11,7 @@ zingbay0624@gmail.com ｜ hsingbeichen.github.io/hsingbei-portfolio
 （旁邊放 QR code：portfolio-qr-black.svg 或 portfolio-qr-teal.svg，至少 2×2 cm）
 
 **將設計從「好看」延伸到「真正能被使用」**
-9 年以上視覺設計經驗，橫跨品牌、數位行銷、網站與 UI，能從視覺概念、介面規劃一路做到前端實作。
+9 年以上視覺設計經驗，橫跨品牌、數位廣告、網站與 UI，能從視覺概念、介面規劃一路做到前端實作。
 曾獨立規劃旅行社官網整站架構與 RWD，沿用至今；並曾任設計主任，帶領 6–8 人團隊。
 現以 Design-to-Code 工作流程，將設計直接落實為網頁。
 
@@ -21,7 +21,7 @@ zingbay0624@gmail.com ｜ hsingbeichen.github.io/hsingbei-portfolio
 
 ### 小川實業有限公司（樂淘）｜視覺設計 Visual Designer
 2021.01 – Present
-負責跨境電商網站的視覺與數位行銷素材，服務台灣、香港、馬來西亞、新加坡等市場；工作範圍涵蓋網站活動、廣告、UI 及前端頁面優化，並與前端及相關團隊協作完成數位專案。
+負責跨境電商網站的視覺與數位廣告素材，服務台灣、香港、馬來西亞、新加坡等市場；工作範圍涵蓋網站活動、廣告、UI 及前端頁面優化，並與前端及相關團隊協作完成數位專案。
 
 **Campaign Visual｜2021.01 – 2025.11**
 - 每月主導 5–6 檔電商活動，從 KV 延伸至台港雙站活動頁（Web／Mobile）、Banner、GDN、EDM、社群廣告與印刷物，單檔約 30+ 尺寸
