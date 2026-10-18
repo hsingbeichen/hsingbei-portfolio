@@ -11,8 +11,8 @@ zingbay0624@gmail.com ｜ hsingbeichen.github.io/hsingbei-portfolio
 （旁邊放 QR code：portfolio-qr-black.svg 或 portfolio-qr-teal.svg，至少 2×2 cm）
 
 **將設計從「好看」延伸到「真正能被使用」**
-9 年視覺設計經驗，從品牌、平面延伸到網站與 UI。
-曾獨立規劃旅行社官網整站架構與 RWD，上線多年仍沿用至今；也曾帶領 6–8 人設計團隊。
+9 年以上視覺設計經驗，專長涵蓋品牌視覺、數位行銷、網站與 UI，具備從視覺概念、介面規劃到前端實作的跨域能力。
+曾獨立規劃旅行社官網整站架構與 RWD，沿用至今；並曾擔任設計主任，帶領 6–8 人團隊。
 現以 Design-to-Code 工作流程，將設計直接落實為網頁。
 
 ---
@@ -24,41 +24,41 @@ zingbay0624@gmail.com ｜ hsingbeichen.github.io/hsingbei-portfolio
 負責跨境電商網站的視覺與數位行銷素材，服務台灣、香港、馬來西亞、新加坡等市場；工作範圍涵蓋網站活動、廣告、UI 及前端頁面優化，並與前端及相關團隊協作完成數位專案。
 
 **Campaign Visual｜2021.01 – 2025.11**
-- 每月主導 5–6 檔電商活動，從 KV 延伸至台港雙站活動頁（Web／Mobile）、Banner、GDN、社群廣告與印刷物，單檔約 30+ 尺寸
+- 每月主導 5–6 檔電商活動，從 KV 延伸至台港雙站活動頁（Web／Mobile）、Banner、GDN、EDM、社群廣告與印刷物，單檔約 30+ 尺寸
 
 **Product GDN System｜2023.12 – 2026.07**
-- 2023.12 起負責商品型 GDN，與主管討論後逐步統整為台灣、香港、新馬三站模板系統，以「活動背景 × 按鈕色 × 商品價目」模組化組合，涵蓋多活動與商品類別，依市場統整交付
+- 負責商品型 GDN，與主管討論後逐步統整為台灣、香港、新馬三站模板系統，以「活動背景 × 按鈕色 × 商品價目」模組化組合，涵蓋多活動與商品類別，依市場統整交付
 - 2026.07 全數交接，專注網站設計還原與前端優化
 
 **Web & Front-end｜2026.07 – Present**
 - 逐項比對 Figma 設計稿與線上頁面（間距、圓角、遮罩、陰影、字級），以實測數值記錄落差並提出修正方案
-- 直接修改 Vue 模板與 CSS 完成設計還原，並追蹤 staging／正式站上線狀態；例：代購商品頁彈窗、Toast、遮罩規格統一
+- 直接修改 Vue 模板與 CSS，獨立完成文字、圖片、間距與 RWD 調整，並與前後端協作追蹤測試站／正式站上線；例：代購商品頁彈窗、Toast、遮罩規格統一
 - 運用 Claude Code 建立 Design-to-Code 流程，加快修改與迭代
 
 ### 巨匠旅遊｜視覺設計主任 Visual Design Supervisor
 2016.12 – 2021.01
-負責旅遊品牌之平面、數位與網站視覺，後期主導官網改版，並帶領設計團隊。
+負責旅遊品牌之平面、數位與網站視覺設計，後期主導官網改版，從視覺架構、UI 統合到與前後端協作上線，並帶領設計團隊。
 
 **Web & Brand Design**
 - 獨立規劃官網整站資訊架構、視覺與 RWD，涵蓋首頁、地區頁、子地區頁、行程頁與會員系統（2020–2021）
 - 改版後架構與規範沿用至今，現行官網仍保留約 80–85%
 - 將行程頁由整張長圖改為模組化區塊，可依內容增減，支援手機瀏覽
-- 建立巨匠旅遊 LOGO 規範，整合旗下三品牌標誌（2019）
+- 建立巨匠旅遊 LOGO 與 CIS 視覺規範，整合旗下三品牌標誌（2019）
 
 **Team Coordination**
-- 帶領 6–8 人設計團隊，依專案需求與成員能力分配工作，協調進度與外部廠商，確保專案如期完成
+- 帶領 6–8 人設計團隊，依專案需求與成員能力分配工作，協調進度並管理外部廠商製作與發包，確保專案如期完成
 
 **Marketing Design**
-- 負責 Banner、DM、雜誌與社群廣告等行銷視覺
+- 負責網站 Banner、活動頁面、旅展 DM、雜誌與社群廣告等行銷視覺
 
 ---
 
 ## CORE SKILLS｜核心技能
-- **Visual Design**：Photoshop · Illustrator · Procreate · Branding · Illustration
+- **Visual Design**：Photoshop · Illustrator · Procreate · Branding · Graphic Design · Illustration
 - **UI / Web**：Figma（Design System、Auto Layout、Component、Variant、Dev Mode）· Prototype · Responsive Layout
 - **Front-end**：HTML · CSS · RWD · VS Code
 - **AI-assisted Development**：Claude Code · Rapid Prototyping · Iteration
-- **Marketing Design**：GDN · EDM · Landing Page · Social Media · GIF / Animation · Print
+- **Marketing Design**：GDN · EDM · Landing Page · Social Media · GIF / Animation · Event Visual · Print
 
 ## SELECTED PROJECTS｜其他作品
 - 杜鵑花開了 Azaleah Studio — 品牌識別設計（LOGO、名片）
