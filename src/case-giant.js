@@ -157,13 +157,18 @@ const sections = [
   {
     id: 'more', num: '08', zh: '其他設計', en: 'MORE WORK',
     content: `
-      ${lead('在巨匠的四年，也負責日常的 Banner、GDN 與臉書廣告、EDM 與 DM 設計。')}
+      ${lead('在巨匠的四年，也負責日常的 Banner、GDN 與臉書廣告、EDM、DM 與雜誌廣告設計。')}
       ${caseLabel('EDM 公版 EDM TEMPLATE')}
       ${caseScroll({ src: `${img}/edm.png`, alt: 'EDM 公版' })}
       ${text('EDM 做成公版：主視覺、「推薦行程」雙欄卡片、黃色價格標籤與頁尾聯絡資訊位置固定，每一檔活動只需替換圖文，就能快速發送，也維持品牌一致。')}
       ${caseLabel('DM 設計 PRINT DM')}
       ${caseMedia({ src: `${img}/dm-wall.jpg`, alt: '旅遊行程 DM 作品集錦', ratio: '1012 / 1454', fit: 'contain' })}
       ${text('行程 DM 依目的地調整主視覺與字體氣氛，資訊區塊則固定為行程特色、出發日期、價格與頁尾聯絡資訊，讓業務拿到任何一張都能快速找到重點。')}
+      ${caseLabel('雜誌廣告 MAGAZINE ADS')}
+      <div class="case-grid" style="grid-template-columns: minmax(0, 704fr) minmax(0, 1034fr); align-items: start">
+        ${caseMedia({ src: `${img}/mag-1.png`, alt: '雜誌廣告：2019 英俄軍樂節盛典', ratio: '704 / 852', fit: 'contain', caption: '單頁' })}
+        ${caseMedia({ src: `${img}/mag-2.png`, alt: '雜誌廣告：2019 世界花季之旅（巨匠旅遊 × 典藏旅遊）', ratio: '1034 / 634', fit: 'contain', caption: '跨頁' })}
+      </div>
       ${caseLabel('臉書廣告 FACEBOOK ADS')}
       <div class="case-grid" style="grid-template-columns: repeat(4, minmax(0, 1fr))">
         ${[1, 2, 3, 4].map((n) => caseMedia({ src: `${img}/fb-${n}.png`, alt: `臉書廣告 ${n}`, ratio: '1 / 1' })).join('')}
