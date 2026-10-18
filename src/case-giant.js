@@ -41,6 +41,16 @@ const sections = [
       ${text('主視覺輪播下方緊接著搜尋列，團體旅遊、國際機票、機＋酒、航空自由行四種入口一次到位。往下依序是熱門國家、主題企劃、珍藏旅遊／新視界假期、精選亞洲、口碑熱銷、特惠促銷，每一區都使用同一套「標題＋分類標籤＋卡片格線」，使用者學會一區，就看得懂每一區。')}
       ${text('「主題企劃」以品牌紅色帶包覆，成為頁面中段的視覺重心，也讓長頁面有了節奏。')}
       <p class="case-note">思考方向：先解決「找行程」這個最主要的任務，再用可重複的區塊模式承載大量商品，讓網站能隨業務需求增減區塊，而不必重新設計。</p>
+      ${caseLabel('首頁大圖：改版前 → 改版後 HERO BANNER')}
+      <div class="case-grid case-grid--2" style="align-items: start">
+        <div class="case-grid" style="margin-top: 0">
+          ${[1, 2].map((n) => caseMedia({ src: `${img}/hero-old-${n}.png`, alt: `改版前首頁大圖 ${n}`, ratio: '695 / 347' })).join('')}
+        </div>
+        <div class="case-grid" style="margin-top: 0">
+          ${[1, 2, 3].map((n) => caseMedia({ src: `${img}/hero-new-${n}.png`, alt: `改版後首頁大圖 ${n}`, ratio: n === 3 ? '761 / 396' : '761 / 380' })).join('')}
+        </div>
+      </div>
+      ${text('改版前的大圖要同時塞進行程名稱、亮點條列與出發日期，左側還被選單蓋住，文字一多就互相干擾。改版後大圖只留一張主照片、一個標題與一行副標，細節交給下方的行程卡片；畫面乾淨，也更容易裁切成手機版。')}
       ${caseLabel('首頁資訊架構 ARCHITECTURE')}
       ${caseMedia({ alt: '首頁資訊架構圖：區塊順序與層級', ratio: '603 / 360' })}
       ${caseLabel('改版後首頁（電腦版） AFTER')}
