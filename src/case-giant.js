@@ -152,8 +152,12 @@ const sections = [
       ${caseLabel('EDM 公版 EDM TEMPLATE')}
       ${caseScroll({ src: `${img}/edm.png`, alt: 'EDM 公版' })}
       ${text('EDM 做成公版：主視覺、「推薦行程」雙欄卡片、黃色價格標籤與頁尾聯絡資訊位置固定，每一檔活動只需替換圖文，就能快速發送，也維持品牌一致。')}
-      <div class="case-grid case-grid--3">
-        ${['Banner', 'GDN 廣告', 'DM'].map((t) => caseMedia({ alt: t, ratio: '223 / 262' })).join('')}
+      ${caseLabel('DM 設計 PRINT DM')}
+      ${caseMedia({ src: `${img}/dm-wall.jpg`, alt: '旅遊行程 DM 作品集錦', ratio: '1012 / 1454', fit: 'contain' })}
+      ${text('行程 DM 依目的地調整主視覺與字體氣氛，資訊區塊則固定為行程特色、出發日期、價格與頁尾聯絡資訊，讓業務拿到任何一張都能快速找到重點。')}
+      ${caseLabel('Banner・GDN 廣告')}
+      <div class="case-grid case-grid--2">
+        ${['Banner', 'GDN 廣告'].map((t) => caseMedia({ alt: t, ratio: '4 / 3' })).join('')}
       </div>
     `,
   },
