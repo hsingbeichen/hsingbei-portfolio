@@ -241,7 +241,7 @@
 .case-pager-band { background: var(--color-bg-surface); } /* full-width surface band between the last section and the footer */
 .case-pager-wrap {
   display: grid; grid-template-columns: minmax(var(--case-toc-min), var(--case-toc-col)) minmax(0, var(--case-content-width));
-  padding-block: var(--space-9);
+  padding-block: var(--space-8);
 }
 .case-pager-label {
   white-space: nowrap;
@@ -260,7 +260,7 @@
 }
 @media (max-width: 800px) {
   .case-body { padding-bottom: var(--space-7); }
-  .case-pager-wrap { padding-block: var(--space-8); }
+  .case-pager-wrap { padding-block: var(--space-7); }
   .case-pager-label { font-size: var(--text-caption); line-height: 1rem; letter-spacing: 0.02em; } /* ~10.5px at the mobile root size */
 }
 
@@ -318,7 +318,7 @@
   transform: scaleX(var(--progress, 0)); transform-origin: left;
 }
 
-.case-next { grid-column: 2; display: grid; gap: var(--space-4); }
+.case-next { grid-column: 2; display: grid; gap: var(--space-3); }
 .case-next-card {
   display: grid; grid-template-columns: 2fr 3fr; align-items: center;
   background: var(--color-bg-default); overflow: hidden; /* square card, light so it stands off the surface band */
