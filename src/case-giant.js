@@ -41,16 +41,19 @@ const sections = [
       ${text('舊版的 Banner 尺寸與風格不一、區塊之間沒有主次、文字密集難以掃讀。改版前我曾參與這個版本的局部調整，也因此確定：小修補解決不了根本問題，必須從架構重新規劃。')}
       ${text('新版在主視覺下方緊接搜尋列，團體旅遊、國際機票、機＋酒、航空自由行四種入口一次到位；往下的熱門國家、主題企劃、精選亞洲、口碑熱銷、特惠促銷，每一區都使用同一套「標題＋分類標籤＋卡片格線」，使用者學會一區，就看得懂每一區。「主題企劃」以品牌紅色帶包覆，讓長頁面有了節奏。')}
       <p class="case-note">思考方向：先解決「找行程」這個最主要的任務，再用可重複的區塊模式承載大量商品，讓網站能隨業務需求增減區塊，而不必重新設計。</p>
-      ${caseLabel('首頁大圖：改版前 → 改版後 HERO BANNER')}
+      ${caseLabel('首頁大圖規則 HERO BANNER RULES')}
       <div class="case-grid case-grid--2" style="align-items: start">
-        <div class="case-grid" style="margin-top: 0">
-          ${[1, 2].map((n) => caseMedia({ src: `${img}/hero-old-${n}.png`, alt: `改版前首頁大圖 ${n}`, ratio: '695 / 347' })).join('')}
-        </div>
-        <div class="case-grid" style="margin-top: 0">
-          ${[1, 2, 3].map((n) => caseMedia({ src: `${img}/hero-new-${n}.png`, alt: `改版後首頁大圖 ${n}`, ratio: n === 3 ? '761 / 396' : '761 / 380' })).join('')}
-        </div>
+        ${caseMedia({ src: `${img}/hero-old-1.png`, alt: '改版前首頁大圖', ratio: '695 / 347', caption: '改版前' })}
+        <figure class="case-media">
+          <div class="case-media-frame gt-rules" style="aspect-ratio: 761 / 380">
+            <img src="${img}/hero-new-1.png" alt="改版後首頁大圖：標出文字安全區與手機裁切範圍" />
+            <span class="gt-crop"><b>手機裁切</b></span>
+            <span class="gt-safe"><b>文字安全區</b></span>
+          </div>
+          <figcaption>改版後</figcaption>
+        </figure>
       </div>
-      ${text('兩個時期的大圖都是我設計的。改版前的大圖要同時塞進行程名稱、亮點條列與出發日期，左側還被選單蓋住；改版時我把其他資訊全部移除，只留一張主照片、一個標題與一行副標，細節交給下方的行程卡片——首圖變得乾淨，也更容易裁切成手機版。')}
+      ${text('大圖只放三樣東西：一張主照片、一個標題、一行副標。行程細節與出發日期全部移到下方的卡片；標題固定落在文字安全區內，裁切成手機版時也不會被切掉。')}
     `,
   },
   {

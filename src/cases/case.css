@@ -372,3 +372,16 @@ a.case-next-prev:hover svg { transform: translateX(-3px); }
   .case-next-tags { font-size: var(--text-caption); }
   .case-next-prev { justify-self: center; font-size: var(--text-caption); letter-spacing: 0.02em; }
 }
+
+/* Artisan Tour: rule overlay on a hero banner (safe text zone + mobile crop) */
+.gt-rules { position: relative; }
+.gt-rules > span { position: absolute; border: 1.5px dashed #fff; border-radius: 2px; pointer-events: none; }
+.gt-rules b {
+  position: absolute; left: 6px; top: 6px; padding: 1px 6px;
+  background: var(--color-accent-default); color: #fff; border-radius: var(--radius-pill);
+  font: var(--weight-medium) 11px / 16px var(--font-body);
+}
+.gt-crop { left: 38%; top: 0; width: 62%; height: 100%; background: rgb(255 255 255 / 0.08); }
+.gt-crop b { left: auto; right: 6px; }
+.gt-safe { left: 64%; top: 72%; width: 32%; height: 22%; border-color: #ffe14d; }
+.gt-safe b { top: -22px; left: 0; background: #ffe14d; color: var(--color-text-primary); }
