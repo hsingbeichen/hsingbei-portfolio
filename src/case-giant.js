@@ -148,7 +148,10 @@ const sections = [
   {
     id: 'more', num: '08', zh: '其他設計', en: 'MORE WORK',
     content: `
-      ${lead('在巨匠的四年，也負責日常的 Banner、GDN 廣告與 DM 設計。')}
+      ${lead('在巨匠的四年，也負責日常的 Banner、GDN 廣告、EDM 與 DM 設計。')}
+      ${caseLabel('EDM 公版 EDM TEMPLATE')}
+      ${caseScroll({ src: `${img}/edm.png`, alt: 'EDM 公版' })}
+      ${text('EDM 做成公版：主視覺、「推薦行程」雙欄卡片、黃色價格標籤與頁尾聯絡資訊位置固定，每一檔活動只需替換圖文，就能快速發送，也維持品牌一致。')}
       <div class="case-grid case-grid--3">
         ${['Banner', 'GDN 廣告', 'DM'].map((t) => caseMedia({ alt: t, ratio: '223 / 262' })).join('')}
       </div>
