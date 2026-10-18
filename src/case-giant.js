@@ -122,11 +122,20 @@ const sections = [
     `,
   },
   {
-    id: 'brand', num: '06', zh: '延伸到子品牌', toc: '子品牌', en: 'SUB-BRAND',
+    id: 'brand', num: '06', zh: '多品牌整合', toc: '多品牌整合', en: 'MULTI-BRAND',
     content: `
-      ${lead('同一套架構換上品牌色，就撐起了旗下另一個品牌「珍藏旅遊」。')}
+      ${lead('網站之外，我也整合了旗下三個品牌的 LOGO：巨匠旅遊、珍藏旅遊與新視界假期。')}
+      ${text('2019 年先為巨匠旅遊 LOGO 整理出基本比例、中英文字體與色彩規範（CMYK、RGB、色碼與 Pantone），再以同樣的邏輯調整珍藏旅遊與新視界假期的標誌：統一「字母圖形＋中文品名＋英文副名」的組合方式，並分別給予紅、紫、綠的品牌色，讓三個品牌既能各自辨識，放在一起時又看得出是同一個家族。')}
+      ${caseLabel('巨匠旅遊 LOGO 規範 BRAND GUIDE')}
+      ${caseMedia({ src: `${img}/logo-guide.png`, alt: '巨匠旅遊 LOGO 規範：比例、字體與色彩', ratio: '1122 / 746', fit: 'contain' })}
+      ${caseLabel('三品牌 LOGO 調整過程與定案 LOGO REFINE')}
+      <div class="case-grid" style="grid-template-columns: minmax(0, 428fr) minmax(0, 157fr); align-items: start">
+        ${caseMedia({ src: `${img}/logo-versions.png`, alt: '三品牌 LOGO 版本演進與配色', ratio: '428 / 312', fit: 'contain', caption: '調整過程' })}
+        ${caseMedia({ src: `${img}/logo-final.png`, alt: '三品牌 LOGO 定案', ratio: '157 / 126', fit: 'contain', caption: '定案' })}
+      </div>
+      ${caseLabel('延伸到子品牌網站：珍藏旅遊 SUB-BRAND SITE')}
+      ${text('同一套網站架構換上品牌色，也撐起了「珍藏旅遊」的網站。')}
       ${text('主視覺加分頁籤、附英文副標的區塊標題、卡片格線與頁尾，結構與巨匠旅遊一致；換成珍藏旅遊的紫色與內容配置，也一併規劃了手機版。前三張是主視覺下方分頁切換時的內容變化。')}
-      ${caseLabel('珍藏旅遊：分頁切換示意與手機版 TREASURE TRAVEL')}
       <div class="case-grid" style="grid-template-columns: repeat(3, minmax(0, 1fr)) minmax(0, 0.4fr); align-items: start">
         ${[1, 2, 3].map((n) => caseMedia({ src: `${img}/treasure-tab-${n}.png`, alt: `珍藏旅遊分頁切換 ${n}`, ratio: n === 1 ? '248 / 562' : '248 / 636', fit: 'contain' })).join('')}
         ${caseMedia({ src: `${img}/treasure-mobile.png`, alt: '珍藏旅遊手機版', ratio: '84 / 480', fit: 'contain' })}
