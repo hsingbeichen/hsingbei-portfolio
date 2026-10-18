@@ -52,8 +52,8 @@ const sections = [
   {
     id: 'pages', num: '04', zh: '內頁架構', en: 'SITE STRUCTURE',
     content: `
-      ${lead('首頁之下，行程分成兩層：大館是地區（如東歐），小館是子地區（如克羅埃西亞・巴爾幹）。三層頁面共用同一套元件，使用者從哪一層進來都不會迷路。')}
-      ${steps(['首頁', '大館：地區', '小館：子地區'])}
+      ${lead('首頁之下，行程分成三層：大館是地區（如東歐），小館是子地區（如克羅埃西亞・巴爾幹），最後是單一行程頁。每一層共用同一套元件，使用者從哪一層進來都不會迷路。')}
+      ${steps(['首頁', '大館：地區', '小館：子地區', '行程頁'])}
       ${caseLabel('大館：改版前 → 改版後 REGION PAGE')}
       <div class="case-grid case-grid--2">
         ${caseScroll({ src: `${img}/region-before.png`, alt: '大館改版前（東歐）', caption: '改版前' })}
@@ -67,6 +67,14 @@ const sections = [
         ${phone(`${img}/area-mobile.png`, '小館（克羅埃西亞・巴爾幹）手機版')}
       </div>
       ${text('左側標出所在地區與「更多相鄰旅遊專區」，可以直接跳到鄰近的子地區；精選行程卡片以色塊標籤區分巨匠旅遊、珍藏旅遊、新視界假期等旗下品牌。')}
+      ${caseLabel('行程頁：特色內頁 改版前 → 改版後 TOUR PAGE')}
+      <div class="case-grid" style="grid-template-columns: 160px minmax(0, 1fr) 160px; align-items: start">
+        ${phone(`${img}/trip-before.png`, '改版前的行程特色內頁（整張長圖）')}
+        ${caseScroll({ src: `${img}/trip-desktop.png`, alt: '改版後行程頁（電腦版）', caption: '改版後（電腦版）' })}
+        ${phone(`${img}/trip-mobile.png`, '改版後行程頁（手機版）')}
+      </div>
+      ${text('改版前，行程的特色介紹是一整張設計好的長圖：文字做在圖裡，手機上只能縮小看、搜尋引擎讀不到，每次修改都得重新出圖。')}
+      ${text('改版後拆成可重複使用的區塊：出發日曆與價格、航班資訊、行程地圖、特別企劃影片、行程重點、景點介紹卡片，文字都是真正的網頁文字，手機上自動改為單欄，也讓行程人員能直接更新內容。')}
       ${caseLabel('會員：註冊與會員中心 MEMBER')}
       <div class="case-grid" style="grid-template-columns: minmax(0, 1fr) 160px; align-items: start">
         ${caseScroll({ src: `${img}/member-join.png`, alt: '加入會員頁（電腦版）', caption: '加入會員' })}
