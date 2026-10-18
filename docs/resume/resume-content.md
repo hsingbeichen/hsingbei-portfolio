@@ -11,8 +11,8 @@ zingbay0624@gmail.com ｜ hsingbeichen.github.io/hsingbei-portfolio
 （旁邊放 QR code：portfolio-qr-black.svg 或 portfolio-qr-teal.svg，至少 2×2 cm）
 
 **將設計從「好看」延伸到「真正能被使用」**
-9 年以上視覺設計經驗，專長涵蓋品牌視覺、數位行銷、網站與 UI，具備從視覺概念、介面規劃到前端實作的跨域能力。
-曾獨立規劃旅行社官網整站架構與 RWD，沿用至今；並曾擔任設計主任，帶領 6–8 人團隊。
+9 年以上視覺設計經驗，橫跨品牌、數位行銷、網站與 UI，能從視覺概念、介面規劃一路做到前端實作。
+曾獨立規劃旅行社官網整站架構與 RWD，沿用至今；並曾任設計主任，帶領 6–8 人團隊。
 現以 Design-to-Code 工作流程，將設計直接落實為網頁。
 
 ---
