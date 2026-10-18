@@ -124,7 +124,7 @@ const sections = [
   {
     id: 'brand', num: '06', zh: '多品牌整合', toc: '多品牌整合', en: 'MULTI-BRAND',
     content: `
-      ${lead('網站之外，我也整合了旗下三個品牌的 LOGO：巨匠旅遊、珍藏旅遊與新視界假期。')}
+      ${lead('網站之外，我也整合了旗下三個品牌的 LOGO：巨匠旅遊、珍藏旅遊（前身為典藏旅遊 LUXE TRAVEL）與新視界假期。')}
       ${text('2019 年先為巨匠旅遊 LOGO 整理出基本比例、中英文字體與色彩規範（CMYK、RGB、色碼與 Pantone），再以同樣的邏輯調整珍藏旅遊與新視界假期的標誌：統一「字母圖形＋中文品名＋英文副名」的組合方式，並分別給予紅、紫、綠的品牌色，讓三個品牌既能各自辨識，放在一起時又看得出是同一個家族。')}
       ${caseLabel('巨匠旅遊 LOGO 規範 BRAND GUIDE')}
       ${caseMedia({ src: `${img}/logo-guide.png`, alt: '巨匠旅遊 LOGO 規範：比例、字體與色彩', ratio: '1122 / 746', fit: 'contain' })}
@@ -167,7 +167,7 @@ const sections = [
       ${caseLabel('雜誌廣告 MAGAZINE ADS')}
       <div class="case-grid" style="grid-template-columns: minmax(0, 704fr) minmax(0, 1034fr); align-items: start">
         ${caseMedia({ src: `${img}/mag-1.png`, alt: '雜誌廣告：2019 英俄軍樂節盛典', ratio: '704 / 852', fit: 'contain', caption: '單頁' })}
-        ${caseMedia({ src: `${img}/mag-2.png`, alt: '雜誌廣告：2019 世界花季之旅（巨匠旅遊 × 典藏旅遊）', ratio: '1034 / 634', fit: 'contain', caption: '跨頁' })}
+        ${caseMedia({ src: `${img}/mag-2.png`, alt: '雜誌廣告：2019 世界花季之旅（巨匠旅遊 × 典藏旅遊）', ratio: '1034 / 634', fit: 'contain', caption: '跨頁（巨匠旅遊 × 典藏旅遊，後更名為珍藏旅遊）' })}
       </div>
       ${caseLabel('臉書廣告 FACEBOOK ADS')}
       <div class="case-grid" style="grid-template-columns: repeat(4, minmax(0, 1fr))">
