@@ -324,11 +324,12 @@
   background: var(--color-bg-default); overflow: hidden; /* square card, light so it stands off the surface band */
 }
 .case-next-cover { align-self: stretch; aspect-ratio: 4 / 3; overflow: hidden; background: var(--color-border-default); }
-.case-next-cover img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--motion-transition), filter var(--motion-transition); }
-/* Mouse only: the cover rests muted and comes back to full colour on hover (touch screens keep full colour) */
+.case-next-cover { position: relative; }
+.case-next-cover img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--motion-transition); }
+/* Mouse only: a 40% black veil dims the cover until hover (touch screens show it unveiled) */
 @media (hover: hover) {
-  .case-next-cover img { filter: saturate(0.25); }
-  a.case-next-card:hover .case-next-cover img, a.case-next-card:focus-visible .case-next-cover img { filter: none; }
+  .case-next-cover::after { content: ''; position: absolute; inset: 0; background: rgb(0 0 0 / 0.4); transition: opacity var(--motion-transition); pointer-events: none; }
+  a.case-next-card:hover .case-next-cover::after, a.case-next-card:focus-visible .case-next-cover::after { opacity: 0; }
 }
 .case-next-text { display: flex; flex-direction: column; gap: var(--space-1); padding: var(--space-4) var(--space-5); }
 .case-next-title {
