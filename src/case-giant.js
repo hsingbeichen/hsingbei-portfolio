@@ -157,13 +157,18 @@ const sections = [
   {
     id: 'more', num: '08', zh: '其他設計', en: 'MORE WORK',
     content: `
-      ${lead('在巨匠的四年，也負責日常的 Banner、GDN 廣告、EDM 與 DM 設計。')}
+      ${lead('在巨匠的四年，也負責日常的 Banner、GDN 與臉書廣告、EDM 與 DM 設計。')}
       ${caseLabel('EDM 公版 EDM TEMPLATE')}
       ${caseScroll({ src: `${img}/edm.png`, alt: 'EDM 公版' })}
       ${text('EDM 做成公版：主視覺、「推薦行程」雙欄卡片、黃色價格標籤與頁尾聯絡資訊位置固定，每一檔活動只需替換圖文，就能快速發送，也維持品牌一致。')}
       ${caseLabel('DM 設計 PRINT DM')}
       ${caseMedia({ src: `${img}/dm-wall.jpg`, alt: '旅遊行程 DM 作品集錦', ratio: '1012 / 1454', fit: 'contain' })}
       ${text('行程 DM 依目的地調整主視覺與字體氣氛，資訊區塊則固定為行程特色、出發日期、價格與頁尾聯絡資訊，讓業務拿到任何一張都能快速找到重點。')}
+      ${caseLabel('臉書廣告 FACEBOOK ADS')}
+      <div class="case-grid" style="grid-template-columns: repeat(4, minmax(0, 1fr))">
+        ${[1, 2, 3, 4].map((n) => caseMedia({ src: `${img}/fb-${n}.png`, alt: `臉書廣告 ${n}`, ratio: '1 / 1' })).join('')}
+      </div>
+      ${caseMedia({ src: `${img}/fb-carousel.png`, alt: '臉書輪播廣告（北境行程）', ratio: '554 / 110', caption: '輪播廣告' })}
       ${caseLabel('Banner・GDN 廣告')}
       <div class="case-grid case-grid--2">
         ${['Banner', 'GDN 廣告'].map((t) => caseMedia({ alt: t, ratio: '4 / 3' })).join('')}
