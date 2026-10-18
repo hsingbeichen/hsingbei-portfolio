@@ -28,7 +28,7 @@ zingbay0624@gmail.com ｜ hsingbeichen.github.io/hsingbei-portfolio
 - 以 Figma 建立活動頁共用元件（Component），從同一組元件延展 Web／Mobile 活動頁與各尺寸 Banner，修改母版即同步更新，維持視覺一致並加快製作
 
 **Product GDN System｜2023.12 – 2026.07**
-- 負責商品型 GDN，與主管討論後逐步統整為台灣、香港、新馬三站模板系統，以「活動背景 × 按鈕色 × 商品價目」模組化組合，涵蓋多活動與商品類別，依市場統整交付
+- 負責商品型 GDN，與主管討論後逐步統整為台灣、香港、新馬三站模板系統，以 Figma 元件將「活動背景 × 按鈕色 × 商品價目」模組化組合，涵蓋多活動與商品類別，依市場統整交付
 - 2026.07 全數交接，專注網站設計還原與前端優化
 
 **Web & Front-end｜2026.07 – Present**
