@@ -74,6 +74,13 @@ const sections = [
       </div>
       ${caseMedia({ src: `${img}/member-center.png`, alt: '會員中心', ratio: '320 / 284', caption: '會員中心' })}
       ${text('會員頁沿用同一套頁首、表單欄位與「熱門行程」區塊；下方的紅利積點說明以分頁切換參加方式、兌換辦法等內容，避免一次把所有規則攤開。')}
+      ${caseLabel('其他內頁：企業專區、我的訂單 MORE PAGES')}
+      <div class="case-grid" style="grid-template-columns: minmax(0, 1fr) 110px; align-items: start">
+        ${caseScroll({ src: `${img}/corporate-desktop.png`, alt: '企業專區（電腦版）', caption: '企業專區' })}
+        ${phone(`${img}/corporate-mobile.png`, '企業專區（手機版）')}
+        ${caseScroll({ src: `${img}/order-desktop.png`, alt: '我的訂單（電腦版）', caption: '我的訂單' })}
+        ${phone(`${img}/order-mobile.png`, '我的訂單（手機版）')}
+      </div>
     `,
   },
   {
