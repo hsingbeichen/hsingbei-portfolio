@@ -146,6 +146,8 @@
 }
 .case-media-frame img { width: 100%; height: 100%; }
 .case-media-frame.is-bare { background: none; border-radius: 0; } /* transparent artwork sits on the page colour */
+/* Thumbnail wall: show the top of each page */
+.case-thumbs .case-media-frame img { object-position: top; }
 /* Tall page screenshot: scrolls inside a fixed-height frame */
 .case-scroll { display: block; max-height: var(--case-scroll-height, 480px); overflow-y: auto; overscroll-behavior: contain; background: #ffffff; }
 .case-scroll img { display: block; height: auto; }
