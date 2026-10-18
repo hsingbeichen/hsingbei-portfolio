@@ -78,8 +78,8 @@ const sections = [
       ${text('忘記密碼以彈窗呈現，使用者不必離開正在看的頁面；彈窗底部同時放上「還不是會員嗎？立即註冊」，把找不到帳號的人順勢帶往加入會員。')}
       ${caseLabel('產品專頁：兩人成行、國際機票 PRODUCT PAGES')}
       <div class="case-grid case-grid--2">
-        ${caseScroll({ src: `${img}/mini-tour.png`, alt: '兩人成行 MINI TOUR 產品專頁', caption: '兩人成行' })}
-        ${caseScroll({ src: `${img}/air-ticket.png`, alt: '國際機票 AIR TICKET 產品專頁', caption: '國際機票' })}
+        ${caseScroll({ src: `${img}/mini-tour.png`, alt: '兩人成行 MINI TOUR 產品專頁', caption: '兩人成行（設計稿示意）' })}
+        ${caseScroll({ src: `${img}/air-ticket.png`, alt: '國際機票 AIR TICKET 產品專頁', caption: '國際機票（設計稿示意）' })}
       </div>
       ${text('「兩人成行」以主視覺文案說明賣點，「快速熱搜」用分類標籤切換海島、古文明等主題，搭配大小交錯的目的地拼貼；「國際機票」把查詢表單直接放進主視覺，以分頁切換國際機票與機＋酒，下方再用「推薦行程／優惠行程」分頁延伸。版面依產品個性調整，頁首、麵包屑、卡片與頁尾仍沿用同一套系統。')}
       ${caseLabel('其他內頁：企業專區、我的訂單 MORE PAGES')}
