@@ -76,6 +76,9 @@ const sections = [
       ${caseMedia({ src: `${img}/forgot-password.png`, alt: '忘記密碼彈窗', ratio: '1795 / 874', caption: '忘記密碼' })}
       ${text('會員頁沿用同一套頁首、表單欄位與「熱門行程」區塊；下方的紅利積點說明以分頁切換參加方式、兌換辦法等內容，避免一次把所有規則攤開。')}
       ${text('忘記密碼以彈窗呈現，使用者不必離開正在看的頁面；彈窗底部同時放上「還不是會員嗎？立即註冊」，把找不到帳號的人順勢帶往加入會員。')}
+      ${caseLabel('產品專頁：兩人成行 MINI TOUR')}
+      ${caseScroll({ src: `${img}/mini-tour.png`, alt: '兩人成行 MINI TOUR 產品專頁' })}
+      ${text('「兩人成行」是兩人即可出發的產品線，專頁以主視覺文案說明賣點，「快速熱搜」用分類標籤切換海島、古文明等主題，搭配大小交錯的目的地拼貼；頁首、麵包屑與頁尾仍沿用同一套系統。')}
       ${caseLabel('其他內頁：企業專區、我的訂單 MORE PAGES')}
       <div class="case-grid" style="grid-template-columns: minmax(0, 1fr) 110px; align-items: start">
         ${caseScroll({ src: `${img}/corporate-desktop.png`, alt: '企業專區（電腦版）', caption: '企業專區' })}
