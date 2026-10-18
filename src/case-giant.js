@@ -1,4 +1,4 @@
-import { IMG, BACK_WORK, header, footer, initLayout } from './shared/layout.js'
+import { BASE, IMG, BACK_WORK, header, footer, initLayout, pillInner } from './shared/layout.js'
 import { text, lead, caseHero, caseBody, caseLabel, caseMedia, caseScroll, casePager, initCaseToc } from './cases/case.js'
 import { pagerFor } from './shared/works.js'
 
@@ -136,7 +136,10 @@ const sections = [
           ['order-desktop', '我的訂單'],
         ].map(([f, t]) => caseMedia({ src: `${img}/${f}.png`, alt: t, ratio: '4 / 3', caption: t })).join('')}
       </div>
-      ${text('同時期的 DM、雜誌與社群廣告等平面作品，收錄在首頁的「其他作品」。')}
+      <div class="case-more-link">
+        ${text('同時期的 DM、雜誌與社群廣告等平面作品，收錄在首頁的「其他作品」。')}
+        <a class="pill-btn pill-btn--wide" href="${BASE}#other-works">${pillInner('看其他作品')}</a>
+      </div>
     `,
   },
 ]
