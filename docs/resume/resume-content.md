@@ -23,7 +23,7 @@ zingbay0624@gmail.com ｜ hsingbeichen.github.io/hsingbei-portfolio
 2021.01 – Present
 負責跨境電商網站的視覺與數位行銷素材，服務台灣、香港、馬來西亞、新加坡等市場；工作範圍涵蓋網站活動、廣告、UI 及前端頁面優化，並與前端及相關團隊協作完成數位專案。
 
-**Campaign Visual｜2021 – 2025**
+**Campaign Visual｜2021.01 – 2025.11**
 - 每月主導 5–6 檔電商活動，從 KV 延伸至台港雙站活動頁（Web／Mobile）、Banner、GDN、社群廣告與印刷物，單檔約 30+ 尺寸
 
 **Product GDN System｜2023.12 – 2026.07**
