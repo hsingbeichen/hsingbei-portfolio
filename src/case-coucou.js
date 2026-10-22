@@ -51,11 +51,10 @@ const sections = [
         <p class="cc-kicker"><strong>100 DAYS</strong><span>完成百日創作挑戰</span></p>
         ${social(IG_HAND, '@hellohellobeibei')}
       </div>
-      <div class="cc-grid cc-grid--4 cc-grid--tall">
-        ${cell({ alt: '百日挑戰作品 1' })}
-        ${cell({ alt: '百日挑戰作品 2' })}
-        ${cell({ alt: '百日挑戰作品 3' })}
-        ${cell({ src: `${img}/pug.jpg`, alt: '百日挑戰作品：巴哥' })}
+      <div class="cc-grid cc-grid--3 cc-grid--wide">
+        ${cell({ src: `${img}/hundred-1.jpg`, alt: '百日挑戰作品：叼著金魚的貓' })}
+        ${cell({ src: `${img}/hundred-2.jpg`, alt: '百日挑戰作品：貓與小烏龜' })}
+        ${cell({ src: `${img}/hundred-3.jpg`, alt: '百日挑戰作品：小獅子' })}
       </div>
       ${caseLabel('參賽作品 COMPETITION')}
       <figure class="cc-competition"><img src="${img}/competition.jpg" alt="參賽作品《無聲的盟約》" loading="lazy" /></figure>
