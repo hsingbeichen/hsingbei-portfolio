@@ -51,6 +51,11 @@ const sections = [
         <p class="cc-kicker"><strong>100 DAYS</strong><span>完成百日創作挑戰</span></p>
         ${social(IG_HAND, '@hellohellobeibei')}
       </div>
+      <p class="cc-stage">初期：從身邊的毛孩開始</p>
+      <div class="cc-grid cc-grid--3 cc-grid--portrait">
+        ${[1, 2, 3, 4, 5, 6].map((n) => cell({ src: `${img}/portrait-${n}.jpg`, alt: `百日挑戰初期：寵物肖像 ${n}` })).join('')}
+      </div>
+      <p class="cc-stage">後期：開始規劃畫面與場景</p>
       <div class="cc-grid cc-grid--3 cc-grid--wide">
         ${cell({ src: `${img}/hundred-1.jpg`, alt: '百日挑戰作品：叼著金魚的貓' })}
         ${cell({ src: `${img}/hundred-2.jpg`, alt: '百日挑戰作品：貓與小烏龜' })}
