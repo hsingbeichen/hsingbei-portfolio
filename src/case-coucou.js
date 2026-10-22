@@ -53,16 +53,16 @@ const sections = [
       </div>
       <p class="cc-stage">初期：從身邊的毛孩開始</p>
       <div class="cc-grid cc-grid--3 cc-grid--portrait">
-        ${[1, 2, 3, 4, 5, 6].map((n) => cell({ src: `${img}/hundred-days-portrait-${n}.jpg`, alt: `百日挑戰初期：寵物肖像 ${n}` })).join('')}
+        ${[1, 2, 3, 4, 5, 6].map((n) => cell({ src: `${img}/hand-drawn-portrait-0${n}.jpg`, alt: `百日挑戰初期：寵物肖像 ${n}` })).join('')}
       </div>
       <p class="cc-stage">後期：開始規劃畫面與場景</p>
       <div class="cc-grid cc-grid--3 cc-grid--wide">
-        ${cell({ src: `${img}/hundred-days-cat-goldfish.jpg`, alt: '百日挑戰作品：叼著金魚的貓' })}
-        ${cell({ src: `${img}/hundred-days-cat-turtle.jpg`, alt: '百日挑戰作品：貓與小烏龜' })}
-        ${cell({ src: `${img}/hundred-days-lion-cub.jpg`, alt: '百日挑戰作品：小獅子' })}
+        ${cell({ src: `${img}/hand-drawn-scene-cat-goldfish.jpg`, alt: '百日挑戰作品：叼著金魚的貓' })}
+        ${cell({ src: `${img}/hand-drawn-scene-cat-turtle.jpg`, alt: '百日挑戰作品：貓與小烏龜' })}
+        ${cell({ src: `${img}/hand-drawn-scene-lion-cub.jpg`, alt: '百日挑戰作品：小獅子' })}
       </div>
       ${caseLabel('參賽作品 COMPETITION')}
-      <figure class="cc-competition"><img src="${img}/competition.jpg" alt="參賽作品《無聲的盟約》" loading="lazy" /></figure>
+      <figure class="cc-competition"><img src="${img}/hand-drawn-competition.jpg" alt="參賽作品《無聲的盟約》" loading="lazy" /></figure>
       <div class="cc-entry">
         <div>
           <p class="cc-entry-title"><strong>無聲的盟約</strong>A WORDLESS PROMISE</p>
@@ -72,11 +72,11 @@ const sections = [
         </div>
         <figure>
           <figcaption>參賽頁面截圖・2026.10</figcaption>
-          <img src="${img}/competition-page.jpg" alt="COPIC AWARD 參賽頁面截圖" loading="lazy" />
+          <img src="${img}/hand-drawn-competition-page.jpg" alt="COPIC AWARD 參賽頁面截圖" loading="lazy" />
         </figure>
       </div>
       <div class="cc-grid cc-grid--4 cc-grid--square cc-grid--flush">
-        ${[1, 2, 3, 4].map((n) => cell({ src: `${img}/competition-${n}.jpg`, alt: `參賽作品細節 ${n}` })).join('')}
+        ${[1, 2, 3, 4].map((n) => cell({ src: `${img}/hand-drawn-competition-detail-0${n}.jpg`, alt: `參賽作品細節 ${n}` })).join('')}
       </div>
     `,
   },
@@ -92,9 +92,9 @@ const sections = [
       </ol>
       ${caseLabel('這幾個月的風格琢磨 STYLE・2026.07 – 08')}
       <div class="cc-grid cc-grid--3 cc-grid--captioned">
-        ${cell({ src: `${img}/style-1.jpg`, alt: '第一張完整電繪', caption: '2026.07.17・第一張完整電繪' })}
-        ${cell({ src: `${img}/style-2.jpg`, alt: '雨 & 虹', caption: '2026.08.01・雨 & 虹' })}
-        ${cell({ src: `${img}/style-3.jpg`, alt: '雨 & 虹', caption: '2026.08.01・雨 & 虹' })}
+        ${cell({ src: `${img}/shift-digital-01.jpg`, alt: '第一張完整電繪', caption: '2026.07.17・第一張完整電繪' })}
+        ${cell({ src: `${img}/shift-digital-02.jpg`, alt: '雨 & 虹', caption: '2026.08.01・雨 & 虹' })}
+        ${cell({ src: `${img}/shift-digital-03.jpg`, alt: '雨 & 虹', caption: '2026.08.01・雨 & 虹' })}
       </div>
       <div class="cc-head">
         <p class="cc-kicker cc-kicker--label"><strong>用角色說故事 COUCOU FRIENDS</strong><span>2026 年新創的角色，每個角色都是各自故事的主角。</span></p>
@@ -102,21 +102,21 @@ const sections = [
       </div>
       <p class="cc-bar-label">Tiny friends. Big feelings. 一起調皮、一起玩耍的人生夥伴</p>
       <div class="cc-chars">
-        ${character({ name: 'Chouchou', note: '在法文裡是被捧在手心的寶貝', desc: '粉紅垂耳的小兔子，活潑有活力，精力用不完，偶爾也會氣呼呼。牠總是第一個對路過的人說 coucou。', src: `${img}/chouchou-doudou.gif` })}
+        ${character({ name: 'Chouchou', note: '在法文裡是被捧在手心的寶貝', desc: '粉紅垂耳的小兔子，活潑有活力，精力用不完，偶爾也會氣呼呼。牠總是第一個對路過的人說 coucou。', src: `${img}/shift-character-chouchou-doudou.gif` })}
         ${character({ name: 'DouDou', note: '在法文裡是讓人安心的陪伴', desc: '米黃色的狗狗，是 Chouchou 的人生夥伴。穩定、不急，陪在旁邊，用不一樣的視角看同一個世界。' })}
       </div>
       <div class="cc-chars">
-        ${character({ name: '雨・Rain', desc: '討厭下雨，卻比誰都還愛掉眼淚。', src: `${img}/rain.png` })}
+        ${character({ name: '雨・Rain', desc: '討厭下雨，卻比誰都還愛掉眼淚。', src: `${img}/shift-character-rain.png` })}
         ${character({ name: '虹・Bow', desc: '理性的樂天派。喜歡下雨天，相信雨後一定有彩虹。' })}
       </div>
       <p class="cc-bar-label">老朋友・賓賓（賓士貓）・麥克筆 2025.05 OLD FRIEND</p>
       <figure class="case-media cc-bin">
-        <div class="case-media-frame" style="aspect-ratio:602 / 426"><img src="${img}/bin-handdrawn.jpg" alt="手繪時期的賓賓" loading="lazy" /></div>
+        <div class="case-media-frame" style="aspect-ratio:602 / 426"><img src="${img}/shift-bin-handdrawn.jpg" alt="手繪時期的賓賓" loading="lazy" /></div>
         <figcaption>手繪時期的賓賓，之後也會以新的樣子，和新朋友們一起回來。</figcaption>
       </figure>
       ${caseLabel('數位版的樣子 DIGITAL')}
       <div class="cc-grid cc-grid--3 cc-grid--captioned">
-        ${cell({ src: `${img}/bin-digital.gif`, alt: '數位版的賓賓', fit: 'contain' })}
+        ${cell({ src: `${img}/shift-bin-digital.gif`, alt: '數位版的賓賓', fit: 'contain' })}
         ${cell({ alt: '數位版的賓賓 2' })}
         ${cell({ alt: '數位版的賓賓 3' })}
       </div>
@@ -127,7 +127,7 @@ const sections = [
     content: `
       ${lead('把日常小事，畫成一個個有溫度的場景。')}
       <div class="cc-grid cc-grid--3 cc-grid--scene">
-        ${[1, 2, 3, 4, 5, 6, 7].map((n) => cell({ src: `${img}/scene-${n}.jpg`, alt: `場景插畫 ${n}` })).join('')}
+        ${[1, 2, 3, 4, 5, 6, 7].map((n) => cell({ src: `${img}/scenes-0${n}.jpg`, alt: `場景插畫 ${n}` })).join('')}
         ${cell({ alt: '場景插畫 8' })}
         ${cell({ alt: '場景插畫 9' })}
       </div>
@@ -138,19 +138,19 @@ const sections = [
     content: `
       ${lead('讓角色動起來，也成為可以傳出去的表情。')}
       <div class="cc-grid cc-grid--3 cc-grid--captioned cc-grid--scene">
-        ${cell({ video: `${img}/anim-rainbow.mp4`, alt: '逐格動畫：雨與虹', caption: '逐格動畫' })}
-        ${cell({ video: `${img}/anim-2.mp4`, alt: '逐格動畫', caption: '逐格動畫' })}
-        ${cell({ video: `${img}/anim-3.mp4`, alt: 'GIF 貼圖', caption: 'GIF & 貼圖' })}
+        ${cell({ video: `${img}/gifs-anim-rainbow.mp4`, alt: '逐格動畫：雨與虹', caption: '逐格動畫' })}
+        ${cell({ video: `${img}/gifs-anim-02.mp4`, alt: '逐格動畫', caption: '逐格動畫' })}
+        ${cell({ video: `${img}/gifs-anim-03.mp4`, alt: 'GIF 貼圖', caption: 'GIF & 貼圖' })}
       </div>
       ${caseLabel('製作過程 MAKING OF')}
-      ${caseMedia({ src: `${img}/making-of.jpg`, alt: '在 Procreate 製作逐格動畫', ratio: '603 / 162', caption: '用 Procreate 做逐格動畫・以每個貼圖的動作構想需要的影格數・每一格都是手畫' })}
+      ${caseMedia({ src: `${img}/gifs-making-of.jpg`, alt: '在 Procreate 製作逐格動畫', ratio: '603 / 162', caption: '用 Procreate 做逐格動畫・以每個貼圖的動作構想需要的影格數・每一格都是手畫' })}
       <div class="cc-grid cc-grid--5 cc-grid--sticker">
-        ${cell({ src: `${img}/gif-1.gif`, alt: '貼圖 GIF 1', fit: 'contain' })}
-        ${cell({ src: `${img}/gif-2.gif`, alt: '貼圖 GIF 2', fit: 'contain' })}
-        ${cell({ src: `${img}/bin-digital.gif`, alt: '貼圖 GIF 3', fit: 'contain' })}
-        ${cell({ src: `${img}/chouchou-doudou.gif`, alt: '貼圖 GIF 4', fit: 'contain' })}
-        ${cell({ video: `${img}/anim-5.mp4`, alt: '貼圖動畫 5' })}
-        ${cell({ video: `${img}/anim-1.mp4`, alt: '貼圖動畫 6' })}
+        ${cell({ src: `${img}/gifs-sticker-01.gif`, alt: '貼圖 GIF 1', fit: 'contain' })}
+        ${cell({ src: `${img}/gifs-sticker-02.gif`, alt: '貼圖 GIF 2', fit: 'contain' })}
+        ${cell({ src: `${img}/shift-bin-digital.gif`, alt: '貼圖 GIF 3', fit: 'contain' })}
+        ${cell({ src: `${img}/shift-character-chouchou-doudou.gif`, alt: '貼圖 GIF 4', fit: 'contain' })}
+        ${cell({ video: `${img}/gifs-anim-05.mp4`, alt: '貼圖動畫 5' })}
+        ${cell({ video: `${img}/gifs-anim-01.mp4`, alt: '貼圖動畫 6' })}
         ${cell({})}${cell({})}${cell({})}${cell({})}
       </div>
       <div class="cc-stats">

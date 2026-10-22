@@ -28,4 +28,4 @@
 - 類別變 5 類 → 首頁放哪 4 張（或改 5 張／6 張）
 - 現在先用網站風格做，還是等使用者 Figma 版面
 - 素材：大／小館大圖、樂淘活動頁／KV／GDN／社群／印刷（使用者在找）
-- 已有素材（public/images/giant）：dm-wall.jpg、edm.png、mag-1/2、fb-1~4、fb-carousel、hero-new-1~3、hero-old-1~2
+- 已有素材（public/images/giant）：print-dm-wall.jpg、print-edm.png、print-magazine-01/02、social-fb-01~04、social-fb-carousel、home-banner-after-01~03、home-banner-before-01~02

@@ -75,7 +75,7 @@
 ## EDM 公版（放 08 其他設計）
 - 主視覺＋「推薦行程」2×2 卡片＋黃色價格膠囊＋「更多旅遊資訊」＋紅色頁尾；每檔只換圖文
 
-## DM（放 08）— 13 張行程 DM 集錦（dm-wall.jpg）
+## DM（放 08）— 13 張行程 DM 集錦（print-dm-wall.jpg）
 - 依目的地換主視覺與字體氣氛；資訊區塊固定：行程特色、出發日期、價格、頁尾聯絡（「讓業務快速找到重點」為推測）
 
 ## LOGO 整合（2019.08.16，放 06 多品牌整合）
@@ -108,5 +108,5 @@
 ## 主視覺（2026-10-18 討論中）
 - 方向：1＋2 結合 → 前景筆電＋手機（改版後首頁），背景淡淡的改版前首頁
 - 兩版：A 背景滿版淡化；B 整頁舊版斜放左側漸淡（Claude 推薦 B）
-- 模擬檔：docs/mockups/giant-hero.html（目前為 B；圖片路徑需放 after-desktop.png / after-mobile.png / before.png 同資料夾）
+- 模擬檔：docs/mockups/giant-hero.html（目前為 B；圖片路徑需放 home-after-desktop.png / home-after-mobile.png / home-before.png 同資料夾）
 - 使用者會提供高像素原圖：改版後電腦版、手機版、改版前首頁
