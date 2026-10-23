@@ -22,14 +22,27 @@
 .cc-grid--tall .cc-cell-frame { aspect-ratio: 143 / 194; }
 .cc-grid--wide .cc-cell-frame { aspect-ratio: 268 / 194; }
 .cc-grid--portrait .cc-cell-frame { aspect-ratio: 230 / 306; }
-/* One big portrait + two stacked landscapes, filling the 603 column at equal height.
-   Column ratio comes from the art: portrait 985:1400, landscapes 268:194, 8px gaps. */
-.cc-feature { grid-template-columns: 303fr 292fr; }
-.cc-feature > .cc-cell:first-child { grid-row: span 2; }
-.cc-feature > .cc-cell:first-child .cc-cell-frame { aspect-ratio: auto; height: 100%; }
-.cc-feature > .cc-cell:not(:first-child) .cc-cell-frame { aspect-ratio: 268 / 194; }
+/* Early pets: cutouts on the page colour, bottoms aligned; column widths come from each
+   cutout's ratio so the row fills 603 (the lying cat is drawn smaller) */
+.cc-pets { display: grid; grid-template-columns: 117fr 81fr 133fr 115fr 125fr; gap: var(--space-2); align-items: end; margin-top: var(--space-2); }
+.cc-pets img { display: block; width: 100%; height: auto; }
+/* Later scenes: big portrait | two stacked landscapes | two stacked portraits, all one height.
+   Widths from the art: portrait 985:1400, landscapes 268:194, 8px gaps */
+.cc-feature { grid-template-columns: 240fr 230fr 118fr; }
+.cc-feature > .cc-cell:nth-child(1) { grid-column: 1; grid-row: 1 / span 2; }
+.cc-feature > .cc-cell:nth-child(2) { grid-column: 2; grid-row: 1; }
+.cc-feature > .cc-cell:nth-child(3) { grid-column: 2; grid-row: 2; }
+.cc-feature > .cc-cell:nth-child(4) { grid-column: 3; grid-row: 1; }
+.cc-feature > .cc-cell:nth-child(5) { grid-column: 3; grid-row: 2; }
+.cc-feature > .cc-cell:nth-child(1) .cc-cell-frame,
+.cc-feature > .cc-cell:nth-child(n+4) .cc-cell-frame { aspect-ratio: auto; height: 100%; position: relative; }
+/* Images that fill a stretched cell don't size the row: the landscapes set it */
+.cc-feature > .cc-cell:nth-child(1) .cc-cell-frame img,
+.cc-feature > .cc-cell:nth-child(n+4) .cc-cell-frame img { position: absolute; inset: 0; }
+.cc-feature > .cc-cell:nth-child(2) .cc-cell-frame,
+.cc-feature > .cc-cell:nth-child(3) .cc-cell-frame { aspect-ratio: 268 / 194; }
 /* 100 DAYS: small stage labels above each group of paintings */
-.cc-stage { margin-top: var(--space-4); color: var(--color-text-secondary); font: var(--weight-medium) var(--text-caption) / var(--leading-caption) var(--font-body); }
+.cc-stage { margin-top: var(--space-4); padding-left: var(--space-2); border-left: 2px solid var(--color-text-secondary); color: var(--color-text-secondary); font: var(--weight-medium) var(--text-caption) / var(--leading-caption) var(--font-body); }
 .cc-stage + .cc-grid { margin-top: var(--space-2); } /* landscape paintings, three across the 603 text column */
 .cc-grid--square .cc-cell-frame { aspect-ratio: 1; }
 .cc-grid--sticker .cc-cell-frame { aspect-ratio: 1; border: 1px solid var(--color-border-default); background: var(--color-bg-default); }
@@ -171,10 +184,13 @@
   .cc-hero-sub { flex-direction: column; gap: 4px; }
   .cc-tagline { font-size: var(--text-body-l); line-height: var(--leading-body-l); }
   .cc-grid--5 { grid-template-columns: repeat(2, 1fr); }
-  /* Feature group on phones: the portrait full width on top, the two landscapes side by side below */
+  /* Feature group on phones: the big portrait on top, then landscapes and portraits in pairs */
   .cc-feature { grid-template-columns: 1fr 1fr; }
-  .cc-feature > .cc-cell:first-child { grid-row: auto; grid-column: 1 / -1; }
-  .cc-feature > .cc-cell:first-child .cc-cell-frame { aspect-ratio: 985 / 1400; height: auto; }
+  .cc-feature > .cc-cell:nth-child(n) { grid-column: auto; grid-row: auto; }
+  .cc-feature > .cc-cell:nth-child(1) { grid-column: 1 / -1; }
+  .cc-feature > .cc-cell:nth-child(1) .cc-cell-frame { aspect-ratio: 985 / 1400; height: auto; }
+  .cc-feature > .cc-cell:nth-child(n+4) .cc-cell-frame { aspect-ratio: 0.71; height: auto; }
+  .cc-pets { gap: 4px; }
   .cc-entry { grid-template-columns: 1fr; margin-inline: 0; padding: 24px 20px 11px; row-gap: var(--space-3); }
   .cc-entry figure { margin-top: 0; }
   .cc-entry-meta { white-space: normal; }

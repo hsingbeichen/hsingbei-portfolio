@@ -52,14 +52,16 @@ const sections = [
         ${social(IG_HAND, '@hellohellobeibei')}
       </div>
       <p class="cc-stage">初期：從身邊的毛孩開始</p>
-      <div class="cc-grid cc-grid--3 cc-grid--portrait">
-        ${[1, 2, 3, 4, 5, 6].map((n) => cell({ src: `${img}/hand-drawn-portrait-0${n}.jpg`, alt: `百日挑戰初期：寵物肖像 ${n}` })).join('')}
+      <div class="cc-pets">
+        ${[['01', '貴賓狗'], ['02', '虎斑貓'], ['03', '揮手的貓'], ['04', '法鬥'], ['05', '咧嘴笑的狗']].map(([n, name]) => `<img src="${img}/hand-drawn-pet-${n}.png" alt="百日挑戰初期：${name}" loading="lazy" />`).join('')}
       </div>
       <p class="cc-stage">後期：開始規劃畫面與場景</p>
       <div class="cc-grid cc-feature">
         ${cell({ src: `${img}/hand-drawn-scene-corgi-fireflies.jpg`, alt: '百日挑戰作品：螢火蟲與柯基' })}
         ${cell({ src: `${img}/hand-drawn-scene-cat-goldfish.jpg`, alt: '百日挑戰作品：叼著金魚的貓' })}
         ${cell({ src: `${img}/hand-drawn-scene-cat-turtle.jpg`, alt: '百日挑戰作品：貓與小烏龜' })}
+        ${cell({ src: `${img}/hand-drawn-scene-black-dog-frog.jpg`, alt: '百日挑戰作品：黑狗與青蛙' })}
+        ${cell({ src: `${img}/hand-drawn-scene-dog-nose.jpg`, alt: '百日挑戰作品：狗鼻子特寫' })}
       </div>
       ${caseLabel('參賽作品 COMPETITION')}
       <figure class="cc-competition"><img src="${img}/hand-drawn-competition.jpg" alt="參賽作品《無聲的盟約》" loading="lazy" /></figure>
