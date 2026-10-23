@@ -57,7 +57,7 @@ const sections = [
       </div>
       <p class="cc-stage">後期：開始規劃畫面與場景</p>
       <div class="cc-grid cc-feature">
-        ${cell({ src: `${img}/hand-drawn-scene-corgi-fireflies.jpg`, alt: '百日挑戰作品：螢火蟲與柯基' })}
+        ${cell({ src: `${img}/hand-drawn-scene-fox-fireflies.jpg`, alt: '百日挑戰作品：螢火蟲與狐狸' })}
         ${cell({ src: `${img}/hand-drawn-scene-cat-goldfish.jpg`, alt: '百日挑戰作品：叼著金魚的貓' })}
         ${cell({ src: `${img}/hand-drawn-scene-cat-turtle.jpg`, alt: '百日挑戰作品：貓與小烏龜' })}
         ${cell({ src: `${img}/hand-drawn-scene-black-dog-frog.jpg`, alt: '百日挑戰作品：黑狗與青蛙' })}
