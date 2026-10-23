@@ -105,8 +105,9 @@ const sections = [
   {
     id: 'brand', num: '05', zh: '品牌系統', en: 'BRAND SYSTEM',
     content: `
-      ${lead('網站之外，我也整合了旗下三個品牌的 LOGO：巨匠旅遊、珍藏旅遊（前身為典藏旅遊 LUXE TRAVEL）與新視界假期。')}
-      ${text('2019 年先為巨匠旅遊 LOGO 整理出基本比例、中英文字體與色彩規範（CMYK、RGB、色碼與 Pantone），再以同樣的邏輯調整珍藏旅遊與新視界假期的標誌：統一「字母圖形＋中文品名＋英文副名」的組合方式，並分別給予紅、紫、綠的品牌色，讓三個品牌各自可辨識，放在一起又看得出是同一個家族。')}
+      ${lead('網站之外，我也重新整理了旗下三個品牌的 CIS 規範：巨匠旅遊、珍藏旅遊與新視界假期。')}
+      ${text('三個品牌各有定位：珍藏旅遊的前身是被巨匠旅遊併購的典藏旅遊（LUXE TRAVEL），併購後重新定位為高價位品牌；新視界假期則是原有品牌，主打價格較親民的團體旅遊。')}
+      ${text('原本計畫重新設計三個品牌的 LOGO，後來公司高層決定換個方向，最後改為重整規範：2019 年先為巨匠旅遊 LOGO 整理出基本比例、中英文字體與色彩規範（CMYK、RGB、色碼與 Pantone），再以同樣的邏輯整理珍藏旅遊與新視界假期，並延伸到 DM 公版等應用，讓三個品牌各自可辨識，放在一起又看得出是同一個家族。')}
       ${caseLabel('巨匠旅遊 LOGO 規範 BRAND GUIDE')}
       ${caseMedia({ src: `${img}/brand-logo-guide.png`, alt: '巨匠旅遊 LOGO 規範：比例、字體與色彩', ratio: '1122 / 746', fit: 'contain' })}
       ${caseLabel('三品牌 LOGO 調整過程與定案 LOGO REFINE')}
@@ -157,10 +158,10 @@ document.querySelector('#app').innerHTML = `
       ],
       meta: [
         { label: '類別', value: ['官網改版・RWD 規劃・品牌系統'] },
-        { label: '製作年份', value: ['官網改版 2020 – 2021', '任職 2016.12 – 2021.01'] },
+        { label: '製作年份', value: ['官網改版 2019 – 2021', '任職 2016.12 – 2021.01'] },
         { label: '產業', value: ['旅遊業｜旅行社'] },
         { label: '合作形式', value: ['在職'] },
-        { label: '專案範圍', value: ['版面架構・UI 與視覺設計・RWD 規劃', '三品牌 LOGO 規範'] },
+        { label: '專案範圍', value: ['版面架構・UI 與視覺設計・RWD 規劃', '三品牌 CIS 規範重整'] },
       ],
     })}
     ${caseBody({ name: 'ARTISAN TOUR', sections })}
