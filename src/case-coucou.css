@@ -26,6 +26,7 @@
    all one height except the lying cat (0.72x), column widths from each cutout's ratio */
 .cc-pets { display: grid; grid-template-columns: 84fr 81fr 155fr 115fr 126fr; column-gap: 10px; align-items: end; margin-top: var(--space-4); }
 .cc-pets img { display: block; width: 100%; height: auto; }
+.cc-pets img:nth-child(2) { width: 88%; justify-self: end; transform: translateX(6px); } /* tabby: a touch smaller, nudged toward the lying cat */
 /* Later scenes: big portrait | two stacked landscapes | two stacked portraits, all one height.
    Widths from the art: portrait 985:1400, landscapes 268:194, 8px gaps */
 .cc-feature { grid-template-columns: 240fr 230fr 118fr; }
