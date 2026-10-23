@@ -22,6 +22,12 @@
 .cc-grid--tall .cc-cell-frame { aspect-ratio: 143 / 194; }
 .cc-grid--wide .cc-cell-frame { aspect-ratio: 268 / 194; }
 .cc-grid--portrait .cc-cell-frame { aspect-ratio: 230 / 306; }
+/* One big portrait + two stacked landscapes, filling the 603 column at equal height.
+   Column ratio comes from the art: portrait 985:1400, landscapes 268:194, 8px gaps. */
+.cc-feature { grid-template-columns: 303fr 292fr; }
+.cc-feature > .cc-cell:first-child { grid-row: span 2; }
+.cc-feature > .cc-cell:first-child .cc-cell-frame { aspect-ratio: auto; height: 100%; }
+.cc-feature > .cc-cell:not(:first-child) .cc-cell-frame { aspect-ratio: 268 / 194; }
 /* 100 DAYS: small stage labels above each group of paintings */
 .cc-stage { margin-top: var(--space-4); color: var(--color-text-secondary); font: var(--weight-medium) var(--text-caption) / var(--leading-caption) var(--font-body); }
 .cc-stage + .cc-grid { margin-top: var(--space-2); } /* landscape paintings, three across the 603 text column */
@@ -165,6 +171,10 @@
   .cc-hero-sub { flex-direction: column; gap: 4px; }
   .cc-tagline { font-size: var(--text-body-l); line-height: var(--leading-body-l); }
   .cc-grid--5 { grid-template-columns: repeat(2, 1fr); }
+  /* Feature group on phones: the portrait full width on top, the two landscapes side by side below */
+  .cc-feature { grid-template-columns: 1fr 1fr; }
+  .cc-feature > .cc-cell:first-child { grid-row: auto; grid-column: 1 / -1; }
+  .cc-feature > .cc-cell:first-child .cc-cell-frame { aspect-ratio: 985 / 1400; height: auto; }
   .cc-entry { grid-template-columns: 1fr; margin-inline: 0; padding: 24px 20px 11px; row-gap: var(--space-3); }
   .cc-entry figure { margin-top: 0; }
   .cc-entry-meta { white-space: normal; }

@@ -56,10 +56,10 @@ const sections = [
         ${[1, 2, 3, 4, 5, 6].map((n) => cell({ src: `${img}/hand-drawn-portrait-0${n}.jpg`, alt: `百日挑戰初期：寵物肖像 ${n}` })).join('')}
       </div>
       <p class="cc-stage">後期：開始規劃畫面與場景</p>
-      <div class="cc-grid cc-grid--3 cc-grid--wide">
+      <div class="cc-grid cc-feature">
+        ${cell({ src: `${img}/hand-drawn-scene-corgi-fireflies.jpg`, alt: '百日挑戰作品：螢火蟲與柯基' })}
         ${cell({ src: `${img}/hand-drawn-scene-cat-goldfish.jpg`, alt: '百日挑戰作品：叼著金魚的貓' })}
         ${cell({ src: `${img}/hand-drawn-scene-cat-turtle.jpg`, alt: '百日挑戰作品：貓與小烏龜' })}
-        ${cell({ src: `${img}/hand-drawn-scene-lion-cub.jpg`, alt: '百日挑戰作品：小獅子' })}
       </div>
       ${caseLabel('參賽作品 COMPETITION')}
       <figure class="cc-competition"><img src="${img}/hand-drawn-competition.jpg" alt="參賽作品《無聲的盟約》" loading="lazy" /></figure>
