@@ -44,7 +44,7 @@
 .cc-feature > .cc-cell:nth-child(3) .cc-cell-frame { aspect-ratio: 268 / 194; }
 /* 100 DAYS: small stage labels above each group of paintings */
 .cc-stage { position: relative; margin-top: var(--space-4); padding-left: var(--space-2); color: var(--color-text-secondary); font: var(--weight-medium) var(--text-caption) / var(--leading-caption) var(--font-body); }
-.cc-stage::before { content: ''; position: absolute; left: 0; inset-block: 0; width: 2px; border-radius: var(--radius-pill); background: var(--color-text-secondary); } /* rounded bar ends, like the home quote bar */
+.cc-stage::before { content: ''; position: absolute; left: 0; inset-block: 3px; width: 2px; border-radius: var(--radius-pill); background: var(--color-text-secondary); } /* rounded bar ends, like the home quote bar */
 .cc-stage + .cc-grid { margin-top: var(--space-2); } /* landscape paintings, three across the 603 text column */
 .cc-grid--square .cc-cell-frame { aspect-ratio: 1; }
 .cc-grid--sticker .cc-cell-frame { aspect-ratio: 1; border: 1px solid var(--color-border-default); background: var(--color-bg-default); }
