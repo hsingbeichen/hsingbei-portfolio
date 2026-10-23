@@ -22,9 +22,9 @@
 .cc-grid--tall .cc-cell-frame { aspect-ratio: 143 / 194; }
 .cc-grid--wide .cc-cell-frame { aspect-ratio: 268 / 194; }
 .cc-grid--portrait .cc-cell-frame { aspect-ratio: 230 / 306; }
-/* Early pets: cutouts on the page colour, bottoms aligned; column widths come from each
-   cutout's ratio so the row fills 603 (the lying cat is drawn smaller) */
-.cc-pets { display: grid; grid-template-columns: 117fr 81fr 133fr 115fr 125fr; gap: var(--space-2); align-items: end; margin-top: var(--space-2); }
+/* Early pets: cutouts on the page colour, bottoms aligned, matching the Figma mock —
+   all one height except the lying cat (0.72x), column widths from each cutout's ratio */
+.cc-pets { display: grid; grid-template-columns: 84fr 81fr 155fr 115fr 126fr; column-gap: 10px; align-items: end; margin-top: var(--space-4); }
 .cc-pets img { display: block; width: 100%; height: auto; }
 /* Later scenes: big portrait | two stacked landscapes | two stacked portraits, all one height.
    Widths from the art: portrait 985:1400, landscapes 268:194, 8px gaps */
