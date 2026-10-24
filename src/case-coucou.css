@@ -27,23 +27,23 @@
 .cc-pets { display: grid; grid-template-columns: 84fr 81fr 155fr 115fr 126fr; column-gap: 10px; align-items: end; margin-top: var(--space-4); }
 .cc-pets img { display: block; width: 100%; height: auto; }
 .cc-pets img:nth-child(2) { width: 88%; justify-self: end; transform: translateX(6px); } /* tabby: a touch smaller, nudged toward the lying cat */
-/* Later scenes: big portrait | two stacked landscapes | two stacked portraits, all one height.
-   Widths from the art: portrait 985:1400, landscapes 268:194, 8px gaps */
-.cc-feature { grid-template-columns: 240fr 230fr 118fr; }
+/* Later scenes: big portrait | two stacked landscapes | black dog shown whole over a cropped nose, all one height.
+   Column widths from the Figma mock (772 : 653 : 374) */
+.cc-feature { grid-template-columns: 772fr 653fr 374fr; }
 .cc-feature > .cc-cell:nth-child(1) { grid-column: 1; grid-row: 1 / span 2; }
 .cc-feature > .cc-cell:nth-child(2) { grid-column: 2; grid-row: 1; }
 .cc-feature > .cc-cell:nth-child(3) { grid-column: 2; grid-row: 2; }
-.cc-feature > .cc-cell:nth-child(4) { grid-column: 3; grid-row: 1; }
-.cc-feature > .cc-cell:nth-child(5) { grid-column: 3; grid-row: 2; }
-/* Fill cells flex to the row height; a percentage height isn't resolved in Safari grid items */
-.cc-feature > .cc-cell { display: flex; flex-direction: column; }
-.cc-feature > .cc-cell:nth-child(1) .cc-cell-frame,
-.cc-feature > .cc-cell:nth-child(n+4) .cc-cell-frame { aspect-ratio: auto; flex: 1 1 0; min-height: 0; position: relative; }
-/* Images that fill a stretched cell don't size the row: the landscapes set it */
-.cc-feature > .cc-cell:nth-child(1) .cc-cell-frame img,
-.cc-feature > .cc-cell:nth-child(n+4) .cc-cell-frame img { position: absolute; inset: 0; }
 .cc-feature > .cc-cell:nth-child(2) .cc-cell-frame,
-.cc-feature > .cc-cell:nth-child(3) .cc-cell-frame { aspect-ratio: 268 / 194; }
+.cc-feature > .cc-cell:nth-child(3) .cc-cell-frame { aspect-ratio: 268 / 194; } /* the landscapes set the height */
+.cc-feature-side { grid-column: 3; grid-row: 1 / span 2; display: flex; flex-direction: column; gap: var(--space-2); }
+.cc-feature-side .cc-cell:first-child .cc-cell-frame { aspect-ratio: 700 / 906; } /* the whole black dog */
+/* Fill frames (fox, nose) flex to the space left; a percentage height isn't resolved in Safari grid items */
+.cc-feature > .cc-cell:nth-child(1), .cc-feature-side .cc-cell:last-child { display: flex; flex-direction: column; flex: 1 1 0; min-height: 0; }
+.cc-feature > .cc-cell:nth-child(1) .cc-cell-frame,
+.cc-feature-side .cc-cell:last-child .cc-cell-frame { aspect-ratio: auto; flex: 1 1 0; min-height: 0; position: relative; }
+/* Their images don't size anything */
+.cc-feature > .cc-cell:nth-child(1) .cc-cell-frame img,
+.cc-feature-side .cc-cell:last-child .cc-cell-frame img { position: absolute; inset: 0; }
 /* 100 DAYS: small stage labels above each group of paintings */
 .cc-stage { position: relative; margin-top: var(--space-4); padding-left: var(--space-2); color: var(--color-text-secondary); font: var(--weight-medium) var(--text-caption) / var(--leading-caption) var(--font-body); }
 .cc-stage::before { content: ''; position: absolute; left: 0; inset-block: 3px; width: 2px; border-radius: var(--radius-pill); background: var(--color-text-secondary); } /* rounded bar ends, like the home quote bar */
@@ -190,12 +190,8 @@
   .cc-grid--5 { grid-template-columns: repeat(2, 1fr); }
   /* Feature group on phones: the fox beside the two stacked landscapes (same height), then the two portraits */
   .cc-feature { grid-template-columns: 303fr 292fr; }
-  .cc-feature > .cc-cell:nth-child(n) { grid-column: auto; grid-row: auto; }
-  .cc-feature > .cc-cell:nth-child(1) { grid-column: 1; grid-row: 1 / span 2; }
-  .cc-feature > .cc-cell:nth-child(2) { grid-column: 2; grid-row: 1; }
-  .cc-feature > .cc-cell:nth-child(3) { grid-column: 2; grid-row: 2; }
-  /* bottom pair: the right one sets the height, the left one fills it */
-  .cc-feature > .cc-cell:nth-child(5) .cc-cell-frame { aspect-ratio: 0.71; flex: none; }
+  /* bottom pair on one row: the whole black dog sets the height, the nose fills it */
+  .cc-feature-side { grid-column: 1 / -1; grid-row: 3; display: grid; grid-template-columns: 303fr 292fr; gap: inherit; }
   .cc-pets { gap: 4px; }
   .cc-entry { grid-template-columns: 1fr; margin-inline: 0; padding: 24px 20px 11px; row-gap: var(--space-3); }
   .cc-entry figure { margin-top: 0; }
