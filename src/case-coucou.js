@@ -131,9 +131,15 @@ const sections = [
     content: `
       ${lead('把日常小事，畫成一個個有溫度的場景。')}
       <div class="cc-grid cc-grid--3 cc-grid--scene">
-        ${[1, 2, 3, 4, 5, 6, 7].map((n) => cell({ src: `${img}/scenes-0${n}.jpg`, alt: `場景插畫 ${n}` })).join('')}
-        ${cell({ alt: '場景插畫 8' })}
-        ${cell({ alt: '場景插畫 9' })}
+        ${cell({ src: `${img}/scenes-01.jpg`, alt: '場景插畫 1' })}
+        ${cell({ src: `${img}/scenes-02.jpg`, alt: '場景插畫 2' })}
+        ${cell({ src: `${img}/scenes-03.jpg`, alt: '場景插畫 3' })}
+        ${cell({ src: `${img}/scenes-04.jpg`, alt: '場景插畫 4' })}
+        ${cell({ src: `${img}/scenes-halloween.jpg`, alt: '場景插畫：萬聖節的兔子' })}
+        ${cell({ video: `${img}/gifs-anim-01.mp4`, alt: '場景插畫：戴泳鏡的狗狗' })}
+        ${cell({ src: `${img}/scenes-05.jpg`, alt: '場景插畫 5' })}
+        ${cell({ video: `${img}/gifs-anim-rainbow.mp4`, alt: '場景插畫：雨與虹' })}
+        ${cell({ src: `${img}/scenes-06.jpg`, alt: '場景插畫 6' })}
       </div>
     `,
   },
@@ -141,21 +147,31 @@ const sections = [
     id: 'gifs', num: '05', zh: '動態與貼圖', en: 'GIFS & STICKERS',
     content: `
       ${lead('讓角色動起來，也成為可以傳出去的表情。')}
-      <div class="cc-grid cc-grid--3 cc-grid--captioned cc-grid--scene">
-        ${cell({ video: `${img}/gifs-anim-rainbow.mp4`, alt: '逐格動畫：雨與虹', caption: '逐格動畫' })}
-        ${cell({ video: `${img}/gifs-anim-02.mp4`, alt: '逐格動畫', caption: '逐格動畫' })}
-        ${cell({ video: `${img}/gifs-anim-03.mp4`, alt: 'GIF 貼圖', caption: 'GIF & 貼圖' })}
+      <div class="cc-grid cc-grid--3 cc-grid--captioned cc-grid--gifs">
+        ${cell({ src: `${img}/gifs-card-frame-by-frame.jpg`, alt: '在 Procreate 用圖層畫逐格動畫', caption: '逐格動畫' })}
+        ${cell({ src: `${img}/gifs-card-scene.jpg`, alt: '賓賓在咖啡店的場景插畫', caption: '場景插畫' })}
+        ${cell({ src: `${img}/gifs-sticker-02.gif`, alt: '賓賓捧著咖啡杯的 GIF 貼圖', caption: 'GIF&貼圖' })}
       </div>
       ${caseLabel('製作過程 MAKING OF')}
-      ${caseMedia({ src: `${img}/gifs-making-of.jpg`, alt: '在 Procreate 製作逐格動畫', ratio: '603 / 162', caption: '用 Procreate 做逐格動畫・以每個貼圖的動作構想需要的影格數・每一格都是手畫' })}
+      <figure class="cc-making">
+        <div class="cc-making-strip">
+          ${[1, 2, 3, 4, 5].map((n) => `<img src="${img}/gifs-making-of-frame-0${n}.jpg" alt="逐格動畫第 ${n} 格" loading="lazy" />`).join('')}
+        </div>
+        <figcaption>用 Procreate 做逐格動畫・以每個貼圖的動作構想需要的影格數・每一格都是手畫</figcaption>
+      </figure>
       <div class="cc-grid cc-grid--5 cc-grid--sticker">
-        ${cell({ src: `${img}/gifs-sticker-01.gif`, alt: '貼圖 GIF 1', fit: 'contain' })}
-        ${cell({ src: `${img}/gifs-sticker-02.gif`, alt: '貼圖 GIF 2', fit: 'contain' })}
-        ${cell({ src: `${img}/shift-bin-digital.gif`, alt: '貼圖 GIF 3', fit: 'contain' })}
-        ${cell({ src: `${img}/shift-character-chouchou-doudou.gif`, alt: '貼圖 GIF 4', fit: 'contain' })}
-        ${cell({ video: `${img}/gifs-anim-05.mp4`, alt: '貼圖動畫 5' })}
-        ${cell({ video: `${img}/gifs-anim-01.mp4`, alt: '貼圖動畫 6' })}
-        ${cell({})}${cell({})}${cell({})}${cell({})}
+        ${[
+          ['gifs-sticker-rabbit-carrot.gif', '咬紅蘿蔔的兔子'],
+          ['gifs-sticker-shiba.gif', '柴犬'],
+          ['gifs-sticker-bunny-orange.gif', '穿橘衣的兔兔'],
+          ['gifs-sticker-01.gif', '戴兔子帽的狗狗'],
+          ['gifs-sticker-bunny-starry.gif', '星空斗篷的兔兔'],
+          ['gifs-sticker-cat-crying.png', '哭哭的賓賓'],
+          ['gifs-sticker-02.gif', '捧咖啡杯的賓賓'],
+          ['shift-character-chouchou-doudou.gif', '兔兔與狗狗'],
+          ['gifs-sticker-dog-lying.png', '趴著的狗狗'],
+          ['gifs-sticker-pug-goggles.gif', '戴泳鏡的狗狗'],
+        ].map(([f, t]) => cell({ src: `${img}/${f}`, alt: `貼圖：${t}`, fit: 'contain' })).join('')}
       </div>
       <div class="cc-stats">
         <p><span>上傳數量</span><b>31</b></p>

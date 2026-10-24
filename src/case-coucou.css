@@ -53,6 +53,13 @@
 .cc-grid--captioned .cc-cell { overflow: hidden; border-radius: var(--radius-photo); background: var(--color-bg-surface); }
 .cc-grid--captioned .cc-cell-frame { border-radius: 0; aspect-ratio: 199 / 231; }
 .cc-grid--captioned.cc-grid--scene .cc-cell-frame { aspect-ratio: 199 / 162; }
+.cc-grid--captioned.cc-grid--gifs .cc-cell-frame { aspect-ratio: 333 / 297; } /* GIFs section cards, from the Figma mock */
+/* Making-of: five hand-drawn frames on a grey band, caption below */
+.cc-making { margin: var(--space-3) 0 0; overflow: hidden; border-radius: 0 0 var(--radius-photo) var(--radius-photo); background: var(--color-bg-surface); }
+.cc-making-strip { display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--space-3); padding: var(--space-3); background: #999999; }
+.cc-making-strip img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: var(--radius-photo); }
+.cc-making + .cc-grid { margin-top: var(--space-4); }
+.cc-making figcaption { padding: var(--space-2) var(--space-5); color: var(--color-text-secondary); font: var(--weight-medium) var(--text-caption) / 1.25 var(--font-body); }
 .cc-cell figcaption {
   padding: 6px 8px; text-align: center;
   color: var(--color-text-secondary);
@@ -188,6 +195,10 @@
   .cc-hero-sub { flex-direction: column; gap: 4px; }
   .cc-tagline { font-size: var(--text-body-l); line-height: var(--leading-body-l); }
   .cc-grid--5 { grid-template-columns: repeat(2, 1fr); }
+  .cc-grid--5.cc-grid--sticker { grid-template-columns: repeat(5, 1fr); gap: 4px; } /* ten stickers stay two rows on phones */
+  .cc-making-strip { gap: var(--space-2); padding: var(--space-2); }
+  .cc-making-strip img { border-radius: 6px; }
+  .cc-making figcaption { padding-inline: var(--space-3); }
   /* Feature group on phones: the fox beside the two stacked landscapes (same height), then the two portraits */
   .cc-feature { grid-template-columns: 303fr 292fr; }
   /* bottom pair on one row: the whole black dog sets the height, the nose fills it */
