@@ -56,7 +56,7 @@
 .cc-grid--captioned.cc-grid--gifs .cc-cell-frame { aspect-ratio: 333 / 297; } /* GIFs section cards, from the Figma mock */
 /* Making-of: five hand-drawn frames on a grey band, caption below */
 .cc-making { margin: var(--space-3) 0 0; overflow: hidden; border-radius: 0 0 var(--radius-photo) var(--radius-photo); background: var(--color-bg-surface); }
-.cc-making-strip { display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--space-3); padding: var(--space-3); background: #999999; }
+.cc-making-strip { display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--space-3); padding: var(--space-3); background: #666666; }
 .cc-making-strip img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: var(--radius-photo); }
 .cc-making + .cc-grid { margin-top: var(--space-4); }
 .cc-making figcaption { padding: var(--space-2) var(--space-5); color: var(--color-text-secondary); font: var(--weight-medium) var(--text-caption) / 1.25 var(--font-body); }
