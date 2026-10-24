@@ -170,10 +170,10 @@ const sections = [
           ['gifs-sticker-bunny-orange.gif', '穿橘衣的兔兔', 6.1, 9.4, 88.7],
           ['gifs-sticker-01.gif', '戴兔子帽的狗狗', 0, 0, 100],
           ['gifs-sticker-bunny-starry.gif', '星空斗篷的兔兔', 5.2, 11.1, 87.8],
-          ['gifs-sticker-cat-crying.png', '哭哭的賓賓', 0, 8.9, 91.3],
+          ['gifs-sticker-cat-crying.gif', '哭哭的賓賓', 0, 8.9, 91.3],
           ['gifs-sticker-02.gif', '捧咖啡杯的賓賓', 7.4, 15, 85.2],
           ['shift-character-chouchou-doudou.gif', '兔兔與狗狗', 0, 1.1, 99],
-          ['gifs-sticker-dog-lying.png', '趴著的狗狗', 0, 2, 101.7],
+          ['gifs-sticker-dog-lying.gif', '趴著的狗狗', 0, 2, 101.7],
           ['gifs-sticker-pug-goggles.gif', '戴泳鏡的狗狗', 0.9, -1.5, 98.3],
         ].map(([f, t, x, y, w]) => `
           <figure class="cc-cell"><div class="cc-cell-frame"><img src="${img}/${f}" alt="貼圖：${t}" loading="lazy" style="left:${x}%;top:${y}%;width:${w}%" /></div></figure>`).join('')}
