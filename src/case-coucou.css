@@ -50,16 +50,21 @@
 .cc-stage + .cc-grid { margin-top: var(--space-2); } /* landscape paintings, three across the 603 text column */
 .cc-grid--square .cc-cell-frame { aspect-ratio: 1; }
 .cc-grid--sticker .cc-cell-frame { aspect-ratio: 1; border: 1px solid var(--color-border-default); background: var(--color-bg-default); }
+.cc-grid--sticker .cc-cell-frame { position: relative; }
+.cc-grid--sticker .cc-cell-frame img { position: absolute; height: auto; } /* placed per sticker, see case-coucou.js */
+.cc-grid--5.cc-grid--sticker { gap: 4.5px; margin-inline: 4px 6px; } /* Figma: 115 tiles, 4.5 apart */
+.cc-grid--scene:not(.cc-grid--captioned), .cc-grid--gifs { gap: 3px; } /* Figma: 199-wide cells, 3 apart */
 .cc-grid--captioned .cc-cell { overflow: hidden; border-radius: var(--radius-photo); background: var(--color-bg-surface); }
 .cc-grid--captioned .cc-cell-frame { border-radius: 0; aspect-ratio: 199 / 231; }
 .cc-grid--captioned.cc-grid--scene .cc-cell-frame { aspect-ratio: 199 / 162; }
-.cc-grid--captioned.cc-grid--gifs .cc-cell-frame { aspect-ratio: 333 / 297; } /* GIFs section cards, from the Figma mock */
+.cc-grid--captioned.cc-grid--gifs .cc-cell-frame { aspect-ratio: 199 / 177; } /* GIFs section cards, from Figma */
+.cc-grid--gifs figcaption { padding-block: 7px 8px; } /* 28px label band */
 /* Making-of: five hand-drawn frames on a grey band, caption below */
 .cc-making { margin: var(--space-3) 0 0; overflow: hidden; border-radius: 0 0 var(--radius-photo) var(--radius-photo); background: var(--color-bg-surface); }
-.cc-making-strip { display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--space-3); padding: var(--space-3); background: #1F1F1F; }
+.cc-making-strip { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; padding: 16px 15px 14px; background: #1F1F1F; } /* Figma: 102 frames in a 131 band */
 .cc-making-strip img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: var(--radius-photo); }
-.cc-making + .cc-grid { margin-top: var(--space-4); }
-.cc-making figcaption { padding: var(--space-2) var(--space-5); color: var(--color-text-secondary); font: var(--weight-medium) var(--text-caption) / 1.25 var(--font-body); }
+.cc-making + .cc-grid { margin-top: 35px; }
+.cc-making figcaption { padding: 10px 24px 11px; color: var(--color-text-secondary); font: var(--weight-medium) var(--text-caption) / 1.25 var(--font-body); }
 .cc-cell figcaption {
   padding: 6px 8px; text-align: center;
   color: var(--color-text-secondary);

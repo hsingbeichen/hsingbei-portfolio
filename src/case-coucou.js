@@ -131,15 +131,18 @@ const sections = [
     content: `
       ${lead('把日常小事，畫成一個個有溫度的場景。')}
       <div class="cc-grid cc-grid--3 cc-grid--scene">
-        ${cell({ src: `${img}/scenes-01.jpg`, alt: '場景插畫 1' })}
-        ${cell({ src: `${img}/scenes-02.jpg`, alt: '場景插畫 2' })}
-        ${cell({ src: `${img}/scenes-03.jpg`, alt: '場景插畫 3' })}
-        ${cell({ src: `${img}/scenes-04.jpg`, alt: '場景插畫 4' })}
-        ${cell({ src: `${img}/scenes-halloween.jpg`, alt: '場景插畫：萬聖節的兔子' })}
-        ${cell({ video: `${img}/gifs-anim-01.mp4`, alt: '場景插畫：戴泳鏡的狗狗' })}
-        ${cell({ src: `${img}/scenes-05.jpg`, alt: '場景插畫 5' })}
-        ${cell({ video: `${img}/gifs-anim-rainbow.mp4`, alt: '場景插畫：雨與虹' })}
-        ${cell({ src: `${img}/scenes-06.jpg`, alt: '場景插畫 6' })}
+        ${[
+          // crops follow the Figma masks (object-position x y)
+          [{ src: `${img}/scenes-01.jpg` }, '場景插畫 1', '50% 50%'],
+          [{ src: `${img}/scenes-02.jpg` }, '場景插畫 2', '100% 50%'],
+          [{ src: `${img}/scenes-03.jpg` }, '場景插畫 3', '50% 70%'],
+          [{ src: `${img}/scenes-04.jpg` }, '場景插畫 4', '50% 0%'],
+          [{ src: `${img}/scenes-halloween.jpg` }, '場景插畫：萬聖節的兔子', '50% 79%'],
+          [{ video: `${img}/gifs-anim-01.mp4` }, '場景插畫：戴泳鏡的狗狗', '50% 39%'],
+          [{ src: `${img}/scenes-05.jpg` }, '場景插畫 5', '35% 50%'],
+          [{ src: `${img}/scenes-cat-frog-hat.jpg` }, '場景插畫：戴青蛙帽的賓賓', '50% 69%'],
+          [{ src: `${img}/scenes-06.jpg` }, '場景插畫 6', '50% 79%'],
+        ].map(([media, alt, pos]) => cell({ ...media, alt }).replace(/<(img|video) /, `<$1 style="object-position:${pos}" `).replace(' style="object-fit:cover"', '')).join('')}
       </div>
     `,
   },
@@ -150,7 +153,7 @@ const sections = [
       <div class="cc-grid cc-grid--3 cc-grid--captioned cc-grid--gifs">
         ${cell({ src: `${img}/gifs-card-frame-by-frame.jpg`, alt: '在 Procreate 用圖層畫逐格動畫', caption: '逐格動畫' })}
         ${cell({ src: `${img}/gifs-card-scene.jpg`, alt: '賓賓在咖啡店的場景插畫', caption: '場景插畫' })}
-        ${cell({ src: `${img}/gifs-sticker-02.gif`, alt: '賓賓捧著咖啡杯的 GIF 貼圖', caption: 'GIF&貼圖' })}
+        ${cell({ src: `${img}/gifs-sticker-02.gif`, alt: '賓賓捧著咖啡杯的 GIF 貼圖', caption: 'GIF&貼圖' }).replace('object-fit:cover', 'object-fit:cover;object-position:50% 38%')}
       </div>
       ${caseLabel('製作過程 MAKING OF')}
       <figure class="cc-making">
@@ -161,17 +164,19 @@ const sections = [
       </figure>
       <div class="cc-grid cc-grid--5 cc-grid--sticker">
         ${[
-          ['gifs-sticker-rabbit-carrot.gif', '咬紅蘿蔔的兔子'],
-          ['gifs-sticker-shiba.gif', '柴犬'],
-          ['gifs-sticker-bunny-orange.gif', '穿橘衣的兔兔'],
-          ['gifs-sticker-01.gif', '戴兔子帽的狗狗'],
-          ['gifs-sticker-bunny-starry.gif', '星空斗篷的兔兔'],
-          ['gifs-sticker-cat-crying.png', '哭哭的賓賓'],
-          ['gifs-sticker-02.gif', '捧咖啡杯的賓賓'],
-          ['shift-character-chouchou-doudou.gif', '兔兔與狗狗'],
-          ['gifs-sticker-dog-lying.png', '趴著的狗狗'],
-          ['gifs-sticker-pug-goggles.gif', '戴泳鏡的狗狗'],
-        ].map(([f, t]) => cell({ src: `${img}/${f}`, alt: `貼圖：${t}`, fit: 'contain' })).join('')}
+          // [file, name, left, top, width] — each sticker's place in its tile, from Figma (% of the tile)
+          ['gifs-sticker-rabbit-carrot.gif', '咬紅蘿蔔的兔子', 0, 0, 100],
+          ['gifs-sticker-shiba.gif', '柴犬', 8.3, 12.9, 81.7],
+          ['gifs-sticker-bunny-orange.gif', '穿橘衣的兔兔', 6.1, 9.4, 88.7],
+          ['gifs-sticker-01.gif', '戴兔子帽的狗狗', 0, 0, 100],
+          ['gifs-sticker-bunny-starry.gif', '星空斗篷的兔兔', 5.2, 11.1, 87.8],
+          ['gifs-sticker-cat-crying.png', '哭哭的賓賓', 0, 8.9, 91.3],
+          ['gifs-sticker-02.gif', '捧咖啡杯的賓賓', 7.4, 15, 85.2],
+          ['shift-character-chouchou-doudou.gif', '兔兔與狗狗', 0, 1.1, 99],
+          ['gifs-sticker-dog-lying.png', '趴著的狗狗', 0, 2, 101.7],
+          ['gifs-sticker-pug-goggles.gif', '戴泳鏡的狗狗', 0.9, -1.5, 98.3],
+        ].map(([f, t, x, y, w]) => `
+          <figure class="cc-cell"><div class="cc-cell-frame"><img src="${img}/${f}" alt="貼圖：${t}" loading="lazy" style="left:${x}%;top:${y}%;width:${w}%" /></div></figure>`).join('')}
       </div>
       <div class="cc-stats">
         <p><span>上傳數量</span><b>31</b></p>
