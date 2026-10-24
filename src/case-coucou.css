@@ -20,11 +20,51 @@
 .cc-cell-frame.is-placeholder { background: var(--color-bg-surface); }
 .cc-cell-frame img, .cc-cell-frame video { display: block; width: 100%; height: 100%; object-fit: cover; }
 .cc-grid--tall .cc-cell-frame { aspect-ratio: 143 / 194; }
+.cc-grid--wide .cc-cell-frame { aspect-ratio: 268 / 194; }
+.cc-grid--portrait .cc-cell-frame { aspect-ratio: 230 / 306; }
+/* Early pets: cutouts on the page colour, bottoms aligned, matching the Figma mock —
+   all one height except the lying cat (0.72x), column widths from each cutout's ratio */
+.cc-pets { display: grid; grid-template-columns: 84fr 81fr 155fr 115fr 126fr; column-gap: 10px; align-items: end; margin-top: var(--space-4); }
+.cc-pets img { display: block; width: 100%; height: auto; }
+.cc-pets img:nth-child(2) { width: 88%; justify-self: end; transform: translateX(6px); } /* tabby: a touch smaller, nudged toward the lying cat */
+/* Later scenes: big portrait | two stacked landscapes | black dog shown whole over a cropped nose, all one height.
+   Column widths from the Figma mock (772 : 653 : 374) */
+.cc-feature { grid-template-columns: 772fr 653fr 374fr; }
+.cc-feature > .cc-cell:nth-child(1) { grid-column: 1; grid-row: 1 / span 2; }
+.cc-feature > .cc-cell:nth-child(2) { grid-column: 2; grid-row: 1; }
+.cc-feature > .cc-cell:nth-child(3) { grid-column: 2; grid-row: 2; }
+.cc-feature > .cc-cell:nth-child(2) .cc-cell-frame,
+.cc-feature > .cc-cell:nth-child(3) .cc-cell-frame { aspect-ratio: 268 / 194; } /* the landscapes set the height */
+.cc-feature-side { grid-column: 3; grid-row: 1 / span 2; display: flex; flex-direction: column; gap: var(--space-2); }
+.cc-feature-side .cc-cell:first-child .cc-cell-frame { aspect-ratio: 123 / 186; } /* black dog 123×186 in the Figma mock; the nose fills the rest (123×129) */
+/* Fill frames (fox, nose) flex to the space left; a percentage height isn't resolved in Safari grid items */
+.cc-feature > .cc-cell:nth-child(1), .cc-feature-side .cc-cell:last-child { display: flex; flex-direction: column; flex: 1 1 0; min-height: 0; }
+.cc-feature > .cc-cell:nth-child(1) .cc-cell-frame,
+.cc-feature-side .cc-cell:last-child .cc-cell-frame { aspect-ratio: auto; flex: 1 1 0; min-height: 0; position: relative; }
+/* Their images don't size anything */
+.cc-feature > .cc-cell:nth-child(1) .cc-cell-frame img,
+.cc-feature-side .cc-cell:last-child .cc-cell-frame img { position: absolute; inset: 0; }
+/* 100 DAYS: small stage labels above each group of paintings */
+.cc-stage { position: relative; margin-top: var(--space-4); padding-left: var(--space-2); color: var(--color-text-secondary); font: var(--weight-medium) var(--text-caption) / var(--leading-caption) var(--font-body); }
+.cc-stage::before { content: ''; position: absolute; left: 0; inset-block: 3px; width: 2px; border-radius: var(--radius-pill); background: var(--color-text-secondary); } /* rounded bar ends, like the home quote bar */
+.cc-stage + .cc-grid { margin-top: var(--space-2); } /* landscape paintings, three across the 603 text column */
 .cc-grid--square .cc-cell-frame { aspect-ratio: 1; }
 .cc-grid--sticker .cc-cell-frame { aspect-ratio: 1; border: 1px solid var(--color-border-default); background: var(--color-bg-default); }
+.cc-grid--sticker .cc-cell-frame { position: relative; }
+.cc-grid--sticker .cc-cell-frame img { position: absolute; height: auto; } /* placed per sticker, see case-coucou.js */
+.cc-grid--5.cc-grid--sticker { gap: 4.5px; margin-inline: 4px 6px; } /* Figma: 115 tiles, 4.5 apart */
+.cc-grid--scene:not(.cc-grid--captioned), .cc-grid--gifs { gap: 3px; } /* Figma: 199-wide cells, 3 apart */
 .cc-grid--captioned .cc-cell { overflow: hidden; border-radius: var(--radius-photo); background: var(--color-bg-surface); }
 .cc-grid--captioned .cc-cell-frame { border-radius: 0; aspect-ratio: 199 / 231; }
 .cc-grid--captioned.cc-grid--scene .cc-cell-frame { aspect-ratio: 199 / 162; }
+.cc-grid--captioned.cc-grid--gifs .cc-cell-frame { aspect-ratio: 199 / 177; } /* GIFs section cards, from Figma */
+.cc-grid--gifs figcaption { padding-block: 7px 8px; } /* 28px label band */
+/* Making-of: five hand-drawn frames on a grey band, caption below */
+.cc-making { margin: var(--space-3) 0 0; overflow: hidden; border-radius: 0 0 var(--radius-photo) var(--radius-photo); background: var(--color-bg-surface); }
+.cc-making-strip { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; padding: 16px 15px 14px; background: #1F1F1F; } /* Figma: 102 frames in a 131 band */
+.cc-making-strip img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: var(--radius-photo); }
+.cc-making + .cc-grid { margin-top: 35px; }
+.cc-making figcaption { padding: 10px 24px 11px; color: var(--color-text-secondary); font: var(--weight-medium) var(--text-caption) / 1.25 var(--font-body); }
 .cc-cell figcaption {
   padding: 6px 8px; text-align: center;
   color: var(--color-text-secondary);
@@ -108,7 +148,7 @@
   position: relative; margin-top: var(--space-5); padding-left: 10px;
   color: var(--color-accent-dark); font: var(--weight-medium) var(--text-caption) / 1.4 var(--font-body);
 }
-.cc-bar-label::before { content: ''; position: absolute; left: 0; top: 2px; bottom: 2px; width: 2px; background: var(--color-accent-dark); }
+.cc-bar-label::before { content: ''; position: absolute; left: 0; top: 2px; bottom: 2px; width: 2px; border-radius: var(--radius-pill); background: var(--color-accent-dark); }
 .cc-bar-label + .case-media, .cc-bar-label + .cc-chars { margin-top: 14px; }
 
 /* Character cards (two per row) */
@@ -160,6 +200,15 @@
   .cc-hero-sub { flex-direction: column; gap: 4px; }
   .cc-tagline { font-size: var(--text-body-l); line-height: var(--leading-body-l); }
   .cc-grid--5 { grid-template-columns: repeat(2, 1fr); }
+  .cc-grid--5.cc-grid--sticker { grid-template-columns: repeat(5, 1fr); gap: 4px; } /* ten stickers stay two rows on phones */
+  .cc-making-strip { gap: var(--space-2); padding: var(--space-2); }
+  .cc-making-strip img { border-radius: 6px; }
+  .cc-making figcaption { padding-inline: var(--space-3); }
+  /* Feature group on phones: the fox beside the two stacked landscapes (same height), then the two portraits */
+  .cc-feature { grid-template-columns: 303fr 292fr; }
+  /* bottom pair on one row: the whole black dog sets the height, the nose fills it */
+  .cc-feature-side { grid-column: 1 / -1; grid-row: 3; display: grid; grid-template-columns: 303fr 292fr; gap: inherit; }
+  .cc-pets { gap: 4px; }
   .cc-entry { grid-template-columns: 1fr; margin-inline: 0; padding: 24px 20px 11px; row-gap: var(--space-3); }
   .cc-entry figure { margin-top: 0; }
   .cc-entry-meta { white-space: normal; }

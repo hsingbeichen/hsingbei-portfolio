@@ -27,13 +27,13 @@ const sections = [
     content: `
       ${lead('造型定案前其實做了兩輪篩選，先用兩個方向的草圖讓業主比較，選定後再反覆微調配色層次，才走到最終定案版本。')}
       ${caseLabel('手繪草圖 SKETCH')}
-      ${caseMedia({ src: `${img}/sketch.jpg`, alt: '手繪草圖', ratio: '603 / 279' })}
+      ${caseMedia({ src: `${img}/process-sketch.jpg`, alt: '手繪草圖', ratio: '603 / 279' })}
       ${caseLabel('造型雛形 ITERATION')}
-      ${caseMedia({ src: `${img}/iteration.png`, alt: '造型雛形與配色微調', ratio: '603 / 132', fit: 'scale-down', bare: true })}
+      ${caseMedia({ src: `${img}/process-iteration.png`, alt: '造型雛形與配色微調', ratio: '603 / 132', fit: 'scale-down', bare: true })}
       ${caseLabel('定案提案 FINAL')}
       ${caseProposals([
-        { name: '提案A', desc: '強調蝶與動態的活動性', src: `${img}/proposal-a.svg` },
-        { name: '提案B', desc: '延展與綻放，花與舞者並重', src: `${img}/proposal-b.svg`, chosen: true },
+        { name: '提案A', desc: '強調蝶與動態的活動性', src: `${img}/process-proposal-a.svg` },
+        { name: '提案B', desc: '延展與綻放，花與舞者並重', src: `${img}/process-proposal-b.svg`, chosen: true },
       ])}
       <div class="case-quote-bar">
         ${text('提案B 的花瓣更貼近杜鵑花本身的花形，體驗者（舞者）動態的身形將其收進花瓣線條裡，呈現舞動即綻放；提案A 以動感更為強調，花情的示意度較低。因而業主選擇 B 作為「杜鵑花開了」商標設計的最終版本。')}
@@ -57,11 +57,11 @@ const sections = [
         「有妳當時的巧思，讓我在市場上有這如此獨樹一格的 logo 陪伴，在我的人生當中，也名列前茅了非常有意義的一件事。」<cite>—— 業主 Leah</cite>
       </blockquote>
       ${caseLabel('工作室燈箱實拍')}
-      ${caseMedia({ src: `${img}/lightbox.jpg`, alt: '工作室燈箱實拍', ratio: '601 / 245' })}
+      ${caseMedia({ src: `${img}/application-lightbox.jpg`, alt: '工作室燈箱實拍', ratio: '601 / 245' })}
       ${caseLabel('業主工作室現場實拍')}
       <div class="case-grid case-grid--wide">
-        ${caseMedia({ src: `${img}/studio-1.jpg`, alt: '工作室空間實拍', ratio: '253 / 201' })}
-        ${caseMedia({ src: `${img}/studio-2.jpg`, alt: '工作室 LOGO 燈牆實拍', ratio: '341 / 201' })}
+        ${caseMedia({ src: `${img}/application-studio-01.jpg`, alt: '工作室空間實拍', ratio: '253 / 201' })}
+        ${caseMedia({ src: `${img}/application-studio-02.jpg`, alt: '工作室 LOGO 燈牆實拍', ratio: '341 / 201' })}
       </div>
     `,
   },
@@ -72,7 +72,7 @@ const sections = [
       ${text('名片沿用同一套品牌色彩與花瓣造型：正面以 LOGO 為主角；背面用簡潔的線條地圖標出工作室位置，搭配手寫體姓名與嵌入 LOGO 的 QR code，讓識別系統從店面招牌一路延續到隨身的小卡上。')}
       ${caseLabel('業主實際發印')}
       <div class="case-grid case-grid--3">
-        ${[1, 2, 3].map((n) => caseMedia({ src: `${img}/print-${n}.jpg`, alt: `名片印刷實拍 ${n}`, ratio: '223 / 262' })).join('')}
+        ${[1, 2, 3].map((n) => caseMedia({ src: `${img}/business-card-print-0${n}.jpg`, alt: `名片印刷實拍 ${n}`, ratio: '223 / 262' })).join('')}
       </div>
     `,
   },
@@ -85,9 +85,9 @@ document.querySelector('#app').innerHTML = `
       titleZh: '杜鵑花開了',
       titleEn: 'AZALEAH STUDIO',
       images: [
-        { shape: 'square', src: `${img}/logo.svg`, alt: 'Azaleah Studio LOGO' },
-        { shape: 'card', src: `${img}/card-front.jpg`, alt: '名片正面' },
-        { shape: 'card', src: `${img}/card-back.png`, alt: '名片背面' },
+        { shape: 'square', src: `${img}/hero-logo.svg`, alt: 'Azaleah Studio LOGO' },
+        { shape: 'card', src: `${img}/hero-card-front.jpg`, alt: '名片正面' },
+        { shape: 'card', src: `${img}/hero-card-back.png`, alt: '名片背面' },
       ],
       meta: [
         { label: '類別', value: ['品牌識別設計'] },

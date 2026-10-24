@@ -12,7 +12,7 @@ export const caseHero = ({ titleZh, titleEn, images, meta }) => `
       <div class="case-hero-body reveal">
         <div class="case-gallery">
           ${images.map((img) => `
-            <figure class="case-shot case-shot--${img.shape}">
+            <figure class="case-shot case-shot--${img.shape}${img.page ? ' case-shot--page' : ''}">
               <img src="${img.src}" alt="${img.alt}" />
             </figure>
           `).join('')}
@@ -81,6 +81,17 @@ export const initCaseToc = () => {
   initCaseProgress()
 }
 
+// A tall page screenshot in a fixed-height frame that scrolls inside, like browsing the real site.
+// phone: narrow frame for a mobile screenshot.
+export const caseScroll = ({ src, alt = '', caption = '', phone = false }) => `
+  <figure class="case-media">
+    <div class="case-media-frame case-scroll${phone ? ' case-scroll--phone' : ''}${src ? '' : ' is-placeholder'}" tabindex="0" aria-label="${alt}（可在框內捲動）">
+      ${src ? `<img src="${src}" alt="${alt}" loading="lazy" />` : `<span>${alt}（圖片待補）</span>`}
+    </div>
+    ${caption ? `<figcaption>${caption}</figcaption>` : ''}
+  </figure>
+`
+
 // Side-by-side proposals; the chosen one gets the accent frame.
 export const caseProposals = (items) => `
   <div class="case-grid case-grid--2 case-proposals">
@@ -136,6 +147,7 @@ const soon = '<span class="case-soon">整理中</span>'
 export const casePager = ({ prev, next }) => {
   const link = (item, cls, inner) => item.href ? `<a class="${cls}" href="${item.href}">${inner}</a>` : `<div class="${cls} is-soon">${inner}</div>`
   return `
+  <div class="case-pager-band">
   <nav class="shell case-shell case-pager-wrap" aria-label="其他作品">
     <div class="case-next">
       ${link(next, 'case-next-card', `
@@ -152,5 +164,6 @@ export const casePager = ({ prev, next }) => {
       `)}
     </div>
   </nav>
+  </div>
 `
 }

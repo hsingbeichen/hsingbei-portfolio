@@ -29,6 +29,7 @@
 .case-shot--card { aspect-ratio: 200.5 / 320.6; }
 .case-shot img { width: 100%; height: 100%; object-fit: contain; }
 .case-shot--square img { width: auto; height: 68.3%; } /* logo art is 218.5 of the 320 box */
+.case-shot--page img { width: 100%; height: 100%; object-fit: cover; object-position: top; } /* web pages: show the top of the page */
 
 .case-meta { display: flex; flex-direction: column; gap: var(--case-meta-gap); padding-right: var(--space-4); }
 .case-meta dt {
@@ -145,6 +146,13 @@
 }
 .case-media-frame img { width: 100%; height: 100%; }
 .case-media-frame.is-bare { background: none; border-radius: 0; } /* transparent artwork sits on the page colour */
+/* Thumbnail wall: show the top of each page */
+.case-thumbs .case-media-frame img { object-position: top; }
+/* Tall page screenshot: scrolls inside a fixed-height frame */
+.case-scroll { display: block; max-height: var(--case-scroll-height, 480px); overflow-y: auto; overscroll-behavior: contain; background: #ffffff; }
+.case-scroll img { display: block; height: auto; }
+.case-scroll.is-placeholder { display: grid; place-items: center; min-height: 240px; }
+.case-scroll--phone { width: min(100%, 240px); margin-inline: auto; }
 .case-media-frame.is-placeholder { background: var(--color-bg-surface); color: var(--color-text-muted); font-size: var(--text-caption); }
 .case-media figcaption {
   margin-top: var(--space-2);
@@ -229,10 +237,11 @@
 .case-proposal figcaption strong { flex: none; white-space: nowrap; color: var(--color-text-primary); font-weight: var(--weight-medium); }
 
 /* ----- Next project card (prev as a quiet link below) ----- */
-.case-body { padding-bottom: 0; }
+.case-body { padding-bottom: var(--space-9); }
+.case-pager-band { background: var(--color-bg-surface); } /* full-width surface band between the last section and the footer */
 .case-pager-wrap {
   display: grid; grid-template-columns: minmax(var(--case-toc-min), var(--case-toc-col)) minmax(0, var(--case-content-width));
-  padding-block: var(--space-9);
+  padding-block: var(--space-8) var(--space-7); /* bottom a step tighter: the small prev line reads lighter than the card */
 }
 .case-pager-label {
   white-space: nowrap;
@@ -250,7 +259,8 @@
   .case-pager-wrap { grid-template-columns: 1fr; }
 }
 @media (max-width: 800px) {
-  .case-pager-wrap { padding-block: var(--space-8); }
+  .case-body { padding-bottom: var(--space-7); }
+  .case-pager-wrap { padding-block: var(--space-7) var(--space-5); }
   .case-pager-label { font-size: var(--text-caption); line-height: 1rem; letter-spacing: 0.02em; } /* ~10.5px at the mobile root size */
 }
 
@@ -308,13 +318,19 @@
   transform: scaleX(var(--progress, 0)); transform-origin: left;
 }
 
-.case-next { grid-column: 2; display: grid; gap: var(--space-4); }
+.case-next { grid-column: 2; display: grid; gap: var(--space-3); }
 .case-next-card {
   display: grid; grid-template-columns: 2fr 3fr; align-items: center;
-  border-radius: var(--radius-card); background: var(--color-bg-surface); overflow: hidden;
+  border-radius: var(--radius-card); background: var(--color-bg-default); overflow: hidden; /* light so it stands off the surface band */
 }
 .case-next-cover { align-self: stretch; aspect-ratio: 4 / 3; overflow: hidden; background: var(--color-border-default); }
+.case-next-cover { position: relative; }
 .case-next-cover img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--motion-transition); }
+/* Mouse only: a 40% black veil dims the cover until hover (touch screens show it unveiled) */
+@media (hover: hover) {
+  .case-next-cover::after { content: ''; position: absolute; inset: 0; background: rgb(0 0 0 / 0.4); transition: opacity var(--motion-transition); pointer-events: none; }
+  a.case-next-card:hover .case-next-cover::after, a.case-next-card:focus-visible .case-next-cover::after { opacity: 0; }
+}
 .case-next-text { display: flex; flex-direction: column; gap: var(--space-1); padding: var(--space-4) var(--space-5); }
 .case-next-title {
   display: inline-flex; align-items: center; gap: var(--space-2);
@@ -359,3 +375,24 @@ a.case-next-prev:hover svg { transform: translateX(-3px); }
   .case-next-tags { font-size: var(--text-caption); }
   .case-next-prev { justify-self: center; font-size: var(--text-caption); letter-spacing: 0.02em; }
 }
+
+/* A closing line with a pill button that leads elsewhere on the site */
+.case-more-link { display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); margin-top: var(--space-5); }
+.case-section .case-more-link p.case-text { margin-top: 0; }
+.case-more-link .pill-btn { flex: none; }
+@media (max-width: 800px) {
+  .case-more-link { flex-direction: column; align-items: flex-start; gap: var(--space-3); }
+}
+
+/* Artisan Tour: rule overlay on a hero banner (safe text zone + mobile crop) */
+.gt-rules { position: relative; }
+.gt-rules > span { position: absolute; border: 1.5px dashed #fff; border-radius: 2px; pointer-events: none; }
+.gt-rules b {
+  position: absolute; left: 6px; top: 6px; padding: 1px 6px;
+  background: var(--color-accent-default); color: #fff; border-radius: var(--radius-pill);
+  font: var(--weight-medium) 11px / 16px var(--font-body);
+}
+.gt-crop { left: 38%; top: 0; width: 62%; height: 100%; background: rgb(255 255 255 / 0.08); }
+.gt-crop b { left: auto; right: 6px; }
+.gt-safe { left: 64%; top: 72%; width: 32%; height: 22%; border-color: #ffe14d; }
+.gt-safe b { top: -22px; left: 0; background: #ffe14d; color: var(--color-text-primary); }
