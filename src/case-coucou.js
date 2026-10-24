@@ -134,13 +134,13 @@ const sections = [
         ${[
           // crops follow the Figma masks (object-position x y)
           [{ src: `${img}/scenes-01.jpg` }, '場景插畫 1', '50% 50%'],
-          [{ src: `${img}/scenes-02.jpg` }, '場景插畫 2', '100% 50%'],
-          [{ src: `${img}/scenes-03.jpg` }, '場景插畫 3', '50% 70%'],
-          [{ src: `${img}/scenes-04.jpg` }, '場景插畫 4', '50% 0%'],
+          [{ video: `${img}/scenes-anim-meadow.mp4` }, '場景插畫：草地上的兔兔與狗狗', '100% 50%'],
+          [{ video: `${img}/scenes-anim-beach.mp4` }, '場景插畫：海邊', '50% 70%'],
+          [{ video: `${img}/scenes-anim-balcony.mp4` }, '場景插畫：陽台午睡', '50% 0%'],
           [{ src: `${img}/scenes-halloween.jpg` }, '場景插畫：萬聖節的兔子', '50% 79%'],
           [{ video: `${img}/gifs-anim-01.mp4` }, '場景插畫：戴泳鏡的狗狗', '50% 39%'],
           [{ src: `${img}/scenes-05.jpg` }, '場景插畫 5', '35% 50%'],
-          [{ src: `${img}/scenes-cat-frog-hat.jpg` }, '場景插畫：戴青蛙帽的賓賓', '50% 69%'],
+          [{ video: `${img}/gifs-anim-rainbow.mp4` }, '場景插畫：戴青蛙帽的賓賓', '50% 69%'],
           [{ src: `${img}/scenes-06.jpg` }, '場景插畫 6', '50% 79%'],
         ].map(([media, alt, pos]) => cell({ ...media, alt }).replace(/<(img|video) /, `<$1 style="object-position:${pos}" `).replace(' style="object-fit:cover"', '')).join('')}
       </div>
