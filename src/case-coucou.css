@@ -36,7 +36,7 @@
 .cc-feature > .cc-cell:nth-child(2) .cc-cell-frame,
 .cc-feature > .cc-cell:nth-child(3) .cc-cell-frame { aspect-ratio: 268 / 194; } /* the landscapes set the height */
 .cc-feature-side { grid-column: 3; grid-row: 1 / span 2; display: flex; flex-direction: column; gap: var(--space-2); }
-.cc-feature-side .cc-cell:first-child .cc-cell-frame { aspect-ratio: 700 / 906; } /* the whole black dog */
+.cc-feature-side .cc-cell:first-child .cc-cell-frame { aspect-ratio: 123 / 186; } /* black dog 123×186 in the Figma mock; the nose fills the rest (123×129) */
 /* Fill frames (fox, nose) flex to the space left; a percentage height isn't resolved in Safari grid items */
 .cc-feature > .cc-cell:nth-child(1), .cc-feature-side .cc-cell:last-child { display: flex; flex-direction: column; flex: 1 1 0; min-height: 0; }
 .cc-feature > .cc-cell:nth-child(1) .cc-cell-frame,
