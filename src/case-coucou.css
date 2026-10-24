@@ -35,8 +35,10 @@
 .cc-feature > .cc-cell:nth-child(3) { grid-column: 2; grid-row: 2; }
 .cc-feature > .cc-cell:nth-child(4) { grid-column: 3; grid-row: 1; }
 .cc-feature > .cc-cell:nth-child(5) { grid-column: 3; grid-row: 2; }
+/* Fill cells flex to the row height; a percentage height isn't resolved in Safari grid items */
+.cc-feature > .cc-cell { display: flex; flex-direction: column; }
 .cc-feature > .cc-cell:nth-child(1) .cc-cell-frame,
-.cc-feature > .cc-cell:nth-child(n+4) .cc-cell-frame { aspect-ratio: auto; height: 100%; position: relative; }
+.cc-feature > .cc-cell:nth-child(n+4) .cc-cell-frame { aspect-ratio: auto; flex: 1 1 0; min-height: 0; position: relative; }
 /* Images that fill a stretched cell don't size the row: the landscapes set it */
 .cc-feature > .cc-cell:nth-child(1) .cc-cell-frame img,
 .cc-feature > .cc-cell:nth-child(n+4) .cc-cell-frame img { position: absolute; inset: 0; }
@@ -193,7 +195,7 @@
   .cc-feature > .cc-cell:nth-child(2) { grid-column: 2; grid-row: 1; }
   .cc-feature > .cc-cell:nth-child(3) { grid-column: 2; grid-row: 2; }
   /* bottom pair: the right one sets the height, the left one fills it */
-  .cc-feature > .cc-cell:nth-child(5) .cc-cell-frame { aspect-ratio: 0.71; height: auto; }
+  .cc-feature > .cc-cell:nth-child(5) .cc-cell-frame { aspect-ratio: 0.71; flex: none; }
   .cc-pets { gap: 4px; }
   .cc-entry { grid-template-columns: 1fr; margin-inline: 0; padding: 24px 20px 11px; row-gap: var(--space-3); }
   .cc-entry figure { margin-top: 0; }
