@@ -89,7 +89,7 @@
 
 /* Competition block — spacing taken from Figma (label y1339 → image 1365 → card 1798–1953 → details 1960) */
 .case-label + .cc-competition { margin-top: var(--space-3); } /* label → artwork, same as other labels */
-.cc-competition { margin: var(--space-3) 0 0; }
+.cc-competition { margin: var(--space-3) 0 0; overflow: hidden; } /* clips the hover zoom */
 .cc-competition img { display: block; width: 100%; aspect-ratio: 604 / 423; object-fit: cover; }
 
 .cc-entry {
@@ -172,7 +172,7 @@
 .cc-stats .cc-social { margin-left: 0; }
 
 /* Follow block before the pager */
-.cc-follow { padding-bottom: var(--space-2); }
+.cc-follow { padding-bottom: var(--space-8); } /* room before the grey next-project band */
 .cc-follow-inner { margin-left: var(--case-toc-col); max-width: var(--case-content-width); }
 .cc-follow-kicker { color: var(--color-accent-dark); font: var(--weight-medium) var(--text-caption) / 1.2 var(--font-body); }
 .cc-follow-title { font: var(--weight-regular) var(--text-h3) / var(--leading-h3) var(--font-display); }
@@ -181,7 +181,7 @@
 .cc-follow-label { display: flex; align-items: center; gap: 4px; color: var(--color-accent-dark); font: var(--weight-medium) var(--text-caption) / 1.2 var(--font-body); }
 .cc-follow-label svg { width: 16px; height: 16px; }
 .cc-follow-links div { flex: none; display: flex; flex-wrap: wrap; gap: 8px; align-content: flex-start; max-width: 100%; }
-.cc-follow-label { flex-basis: 100%; }
+.cc-follow-label { flex-basis: 100%; min-height: 16px; } /* GIPHY has no icon: keep its chip level with the Instagram ones */
 .cc-chip {
   padding: 3px 10px; border: 1px solid var(--color-text-muted); border-radius: var(--radius-pill);
   color: var(--color-text-muted); font: var(--weight-regular) var(--text-body-s) / 1.4 var(--font-body);
@@ -217,6 +217,7 @@
   .cc-chars { grid-template-columns: 1fr; gap: var(--space-3); }
   .cc-stats { flex-wrap: wrap; row-gap: var(--space-2); }
   .cc-stats small { margin-left: 0; flex-basis: 100%; }
+  .cc-follow { padding-bottom: var(--space-7); }
   .cc-follow-links { flex-direction: column; }
   .cc-follow-links > div + div { padding-left: 0; border-left: 0; }
 }

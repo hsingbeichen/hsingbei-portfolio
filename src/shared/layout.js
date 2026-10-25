@@ -127,4 +127,20 @@ export const initLayout = () => {
     event.preventDefault()
     window.scrollTo({ top: 0 })
   })
+
+  // Phones: a small TOP button on the right once the reader is a screen down; it hides near the footer, which has its own
+  const floatTop = document.createElement('button')
+  floatTop.className = 'float-top'
+  floatTop.type = 'button'
+  floatTop.setAttribute('aria-label', '回到頁面頂端')
+  floatTop.innerHTML = `<img src="${IMG}/layout/icon-back-top.svg" alt="" />TOP`
+  floatTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }))
+  document.body.append(floatTop)
+  const footerEl = document.querySelector('footer')
+  const updateFloatTop = () => {
+    const nearFooter = footerEl && footerEl.getBoundingClientRect().top < window.innerHeight
+    floatTop.classList.toggle('is-shown', window.scrollY > window.innerHeight && !nearFooter)
+  }
+  window.addEventListener('scroll', updateFloatTop, { passive: true })
+  updateFloatTop()
 }
