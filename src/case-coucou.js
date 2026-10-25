@@ -140,7 +140,7 @@ const sections = [
           [{ src: `${img}/scenes-halloween.jpg` }, '場景插畫：萬聖節的兔子', '50% 79%'],
           [{ video: `${img}/gifs-anim-01.mp4` }, '場景插畫：戴泳鏡的狗狗', '50% 39%'],
           [{ src: `${img}/scenes-05.jpg` }, '場景插畫 5', '35% 50%'],
-          [{ video: `${img}/gifs-anim-rainbow.mp4` }, '場景插畫：戴青蛙帽的賓賓', '50% 69%'],
+          [{ video: `${img}/gifs-anim-rainbow.mp4` }, '場景插畫：戴青蛙帽的鬥牛犬', '50% 69%'],
           [{ src: `${img}/scenes-06.jpg` }, '場景插畫 6', '50% 79%'],
         ].map(([media, alt, pos]) => cell({ ...media, alt }).replace(/<(img|video) /, `<$1 style="object-position:${pos}" `).replace(' style="object-fit:cover"', '')).join('')}
       </div>
@@ -150,10 +150,11 @@ const sections = [
     id: 'gifs', num: '05', zh: '動態與貼圖', en: 'GIFS & STICKERS',
     content: `
       ${lead('讓角色動起來，也成為可以傳出去的表情。')}
+      <p class="cc-stage">同一隻鬥牛犬，延伸成三種形式</p>
       <div class="cc-grid cc-grid--3 cc-grid--captioned cc-grid--gifs">
         ${cell({ src: `${img}/gifs-card-frame-by-frame.jpg`, alt: '在 Procreate 用圖層畫逐格動畫', caption: '逐格動畫' })}
-        ${cell({ src: `${img}/gifs-card-scene.jpg`, alt: '賓賓在咖啡店的場景插畫', caption: '場景插畫' })}
-        ${cell({ src: `${img}/gifs-sticker-02.gif`, alt: '賓賓捧著咖啡杯的 GIF 貼圖', caption: 'GIF&貼圖' }).replace('object-fit:cover', 'object-fit:cover;object-position:50% 38%')}
+        ${cell({ src: `${img}/gifs-card-scene.jpg`, alt: '鬥牛犬在咖啡店的場景插畫', caption: '場景插畫' })}
+        ${cell({ src: `${img}/gifs-sticker-02.gif`, alt: '鬥牛犬捧著咖啡杯的 GIF 貼圖', caption: 'GIF&貼圖' }).replace('object-fit:cover', 'object-fit:cover;object-position:50% 38%')}
       </div>
       ${caseLabel('製作過程 MAKING OF')}
       <figure class="cc-making">
@@ -170,9 +171,9 @@ const sections = [
           ['gifs-sticker-bunny-orange.gif', '穿橘衣的兔兔', 6.1, 9.4, 88.7],
           ['gifs-sticker-01.gif', '戴兔子帽的狗狗', 0, 0, 100],
           ['gifs-sticker-bunny-starry.gif', '星空斗篷的兔兔', 5.2, 11.1, 87.8],
-          ['gifs-sticker-cat-crying.gif', '哭哭的賓賓', 0, 8.9, 91.3],
-          ['gifs-sticker-02.gif', '捧咖啡杯的賓賓', 7.4, 15, 85.2],
-          ['gifs-sticker-cat-frog-shirt.gif', '穿青蛙 T 恤揮手的賓賓', 0, 9.4, 100], // sits with the other 賓賓 stickers
+          ['gifs-sticker-bulldog-crying.gif', '哭哭的鬥牛犬', 0, 8.9, 91.3],
+          ['gifs-sticker-02.gif', '捧咖啡杯的鬥牛犬', 7.4, 15, 85.2],
+          ['gifs-sticker-bulldog-frog-shirt.gif', '穿青蛙 T 恤揮手的鬥牛犬', 0, 9.4, 100], // sits with the other bulldog stickers
           ['shift-character-chouchou-doudou.gif', '兔兔與狗狗', 0, 1.1, 99],
           ['gifs-sticker-dog-lying.gif', '趴著的狗狗', 0, 2, 101.7],
         ].map(([f, t, x, y, w]) => `
