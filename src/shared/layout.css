@@ -175,3 +175,20 @@ img, video { -webkit-user-drag: none; user-select: none; -webkit-touch-callout: 
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .rise, .reveal { opacity: 1; transform: none; }
 }
+
+/* ===== Floating TOP (phones only) ===== */
+.float-top { display: none; }
+@media (max-width: 800px) {
+  .float-top {
+    position: fixed; right: var(--space-2); bottom: calc(var(--space-3) + env(safe-area-inset-bottom)); z-index: 90;
+    display: grid; place-items: center; align-content: center; gap: 1px;
+    width: 44px; height: 44px; padding: 0; border: 0; border-radius: 50%;
+    background: var(--color-accent-dark); color: #FFFFFF;
+    font: var(--weight-medium) 10px / 1 var(--font-display); letter-spacing: 0.04em;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 0.18);
+    opacity: 0; transform: translateY(8px); pointer-events: none;
+    transition: opacity var(--motion-normal), transform var(--motion-normal);
+  }
+  .float-top img { width: 10px; height: auto; filter: brightness(0) invert(1); }
+  .float-top.is-shown { opacity: 1; transform: none; pointer-events: auto; }
+}
