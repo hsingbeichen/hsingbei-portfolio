@@ -150,6 +150,7 @@ const sections = [
     id: 'gifs', num: '05', zh: '動態與貼圖', en: 'GIFS & STICKERS',
     content: `
       ${lead('讓角色動起來，也成為可以傳出去的表情。')}
+      <p class="cc-stage">同一隻賓賓，延伸成三種形式</p>
       <div class="cc-grid cc-grid--3 cc-grid--captioned cc-grid--gifs">
         ${cell({ src: `${img}/gifs-card-frame-by-frame.jpg`, alt: '在 Procreate 用圖層畫逐格動畫', caption: '逐格動畫' })}
         ${cell({ src: `${img}/gifs-card-scene.jpg`, alt: '賓賓在咖啡店的場景插畫', caption: '場景插畫' })}
