@@ -1,6 +1,7 @@
 import { BASE, IMG, BACK_WORK, header, footer, initLayout } from './shared/layout.js'
 import { text, lead, caseBody, caseLabel, caseMedia, casePager, initCaseToc } from './cases/case.js'
 import { pagerFor } from './shared/works.js'
+import { initLightbox } from './cases/lightbox.js'
 import './case-coucou.css'
 
 const img = `${IMG}/coucou`
@@ -225,3 +226,10 @@ document.querySelector('#app').innerHTML = `
 
 initLayout()
 initCaseToc()
+// Artwork opens large on click; each section pages through its own pieces (stickers and making-of frames stay as they are)
+initLightbox([
+  '#hand-drawn .cc-feature .cc-cell-frame > img',
+  '#hand-drawn .cc-competition > img, #hand-drawn .cc-grid--square .cc-cell-frame > img',
+  '#shift .cc-grid--captioned .cc-cell-frame > :is(img, video), #shift .cc-bin img',
+  '#scenes .cc-cell-frame > :is(img, video)',
+])

@@ -89,7 +89,7 @@
 
 /* Competition block — spacing taken from Figma (label y1339 → image 1365 → card 1798–1953 → details 1960) */
 .case-label + .cc-competition { margin-top: var(--space-3); } /* label → artwork, same as other labels */
-.cc-competition { margin: var(--space-3) 0 0; }
+.cc-competition { margin: var(--space-3) 0 0; overflow: hidden; } /* clips the hover zoom */
 .cc-competition img { display: block; width: 100%; aspect-ratio: 604 / 423; object-fit: cover; }
 
 .cc-entry {

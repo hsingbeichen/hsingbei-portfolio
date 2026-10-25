@@ -1,0 +1,42 @@
+/* ===== Click-to-enlarge artwork ===== */
+.lb-zoom { cursor: zoom-in; }
+.lb-zoom:focus-visible { outline: 2px solid var(--color-accent-default); outline-offset: 2px; }
+@media (hover: hover) {
+  /* A small zoom inside the frame says "you can open this" */
+  .lb-zoom > img, .lb-zoom > video { transition: transform var(--motion-normal); }
+  .lb-zoom:hover > img, .lb-zoom:hover > video { transform: scale(1.04); }
+}
+
+.lb-open { overflow: hidden; }
+.lb {
+  position: fixed; inset: 0; z-index: 1000;
+  display: grid; grid-template-columns: 64px minmax(0, 1fr) 64px; align-items: center;
+  background: rgb(0 0 0 / 0.92);
+}
+.lb[hidden] { display: none; }
+.lb-figure { grid-column: 2; display: grid; justify-items: center; gap: var(--space-2); margin: 0; height: 100%; align-content: center; cursor: zoom-out; }
+.lb-media { display: grid; place-items: center; }
+.lb-media img, .lb-media video {
+  display: block; max-width: min(100%, 1200px); max-height: calc(100svh - 120px);
+  width: auto; height: auto; border-radius: var(--radius-photo); cursor: default;
+}
+.lb-caption { color: rgb(255 255 255 / 0.8); font: var(--weight-medium) var(--text-caption) / 1.4 var(--font-body); text-align: center; }
+.lb-btn {
+  display: grid; place-items: center; width: 44px; height: 44px; justify-self: center;
+  border: 0; border-radius: 50%; background: rgb(255 255 255 / 0.12); color: #FFFFFF;
+  font: 400 28px / 1 var(--font-body); cursor: pointer; transition: background var(--motion-normal);
+}
+.lb-btn:hover, .lb-btn:focus-visible { background: rgb(255 255 255 / 0.25); }
+.lb-btn[hidden] { visibility: hidden; }
+.lb-prev { grid-column: 1; grid-row: 1; }
+.lb-next { grid-column: 3; grid-row: 1; }
+.lb-close { position: absolute; top: var(--space-3); right: var(--space-3); font-size: 20px; }
+
+@media (max-width: 800px) {
+  /* Phones: the image takes the full width; arrows sit at the bottom, swipe also works */
+  .lb { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr auto; padding: var(--space-6) var(--space-2) var(--space-3); }
+  .lb-figure { grid-column: 1 / -1; grid-row: 1; }
+  .lb-media img, .lb-media video { max-height: calc(100svh - 170px); }
+  .lb-prev { grid-column: 1; grid-row: 2; }
+  .lb-next { grid-column: 2; grid-row: 2; }
+}
