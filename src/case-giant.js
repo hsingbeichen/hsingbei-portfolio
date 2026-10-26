@@ -155,11 +155,11 @@ document.querySelector('#app').innerHTML = `
       titleEn: 'ARTISAN TOUR',
       cover: { src: `${img}/hero-mockup.jpg`, alt: '改版後的巨匠旅遊首頁，電腦版與手機版，背景是淡化的改版前首頁' }, // mockup; final key visual still to come
       meta: [
-        { label: '類別', value: ['官網改版・RWD 規劃・品牌系統'] },
-        { label: '製作年份', value: ['官網改版 2019 – 2021', '任職 2016.12 – 2021.01'] },
+        { label: '負責項目', value: ['官網改版・RWD 規劃｜2019 – 2021', '品牌 CIS 規範重整｜2019', '行銷視覺設計｜2016 – 2021', '設計團隊管理｜2020 – 2021'] },
+        { label: '任職期間', value: ['2016.12 – 2021.01'] },
         { label: '產業', value: ['旅遊業｜旅行社'] },
-        { label: '合作形式', value: ['在職'] },
-        { label: '專案範圍', value: ['版面架構・UI 與視覺設計・RWD 規劃', '三品牌 CIS 規範重整'] },
+        { label: '合作形式', value: ['在職・視覺設計主任'] },
+        { label: '設計內容', value: ['首頁、大館、小館、行程頁、會員系統', 'LOGO 規範・DM 公版', 'Banner・DM・雜誌・社群廣告・EDM'] },
       ],
     })}
     ${caseBody({ name: 'ARTISAN TOUR', sections })}
