@@ -37,7 +37,7 @@ const sections = [
       ${lead('舊版首頁把所有資訊都放了上來；新版先解決「找行程」，再用一致的區塊模式，帶著使用者往下逛。')}
       <div class="case-grid case-grid--2" style="align-items: start">
         ${caseScroll({ src: `${img}/home-before.png`, alt: '改版前的巨匠旅遊首頁', caption: '改版前' })}
-        ${caseScroll({ src: `${img}/home-after-desktop.png`, alt: '改版後的巨匠旅遊首頁（電腦版）', caption: '改版後' })}
+        ${caseScroll({ src: `${img}/home-after-desktop.jpg`, alt: '改版後的巨匠旅遊首頁（電腦版）', caption: '改版後' })}
       </div>
       ${text('舊版首頁的問題很明顯：Banner 尺寸與風格不一、區塊之間沒有主次、文字密集難以掃讀，放到手機上更難使用。改版前我參與過這個版本的局部調整，也因此確定小修補解決不了根本問題，必須從架構重新規劃。')}
       ${text('新版把搜尋列放在主視覺正下方，團體旅遊、國際機票、機＋酒、航空自由行四種入口一次到位，一進首頁就能開始找行程。')}
@@ -66,7 +66,7 @@ const sections = [
       ${caseLabel('大館：改版前 → 改版後 REGION PAGE')}
       <div class="case-grid case-grid--2" style="align-items: start">
         ${caseScroll({ src: `${img}/pages-region-before.png`, alt: '大館改版前（東歐）', caption: '改版前' })}
-        ${caseScroll({ src: `${img}/pages-region-after.png`, alt: '大館改版後（東歐）', caption: '改版後' })}
+        ${caseScroll({ src: `${img}/pages-region-after.jpg`, alt: '大館改版後（東歐）', caption: '改版後' })}
       </div>
       ${text('拿掉塞滿主題 Banner 的左側欄，改成單欄，電腦與手機才能共用同一套結構。篩選從一排難點的小勾選框，改成「篩選地區（可複選）」的膠囊按鈕，選中即填色，手指也點得準。')}
       ${text('列表分成三層：行程名稱加粗、紅字亮點、價格放大並靠右對齊，掃一眼就能比價。促銷仍保留在「熱門推薦」輪播，但不再壓過搜尋，業務要的曝光與使用者要的找行程兩邊都顧到。')}
@@ -93,8 +93,8 @@ const sections = [
       ${text('區塊改為上下堆疊；商品卡片改成橫向滑動，分類標籤也能左右滑；服務入口收成一排圓形圖示。導覽選單收進右上角，展開後依地區列出，會員與專區入口固定在底部。')}
       ${caseLabel('首頁與導覽選單（手機版） MOBILE')}
       <div class="case-grid case-grid--2">
-        ${phone(`${img}/home-after-mobile.png`, '改版後首頁（手機版）')}
-        ${phone(`${img}/rwd-menu-mobile.png`, '手機版導覽選單展開')}
+        ${phone(`${img}/home-after-mobile.jpg`, '改版後首頁（手機版）')}
+        ${phone(`${img}/rwd-menu-mobile.jpg`, '手機版導覽選單展開')}
       </div>
       ${caseLabel('不只縮小：匠子旅遊誌的篩選 FILTERS')}
       <div class="case-grid" style="grid-template-columns: minmax(0, 1fr) 160px; align-items: start">
