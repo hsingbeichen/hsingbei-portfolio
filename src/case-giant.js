@@ -159,7 +159,7 @@ document.querySelector('#app').innerHTML = `
         { label: '任職期間', value: ['2016.12 – 2021.01'] },
         { label: '產業', value: ['旅遊業｜旅行社'] },
         { label: '合作形式', value: ['在職・視覺設計主任'] },
-        { label: '設計內容', value: ['首頁、大館、小館、行程頁、會員系統', 'LOGO 規範・DM 公版', 'Banner・DM・雜誌・社群廣告・EDM'] },
+        { label: '設計內容', value: ['首頁、大館、小館、行程頁、會員系統', 'LOGO 規範・DM 公版', 'Banner・GDN・DM・雜誌・社群廣告・EDM'] },
       ],
     })}
     ${caseBody({ name: 'ARTISAN TOUR', sections })}
