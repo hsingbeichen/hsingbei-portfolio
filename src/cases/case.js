@@ -2,13 +2,21 @@
 import '../shared/layout.js'
 import './case.css'
 
-export const caseHero = ({ titleZh, titleEn, images, meta }) => `
+// cover: one full-width key visual instead of the three-shot gallery; the meta then runs in a row underneath.
+export const caseHero = ({ titleZh, titleEn, images = [], cover, meta }) => `
   <section class="case-hero" id="top">
     <div class="shell case-shell">
       <h1 class="case-title rise">
         <span class="case-title-en">${titleEn}</span>
         <span class="case-title-zh">${titleZh}</span>
       </h1>
+      ${cover ? `
+      <div class="case-hero-body case-hero-body--cover reveal">
+        <figure class="case-cover"><img src="${cover.src}" alt="${cover.alt}" /></figure>
+        <dl class="case-meta case-meta--row">
+          ${meta.map((m) => `<div><dt>${m.label}</dt><dd>${m.value.join('<br />')}</dd></div>`).join('')}
+        </dl>
+      </div>` : `
       <div class="case-hero-body reveal">
         <div class="case-gallery">
           ${images.map((img) => `
@@ -25,7 +33,7 @@ export const caseHero = ({ titleZh, titleEn, images, meta }) => `
             </div>
           `).join('')}
         </dl>
-      </div>
+      </div>`}
     </div>
   </section>
 `

@@ -153,11 +153,7 @@ document.querySelector('#app').innerHTML = `
     ${caseHero({
       titleZh: '巨匠旅遊',
       titleEn: 'ARTISAN TOUR',
-      images: [
-        { shape: 'square', page: true, src: `${img}/home-after-desktop.png`, alt: '改版後首頁（電腦版）' },
-        { shape: 'card', page: true, src: `${img}/home-after-mobile.png`, alt: '改版後首頁（手機版）' },
-        { shape: 'card', page: true, src: `${img}/home-before.png`, alt: '改版前首頁' },
-      ],
+      cover: { src: `${img}/hero-mockup.jpg`, alt: '改版後的巨匠旅遊首頁，電腦版與手機版，背景是淡化的改版前首頁' }, // mockup; final key visual still to come
       meta: [
         { label: '類別', value: ['官網改版・RWD 規劃・品牌系統'] },
         { label: '製作年份', value: ['官網改版 2019 – 2021', '任職 2016.12 – 2021.01'] },
