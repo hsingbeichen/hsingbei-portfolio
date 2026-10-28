@@ -161,13 +161,13 @@ img, video { -webkit-user-drag: none; user-select: none; -webkit-touch-callout: 
 @media (max-width: 800px) {
   .navbar-actions nav { display: none; }
   .menu-btn {
-    display: grid; align-content: center; justify-items: center; gap: 5px;
+    display: grid; align-content: center; justify-items: center; gap: 4px;
     width: 40px; height: 40px; margin-right: -8px; padding: 0; border: 0; background: none; cursor: pointer;
   }
-  .menu-btn span { display: block; width: 22px; height: 2px; border-radius: var(--radius-pill); background: var(--color-text-primary); transition: transform var(--motion-normal), opacity var(--motion-normal); }
-  .is-menu-open .menu-btn span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .menu-btn span { display: block; width: 18px; height: 2.5px; border-radius: var(--radius-pill); background: #444444; /* deep grey, a touch heavier than the 1px nav text */ transition: transform var(--motion-normal), opacity var(--motion-normal); }
+  .is-menu-open .menu-btn span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
   .is-menu-open .menu-btn span:nth-child(2) { opacity: 0; }
-  .is-menu-open .menu-btn span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .is-menu-open .menu-btn span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
   .navbar.is-menu-open { background: var(--color-bg-default); border-bottom-color: var(--color-border-default); }
   .menu-panel:not([hidden]) {
     position: fixed; inset: var(--nav-height) 0 0; z-index: 199;
