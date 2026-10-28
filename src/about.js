@@ -63,9 +63,9 @@ document.querySelector('#app').innerHTML = `
           </div>
           <div class="profile-story">
             <img class="quote-mark quote-mark--open" src="${IMG}/about/quote-open.svg" width="94.3945" height="77.6156" alt="" />
-            <p>我是陳星蓓(Hsingbei)，2016 年從平面與活動視覺踏入設計這行，後來一路到參與網站介面。在巨匠旅遊的四年多，我和行銷主管一起改版官網，負責版面架構、UI 與 RWD 設計，也跟前端反覆討論切版邏輯、緊盯畫面還原的細節。直到現在，那套架構仍有 80–85% 留在線上使用。</p>
-            <p>這段經驗讓我發現，好看的設計稿只是起點，能被準確實作、被使用者順利操作，才算完成。所以我開始學習 HTML、CSS，目前在樂淘負責電商頁面視覺優化，並用 Claude Code 加速原型與驗證，把「發現問題、做設計判斷、用 Code 解決、驗證結果」串成自己的工作方式。</p>
-            <p>同時，我也持續創作個人插畫 Coucoubei——沒有客戶、沒有截稿日，單純練習觀察與表達，讓自己在解決問題之外，還留一點空間純粹地畫畫。</p>
+            <p>我是陳星蓓（Hsingbei）。在巨匠旅遊時，我與行銷主管一起改版官網，主導版面架構、UI、RWD 與前端協作，這套架構至今仍有 80–85% 在線上使用；後期也帶領 4–6 人的設計團隊。入行 9 年多，我從平面一路做到網站介面。</p>
+            <p>我相信設計稿只是起點，被準確做出來、被順利使用，才算完成。現在在樂淘，我負責 4 個市場的活動視覺，用 Figma 元件把製作系統化，也直接修改 Vue 模板與 CSS 做設計還原。</p>
+            <p>工作之外，我畫個人插畫 Coucoubei，在 GIPHY 累積超過 51 萬次觀看，是我練習觀察與表達的地方。</p>
             <img class="quote-mark quote-mark--close" src="${IMG}/about/quote-close.svg" width="94.3945" height="77.6156" alt="" />
           </div>
         </div>
