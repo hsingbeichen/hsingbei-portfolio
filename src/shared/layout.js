@@ -153,7 +153,7 @@ export const initLayout = () => {
   document.addEventListener('keydown', (event) => { if (event.key === 'Escape' && !menu.hidden) { setMenu(false); menuBtn.focus() } })
   window.matchMedia('(min-width: 801px)').addEventListener('change', (event) => { if (event.matches) setMenu(false) })
 
-  // Phones: a small TOP button on the right once the reader is a screen down; it hides near the footer, which has its own
+  // Phones: a small TOP button on the right once the reader has scrolled a little; it hides when the footer's own TOP link shows
   const floatTop = document.createElement('button')
   floatTop.className = 'float-top'
   floatTop.type = 'button'
@@ -161,10 +161,10 @@ export const initLayout = () => {
   floatTop.innerHTML = `<img src="${IMG}/layout/icon-back-top.svg" alt="" />TOP`
   floatTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }))
   document.body.append(floatTop)
-  const footerEl = document.querySelector('footer')
+  const footerTop = document.querySelector('.back-top')
   const updateFloatTop = () => {
-    const nearFooter = footerEl && footerEl.getBoundingClientRect().top < window.innerHeight
-    floatTop.classList.toggle('is-shown', window.scrollY > window.innerHeight && !nearFooter)
+    const footerTopVisible = footerTop && footerTop.getBoundingClientRect().top < window.innerHeight
+    floatTop.classList.toggle('is-shown', window.scrollY > window.innerHeight * 0.5 && !footerTopVisible)
   }
   window.addEventListener('scroll', updateFloatTop, { passive: true })
   updateFloatTop()
