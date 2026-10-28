@@ -75,6 +75,13 @@
   color: var(--color-text-secondary);
   font: var(--weight-medium) var(--text-body-m) / var(--leading-body-m-tight) var(--font-display);
 }
+.job-points { margin-top: var(--space-2); display: grid; gap: 6px; }
+.job-points li {
+  position: relative; padding-left: 14px;
+  color: var(--color-text-secondary);
+  font: var(--weight-regular) var(--text-body-m) / var(--leading-lead) var(--font-body);
+}
+.job-points li::before { content: ''; position: absolute; left: 0; top: 0.62em; width: 5px; height: 5px; border-radius: 50%; background: var(--color-accent-default); }
 
 .resume-row { display: flex; justify-content: space-between; align-items: center; gap: var(--space-4); }
 .resume-row p {

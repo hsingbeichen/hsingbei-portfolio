@@ -55,9 +55,19 @@ export const header = (active, { back } = {}) => `
         <img src="${IMG}/home/logo-header.svg" width="29.809" height="32" alt="" />
         <span class="logo-text">HSINGBEI CHEN</span>
       </a>
-      ${back ? backLink(back) : primaryNav(active)}
+      <div class="navbar-actions">
+        ${back ? backLink(back) : primaryNav(active)}
+        <button class="menu-btn" type="button" aria-label="開啟選單" aria-expanded="false" aria-controls="site-menu"><span></span><span></span><span></span></button>
+      </div>
     </div>
   </header>
+  <nav class="menu-panel" id="site-menu" aria-label="選單" hidden>
+      <a href="${BASE}">HOME</a>
+      ${navItems.map((item) => `<a href="${item.href}"${item.key === active ? ' class="is-active" aria-current="page"' : ''}>${item.label}</a>`).join('')}
+      <div class="menu-socials">
+        ${socials.map((s) => `<a href="${s.href}" target="_blank" rel="noopener">${s.label}</a>`).join('')}
+      </div>
+    </nav>
 `
 
 export const footer = (active) => `
@@ -127,6 +137,21 @@ export const initLayout = () => {
     event.preventDefault()
     window.scrollTo({ top: 0 })
   })
+
+  // Phones: hamburger opens a full-width menu under the navbar; links, Esc or the button close it
+  const menuBtn = document.querySelector('.menu-btn')
+  const menu = document.querySelector('#site-menu')
+  const setMenu = (open) => {
+    menu.hidden = !open
+    menuBtn.setAttribute('aria-expanded', String(open))
+    menuBtn.setAttribute('aria-label', open ? '關閉選單' : '開啟選單')
+    navbar.classList.toggle('is-menu-open', open)
+    document.documentElement.classList.toggle('menu-open', open)
+  }
+  menuBtn.addEventListener('click', () => setMenu(menu.hidden))
+  menu.addEventListener('click', (event) => { if (event.target.closest('a')) setMenu(false) })
+  document.addEventListener('keydown', (event) => { if (event.key === 'Escape' && !menu.hidden) { setMenu(false); menuBtn.focus() } })
+  window.matchMedia('(min-width: 801px)').addEventListener('change', (event) => { if (event.matches) setMenu(false) })
 
   // Phones: a small TOP button on the right once the reader is a screen down; it hides near the footer, which has its own
   const floatTop = document.createElement('button')
