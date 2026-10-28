@@ -63,7 +63,7 @@ document.querySelector('#app').innerHTML = `
           </div>
           <div class="profile-story">
             <img class="quote-mark quote-mark--open" src="${IMG}/about/quote-open.svg" width="94.3945" height="77.6156" alt="" />
-            <p>我是陳星蓓（Hsingbei）。在巨匠旅遊時，我與行銷主管一起改版官網，主導版面架構、UI、RWD 與前端協作，這套架構至今仍有 80–85% 在線上使用；後期也帶領 4–6 人的設計團隊。入行 9 年多，我從平面一路做到網站介面。</p>
+            <p>我是陳星蓓（Hsingbei）。在巨匠旅遊時，我與行銷主管一起改版官網，主導版面架構、UI、RWD 與前端協作，這套架構至今仍有 80–85% 在線上使用；後期也帶領 4–6 人的設計團隊。從平面一路做到網站介面，累積 9 年多的設計經驗。</p>
             <p>我相信設計稿只是起點，被準確做出來、被順利使用，才算完成。現在在樂淘，我負責 4 個市場的活動視覺，用 Figma 元件把製作系統化，也直接修改 Vue 模板與 CSS 做設計還原。</p>
             <p>工作之外，我畫個人插畫 Coucoubei，在 GIPHY 累積超過 51 萬次觀看，是我練習觀察與表達的地方。</p>
             <img class="quote-mark quote-mark--close" src="${IMG}/about/quote-close.svg" width="94.3945" height="77.6156" alt="" />
