@@ -26,9 +26,9 @@ export const pillInner = (label, arrow = 'arrow-outline.svg') => `
   </span>
 `
 
-const primaryNav = (active) => `
+const primaryNav = (active, items = navItems) => `
   <nav aria-label="Primary navigation">
-    ${navItems.map((item) => `
+    ${items.map((item) => `
       <a href="${item.href}" data-section="${item.key}" data-label="${item.label}"${item.key === active ? ' class="is-active" aria-current="page"' : ''}>${item.label}</a>
     `).join('')}
   </nav>
@@ -47,8 +47,9 @@ const backLink = ({ label, href }) => `
 export const BACK_HOME = { label: 'BACK TO HOME', href: BASE }
 export const BACK_WORK = { label: 'BACK TO WORK', href: `${BASE}#works` }
 
-// Inner pages pass { back: BACK_HOME | BACK_WORK } to swap the nav for a back link.
-export const header = (active, { back } = {}) => `
+// Inner pages pass { back: BACK_HOME | BACK_WORK } to swap the nav for a back link;
+// a page with its own sections can pass { nav: [{ key, label, href }] } instead of the site nav.
+export const header = (active, { back, nav = navItems } = {}) => `
   <header class="navbar" id="navbar">
     <div class="shell navbar-inner">
       <a class="logo" href="${BASE}" aria-label="Hsingbei Chen home">
@@ -56,14 +57,14 @@ export const header = (active, { back } = {}) => `
         <span class="logo-text">HSINGBEI CHEN</span>
       </a>
       <div class="navbar-actions">
-        ${back ? backLink(back) : primaryNav(active)}
+        ${back ? backLink(back) : primaryNav(active, nav)}
         <button class="menu-btn" type="button" aria-label="開啟選單" aria-expanded="false" aria-controls="site-menu"><span></span><span></span><span></span></button>
       </div>
     </div>
   </header>
   <nav class="menu-panel" id="site-menu" aria-label="選單" hidden>
       <a href="${BASE}">HOME</a>
-      ${navItems.map((item) => `<a href="${item.href}"${item.key === active ? ' class="is-active" aria-current="page"' : ''}>${item.label}</a>`).join('')}
+      ${nav.map((item) => `<a href="${item.href}"${item.key === active ? ' class="is-active" aria-current="page"' : ''}>${item.label}</a>`).join('')}
       <div class="menu-socials">
         ${socials.map((s) => `<a href="${s.href}" target="_blank" rel="noopener">${s.label}</a>`).join('')}
       </div>
@@ -132,6 +133,13 @@ export const initLayout = () => {
     })
   }, { threshold: 0.15 })
   document.querySelectorAll('.reveal').forEach((el) => observer.observe(el))
+
+  // Visitors who opened a case from the overview go back there, not to the home page
+  const back = document.querySelector('.back-home')
+  if (back && document.referrer.includes(`${BASE}overview/`)) {
+    back.href = `${BASE}overview/#work`
+    back.lastChild.textContent = ' BACK TO OVERVIEW'
+  }
 
   document.querySelector('.back-top').addEventListener('click', (event) => {
     event.preventDefault()

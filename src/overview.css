@@ -1,0 +1,112 @@
+/* ===== Overview: one page for a quick read ===== */
+.ov-section { padding-block: var(--space-9); }
+.ov-title {
+  display: flex; align-items: baseline; gap: 12px; margin-bottom: var(--space-5);
+  color: var(--color-accent-dark);
+  font: var(--weight-bold) var(--text-h3) / var(--leading-h3) var(--font-body);
+}
+.ov-title .en { color: var(--color-text-muted); font: var(--weight-medium) var(--text-caption) / 1 var(--font-display); letter-spacing: var(--tracking-label); }
+
+/* ----- Hero: role, promise, proof numbers ----- */
+.ov-hero { padding-block: calc(var(--nav-height) + var(--space-9)) var(--space-8); }
+.ov-role {
+  display: flex; align-items: center; gap: var(--space-2);
+  color: var(--color-text-muted);
+  font: var(--weight-medium) var(--text-body-m) / 1 var(--font-display); letter-spacing: var(--tracking-label);
+}
+.ov-role span:last-child { color: var(--color-accent-default); font-family: ui-monospace, 'SF Mono', Menlo, monospace; }
+.ov-role i { font-style: normal; color: var(--color-border-default); }
+.ov-headline {
+  margin-top: var(--space-3);
+  font: var(--weight-black) clamp(2.25rem, 5.5vw, 4rem) / 1.2 var(--font-body);
+}
+.ov-sub { max-width: 40em; margin-top: var(--space-3); color: var(--color-text-secondary); font: var(--weight-regular) var(--text-body-lead) / 1.7 var(--font-body); }
+.ov-actions { display: flex; align-items: center; gap: var(--space-4); margin-top: var(--space-5); }
+.ov-link { color: var(--color-text-secondary); text-decoration: underline; text-underline-offset: 4px; font: var(--weight-medium) var(--text-body-m) / 1 var(--font-body); }
+.ov-link:hover { color: var(--color-accent-hover); }
+
+.ov-stats {
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: var(--space-8); border-top: 1px solid var(--color-border-default);
+}
+.ov-stats li { padding: var(--space-4) var(--space-4) 0 0; }
+.ov-stats li + li { padding-left: var(--space-4); border-left: 1px solid var(--color-border-subtle); }
+.ov-stat-value { color: var(--color-accent-dark); font: var(--weight-extrabold) clamp(2rem, 3.6vw, 2.75rem) / 1.1 var(--font-display); white-space: nowrap; }
+.ov-stat-value small { margin-left: 4px; font-size: var(--text-body-l); font-weight: var(--weight-bold); }
+.ov-stat-label { margin-top: var(--space-1); font: var(--weight-bold) var(--text-body-m) / 1.5 var(--font-body); }
+.ov-stat-note { color: var(--color-text-muted); font: var(--weight-regular) var(--text-body-s) / 1.5 var(--font-body); }
+
+/* ----- Featured cards: one number per project, then into the case page ----- */
+.ov-featured { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-3); }
+.ov-card { display: flex; flex-direction: column; height: 100%; overflow: hidden; border-radius: var(--radius-card); background: var(--color-bg-surface); }
+.ov-card-cover { display: block; aspect-ratio: 4 / 3; overflow: hidden; background: #FFFFFF; }
+.ov-card-cover img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--motion-normal); }
+.ov-card-empty { display: grid; place-items: center; height: 100%; color: var(--color-text-muted); font: var(--weight-medium) var(--text-body-s) / 1 var(--font-body); }
+.ov-card-body { display: flex; flex-direction: column; gap: 6px; flex: 1; padding: var(--space-3); }
+.ov-card-stat { color: var(--color-accent-dark); font: var(--weight-extrabold) var(--text-h3) / 1.2 var(--font-display); }
+.ov-card-stat small { display: block; color: var(--color-text-muted); font: var(--weight-medium) var(--text-caption) / 1.4 var(--font-body); }
+.ov-card-title { margin-top: var(--space-1); font: var(--weight-bold) var(--text-body-l) / 1.4 var(--font-body); }
+.ov-card-title em { margin-left: 6px; color: var(--color-text-muted); font: var(--weight-medium) var(--text-caption) / 1 var(--font-display); font-style: normal; letter-spacing: var(--tracking-label); }
+.ov-card-tags { color: var(--color-text-secondary); font: var(--weight-regular) var(--text-body-s) / 1.5 var(--font-body); }
+.ov-card-cta { margin-top: auto; padding-top: var(--space-2); color: var(--color-accent-default); font: var(--weight-medium) var(--text-body-s) / 1 var(--font-body); }
+.ov-card.is-soon .ov-card-cta { color: var(--color-text-muted); }
+a.ov-card:hover .ov-card-cover img, a.ov-card:focus-visible .ov-card-cover img { transform: scale(1.04); }
+a.ov-card:hover .ov-card-cta { text-decoration: underline; text-underline-offset: 3px; }
+
+/* ----- Work wall with category filter ----- */
+.ov-filter { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-8); }
+.ov-filter button {
+  padding: 6px 16px; border: 1px solid var(--color-border-default); border-radius: var(--radius-pill);
+  background: none; color: var(--color-text-secondary); cursor: pointer;
+  font: var(--weight-medium) var(--text-body-s) / 1.4 var(--font-body);
+  transition: background var(--motion-normal), color var(--motion-normal), border-color var(--motion-normal);
+}
+.ov-filter button:hover { border-color: var(--color-accent-hover); color: var(--color-accent-hover); }
+.ov-filter button[aria-selected="true"] { border-color: var(--color-accent-dark); background: var(--color-accent-dark); color: #FFFFFF; }
+.ov-wall { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-2); margin-top: var(--space-3); }
+.ov-wall li[hidden] { display: none; }
+.ov-wall figure { margin: 0; aspect-ratio: 1; overflow: hidden; border-radius: var(--radius-photo); background: #FFFFFF; }
+.ov-wall img { display: block; width: 100%; height: 100%; }
+
+/* ----- About: education + short story | skills, then timeline ----- */
+.ov-about { background: var(--color-bg-surface); }
+.ov-about-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: var(--space-8); }
+.ov-about-grid h3 { color: var(--color-accent-dark); font: var(--weight-bold) var(--text-body-m) / 1.5 var(--font-body); }
+.ov-about-grid h3 + p { margin-top: var(--space-1); color: var(--color-text-secondary); font: var(--weight-regular) var(--text-body-m) / 1.8 var(--font-body); }
+.ov-about-grid p + h3 { margin-top: var(--space-4); }
+.ov-skills { display: grid; gap: var(--space-3); }
+.ov-skills div { padding-bottom: var(--space-3); border-bottom: 1px solid var(--color-border-default); }
+.ov-skills dt { font: var(--weight-bold) var(--text-body-m) / 1.5 var(--font-display); }
+.ov-skills dd { margin: 2px 0 0; color: var(--color-text-secondary); font: var(--weight-regular) var(--text-body-s) / 1.6 var(--font-body); }
+
+.ov-timeline { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-4); margin-top: var(--space-8); }
+.ov-timeline > li { position: relative; padding-top: var(--space-4); border-top: 2px solid var(--color-accent-dark); }
+.ov-tl-period { color: var(--color-text-muted); font: var(--weight-medium) var(--text-body-s) / 1 var(--font-display); }
+.ov-timeline h3 { margin-top: var(--space-2); font: var(--weight-bold) var(--text-body-l) / 1.4 var(--font-body); }
+.ov-timeline h3 span { margin-left: var(--space-2); color: var(--color-text-secondary); font-size: var(--text-body-s); font-weight: var(--weight-medium); }
+.ov-timeline ul { display: grid; gap: 4px; margin-top: var(--space-2); }
+.ov-timeline ul li { position: relative; padding-left: 14px; color: var(--color-text-secondary); font: var(--weight-regular) var(--text-body-s) / 1.6 var(--font-body); }
+.ov-timeline ul li::before { content: ''; position: absolute; left: 0; top: 0.65em; width: 5px; height: 5px; border-radius: 50%; background: var(--color-accent-default); }
+.ov-more { margin-top: var(--space-6); }
+
+@media (max-width: 1024px) {
+  .ov-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ov-stats li:nth-child(3) { padding-left: 0; border-left: 0; }
+  .ov-featured { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ov-wall { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+@media (max-width: 800px) {
+  .ov-section { padding-block: var(--space-8); }
+  .ov-hero { padding-block: calc(var(--nav-height) + var(--space-7)) var(--space-6); }
+  .ov-sub { font-size: var(--text-body-m); }
+  .ov-stats { margin-top: var(--space-6); }
+  .ov-stats li { padding: var(--space-3) var(--space-2) var(--space-3) 0; }
+  .ov-stats li + li { padding-left: var(--space-3); }
+  .ov-stats li:nth-child(n+3) { border-top: 1px solid var(--color-border-subtle); }
+  .ov-featured { grid-template-columns: 1fr; }
+  .ov-card { display: grid; grid-template-columns: 38% 1fr; }
+  .ov-card-cover { aspect-ratio: auto; height: 100%; }
+  .ov-wall { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ov-about-grid, .ov-timeline { grid-template-columns: 1fr; gap: var(--space-6); }
+}

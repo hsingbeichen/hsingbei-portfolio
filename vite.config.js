@@ -8,6 +8,8 @@ const root = fileURLToPath(new URL('.', import.meta.url))
 const pages = Object.fromEntries(
   readdirSync(root).filter((f) => f.endsWith('.html')).map((f) => [f.replace('.html', ''), root + f]),
 )
+// Pages that live in their own folder so the URL has no .html (e.g. /overview/)
+for (const dir of ['overview']) pages[dir] = `${root}${dir}/index.html`
 
 // GitHub Pages serves this repo under /hsingbei-portfolio/
 export default defineConfig({
