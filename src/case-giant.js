@@ -35,25 +35,28 @@ const sections = [
     id: 'home', num: '02', zh: '首頁：從拼貼到系統', toc: '首頁', en: 'HOMEPAGE',
     content: `
       ${lead('舊版首頁把所有資訊都放了上來；新版先解決「找行程」，再用一致的區塊模式，帶著使用者往下逛。')}
-      ${caseCompare({
-        before: { src: `${img}/home-before.png`, alt: '改版前的巨匠旅遊首頁', label: '改版前' },
-        after: { src: `${img}/home-after-desktop.jpg`, alt: '改版後的巨匠旅遊首頁（電腦版）', label: '改版後' },
-        caption: '左右拖動，比較改版前後的首頁',
-      })}
+      <div class="case-grid case-grid--2 case-grid--even" style="--even-ratio: 436 / 662">
+        ${caseScroll({ src: `${img}/home-before.png`, alt: '改版前的巨匠旅遊首頁', caption: '改版前' })}
+        ${caseScroll({ src: `${img}/home-after-desktop.jpg`, alt: '改版後的巨匠旅遊首頁（電腦版）', caption: '改版後' })}
+      </div>
       ${text('舊版首頁的問題很明顯：Banner 尺寸與風格不一、區塊之間沒有主次、文字密集難以掃讀，放到手機上更難使用。改版前我參與過這個版本的局部調整，也因此確定小修補解決不了根本問題，必須從架構重新規劃。')}
       ${text('新版把搜尋列放在主視覺正下方，團體旅遊、國際機票、機＋酒、航空自由行四種入口一次到位，一進首頁就能開始找行程。')}
       ${text('往下的熱門國家、主題企劃、珍藏旅遊／新視界假期、精選亞洲，都用同一套「標題＋分類標籤＋卡片」；口碑熱銷與特惠促銷也沿用同樣的標題樣式。使用者學會一區，就看得懂下一區；到了手機上，同樣的區塊改為上下堆疊、卡片橫向滑動。「主題企劃」再以品牌紅色帶襯底，讓長頁面有了節奏。')}
       <p class="case-note">思考方向：國家與商品的排序由行銷主管依廣告策略安排；我的構想是把版面拆成可增減的區塊，讓各線線控依自己的商品數量決定顯示多少內容，網站能隨業務調整，而不必重新設計。這個區塊化的做法，後來也延伸到其他頁面。</p>
       ${caseLabel('首頁大圖規則 HERO BANNER RULES')}
-      <div class="case-grid case-grid--2" style="align-items: start">
-        ${caseMedia({ src: `${img}/home-banner-before-01.png`, alt: '改版前首頁大圖', ratio: '695 / 347', caption: '改版前' })}
+      ${caseCompare({
+        before: { src: `${img}/home-banner-before-01.png`, alt: '改版前首頁大圖：行程特色與景點清單做在圖上', label: '改版前' },
+        after: { src: `${img}/home-banner-after-01.png`, alt: '改版後首頁大圖：只留照片、標題與副標', label: '改版後' },
+        caption: '左右拖動比較：圖上的行程資訊移到下方卡片，大圖只留照片、標題與副標',
+      })}
+      <div class="case-grid gt-rules-row">
         <figure class="case-media">
           <div class="case-media-frame gt-rules" style="aspect-ratio: 761 / 380">
             <img src="${img}/home-banner-after-01.png" alt="改版後首頁大圖：標出文字安全區與手機裁切範圍" />
             <span class="gt-crop"><b>手機裁切</b></span>
             <span class="gt-safe"><b>文字安全區</b></span>
           </div>
-          <figcaption>改版後</figcaption>
+          <figcaption>改版後的規則：標題放在文字安全區，裁成手機版也不會被切掉</figcaption>
         </figure>
       </div>
       ${text('大圖以一張主照片、一個標題、一行副標為主，必要時才加上活動日期或一顆按鈕；舊版直接做在圖上的行程特色與景點清單，全部移到下方的卡片。標題固定落在文字安全區內，裁切成手機版時也不會被切掉。')}

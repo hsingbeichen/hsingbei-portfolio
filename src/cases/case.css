@@ -166,6 +166,7 @@
 .case-scroll { display: block; max-height: var(--case-scroll-height, 480px); overflow-y: auto; overscroll-behavior: contain; background: #ffffff; }
 .case-scroll img { display: block; height: auto; }
 .case-scroll.is-placeholder { display: grid; place-items: center; min-height: 240px; }
+.case-grid--even .case-scroll { height: auto; max-height: none; aspect-ratio: var(--even-ratio); border-radius: 0; } /* paired frames take the first image's full height; the longer one scrolls inside */
 .case-scroll--phone { width: min(100%, 240px); margin-inline: auto; }
 .case-compare-wrap { position: relative; } /* the labels stay put while the frame scrolls */
 /* Before/after slider: both pages in full, the longer one sets the height, scroll inside the frame */
@@ -174,14 +175,14 @@
 .case-compare-stage > img { grid-area: 1 / 1; display: block; width: 100%; height: auto; }
 .case-compare-after { clip-path: inset(0 0 0 var(--pos)); }
 .case-compare-line { grid-area: 1 / 1; position: absolute; top: 0; bottom: 0; left: var(--pos); width: 2px; margin-left: -1px; background: #FFFFFF; box-shadow: 0 0 0 1px rgb(0 0 0 / 0.15); pointer-events: none; }
-.case-compare-knob {
-  position: sticky; top: calc(var(--case-compare-height, 700px) / 2 - 20px);
-  display: grid; place-items: center; width: 40px; height: 40px; margin: calc(var(--case-compare-height, 700px) / 2 - 20px) 0 0 -19px;
-  border-radius: 50%; background: #FFFFFF; color: var(--color-accent-dark); box-shadow: 0 2px 8px rgb(0 0 0 / 0.2);
+.case-compare-knob { /* outside the scroller: always centred in the visible frame */
+  position: absolute; top: 50%; left: var(--pos); translate: -50% -50%; z-index: 1;
+  display: grid; place-items: center; width: 40px; height: 40px;
+  border-radius: 50%; background: #FFFFFF; color: var(--color-accent-dark); box-shadow: 0 2px 8px rgb(0 0 0 / 0.2); pointer-events: none;
 }
 .case-compare-knob::after { content: '‹ ›'; font: 700 15px / 1 var(--font-display); }
 .case-compare-stage input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: ew-resize; touch-action: pan-y; }
-.case-compare-stage:has(input:focus-visible) .case-compare-knob { outline: 2px solid var(--color-accent-default); outline-offset: 2px; }
+.case-compare-wrap:has(input:focus-visible) .case-compare-knob { outline: 2px solid var(--color-accent-default); outline-offset: 2px; }
 .case-compare-tag {
   position: absolute; top: var(--space-2); left: var(--space-2); z-index: 1;
   padding: 3px 10px; border-radius: var(--radius-pill); background: rgb(0 0 0 / 0.6); color: #FFFFFF;
@@ -219,7 +220,6 @@
 }
 @media (max-width: 800px) {
   .case-compare-frame { --case-compare-height: 480px; }
-  .case-compare-knob { --case-compare-height: 480px; }
   /* Mobile: Chinese and English stay on one line (sizes trimmed so it fits down to 320px) */
   .case-heading {
     gap: var(--space-2); white-space: nowrap; font-size: 1.25rem; line-height: 1.75rem;
