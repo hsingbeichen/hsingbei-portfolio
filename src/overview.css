@@ -36,6 +36,16 @@
 .ov-stat-label { margin-top: var(--space-1); font: var(--weight-bold) var(--text-body-m) / 1.5 var(--font-body); }
 .ov-stat-note { color: var(--color-text-muted); font: var(--weight-regular) var(--text-body-s) / 1.5 var(--font-body); }
 
+/* ----- Hero visual: slow endless strip of work, pauses on hover ----- */
+.ov-marquee { margin-top: var(--space-7); margin-inline: calc(50% - 50vw); overflow: hidden; mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
+.ov-marquee-track { display: flex; gap: var(--space-2); width: max-content; animation: ov-marquee 60s linear infinite; }
+.ov-marquee:hover .ov-marquee-track { animation-play-state: paused; }
+.ov-marquee li { flex: none; width: 260px; aspect-ratio: 4 / 3; overflow: hidden; border-radius: var(--radius-photo); background: #FFFFFF; }
+.ov-marquee img { width: 100%; height: 100%; object-fit: cover; }
+@keyframes ov-marquee { to { transform: translateX(calc(-50% - var(--space-2) / 2)); } }
+
+@media (prefers-reduced-motion: reduce) { .ov-marquee-track { animation: none; } }
+
 /* ----- Featured cards: one number per project, then into the case page ----- */
 .ov-featured { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-3); }
 .ov-card { display: flex; flex-direction: column; height: 100%; overflow: hidden; border-radius: var(--radius-card); background: var(--color-bg-surface); }
@@ -100,6 +110,9 @@ a.ov-card:hover .ov-card-cta { text-decoration: underline; text-underline-offset
   .ov-section { padding-block: var(--space-8); }
   .ov-hero { padding-block: calc(var(--nav-height) + var(--space-7)) var(--space-6); }
   .ov-sub { font-size: var(--text-body-m); }
+  .ov-marquee { margin-top: var(--space-5); }
+  .ov-marquee li { width: 180px; }
+
   .ov-stats { margin-top: var(--space-6); }
   .ov-stats li { padding: var(--space-3) var(--space-2) var(--space-3) 0; }
   .ov-stats li + li { padding-left: var(--space-3); }

@@ -65,6 +65,15 @@ const timeline = [
   { period: '2016.12 – 2021.01', company: '巨匠旅遊', role: '視覺設計主任', points: ['與行銷主管改版官網，架構仍保留 80–85%', '重整 3 個品牌的 CIS 規範', '帶領 4–6 人設計團隊'] },
 ]
 
+// Hero: a slow endless strip of work under the headline
+const marqueeItems = wall.filter((w) => !w.contain)
+const heroMarquee = () => `
+  <div class="ov-marquee rise" aria-label="作品一覽">
+    <ul class="ov-marquee-track">
+      ${[...marqueeItems, ...marqueeItems].map((w, i) => `<li${i >= marqueeItems.length ? ' aria-hidden="true"' : ''}><img src="${w.src}" alt="${i >= marqueeItems.length ? '' : w.alt}" loading="lazy" style="${w.top ? 'object-position:top' : ''}" /></li>`).join('')}
+    </ul>
+  </div>
+`
 const sectionTitle = (zh, en) => `<h2 class="ov-title reveal"><span class="zh">${zh}</span><span class="en">${en}</span></h2>`
 
 document.querySelector('#app').innerHTML = `
@@ -72,13 +81,18 @@ document.querySelector('#app').innerHTML = `
   <main id="top">
     <section class="ov-hero">
       <div class="shell">
-        <p class="ov-role rise"><span>Designer</span><i aria-hidden="true">｜</i><span>&lt;Coder&gt;</span></p>
-        <h1 class="ov-headline rise">從設計稿到上線，<br />同一個人負責到底。</h1>
-        <p class="ov-sub rise">〔草稿〕少一輪交接，畫面不走樣。陳星蓓 Hsingbei Chen，Design-to-Code 視覺設計師。</p>
-        <div class="ov-actions rise">
-          <a class="pill-btn" href="#work">${pillInner('看作品')}</a>
-          <a class="ov-link" href="${BASE}resume.pdf" target="_blank" rel="noopener">下載履歷 PDF</a>
+        <div class="ov-hero-main">
+          <div class="ov-hero-text">
+            <p class="ov-role rise"><span>Designer</span><i aria-hidden="true">｜</i><span>&lt;Coder&gt;</span></p>
+            <h1 class="ov-headline rise">從設計稿到上線，<br />同一個人負責到底。</h1>
+            <p class="ov-sub rise">〔草稿〕少一輪交接，畫面不走樣。陳星蓓 Hsingbei Chen，Design-to-Code 視覺設計師。</p>
+            <div class="ov-actions rise">
+              <a class="pill-btn" href="#work">${pillInner('看作品')}</a>
+              <a class="ov-link" href="${BASE}resume.pdf" target="_blank" rel="noopener">下載履歷 PDF</a>
+            </div>
+          </div>
         </div>
+        ${heroMarquee()}
         <ul class="ov-stats reveal">
           ${stats.map((s) => `
             <li>
