@@ -100,6 +100,24 @@ export const caseScroll = ({ src, alt = '', caption = '', phone = false }) => `
   </figure>
 `
 
+// Before/after slider: drag (or use ←/→ on the focused slider) to reveal the "after" image over the "before" one.
+export const caseCompare = ({ before, after, ratio = '603 / 700', caption = '' }) => `
+  <figure class="case-media case-compare">
+    <div class="case-compare-frame" style="aspect-ratio: ${ratio}; --pos: 50%">
+      <img src="${before.src}" alt="${before.alt}" loading="lazy" />
+      <img class="case-compare-after" src="${after.src}" alt="${after.alt}" loading="lazy" />
+      <span class="case-compare-line" aria-hidden="true"></span>
+      <input type="range" min="0" max="100" value="50" aria-label="左右拖動，比較${before.label}與${after.label}" />
+      <span class="case-compare-tag">${before.label}</span><span class="case-compare-tag case-compare-tag--after">${after.label}</span>
+    </div>
+    ${caption ? `<figcaption>${caption}</figcaption>` : ''}
+  </figure>
+`
+document.addEventListener('input', (event) => {
+  const frame = event.target.closest('.case-compare-frame')
+  if (frame) frame.style.setProperty('--pos', `${event.target.value}%`)
+})
+
 // Side-by-side proposals; the chosen one gets the accent frame.
 export const caseProposals = (items) => `
   <div class="case-grid case-grid--2 case-proposals">

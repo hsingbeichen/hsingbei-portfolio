@@ -1,5 +1,5 @@
 import { BASE, IMG, BACK_WORK, header, footer, initLayout, pillInner } from './shared/layout.js'
-import { text, lead, caseHero, caseBody, caseLabel, caseMedia, caseScroll, casePager, initCaseToc } from './cases/case.js'
+import { text, lead, caseHero, caseBody, caseLabel, caseMedia, caseScroll, caseCompare, casePager, initCaseToc } from './cases/case.js'
 import { pagerFor } from './shared/works.js'
 
 const img = `${IMG}/giant`
@@ -35,10 +35,11 @@ const sections = [
     id: 'home', num: '02', zh: '首頁：從拼貼到系統', toc: '首頁', en: 'HOMEPAGE',
     content: `
       ${lead('舊版首頁把所有資訊都放了上來；新版先解決「找行程」，再用一致的區塊模式，帶著使用者往下逛。')}
-      <div class="case-grid case-grid--2" style="align-items: start">
-        ${caseScroll({ src: `${img}/home-before.png`, alt: '改版前的巨匠旅遊首頁', caption: '改版前' })}
-        ${caseScroll({ src: `${img}/home-after-desktop.jpg`, alt: '改版後的巨匠旅遊首頁（電腦版）', caption: '改版後' })}
-      </div>
+      ${caseCompare({
+        before: { src: `${img}/home-before.png`, alt: '改版前的巨匠旅遊首頁', label: '改版前' },
+        after: { src: `${img}/home-after-desktop.jpg`, alt: '改版後的巨匠旅遊首頁（電腦版）', label: '改版後' },
+        caption: '左右拖動，比較改版前後的首頁',
+      })}
       ${text('舊版首頁的問題很明顯：Banner 尺寸與風格不一、區塊之間沒有主次、文字密集難以掃讀，放到手機上更難使用。改版前我參與過這個版本的局部調整，也因此確定小修補解決不了根本問題，必須從架構重新規劃。')}
       ${text('新版把搜尋列放在主視覺正下方，團體旅遊、國際機票、機＋酒、航空自由行四種入口一次到位，一進首頁就能開始找行程。')}
       ${text('往下的熱門國家、主題企劃、珍藏旅遊／新視界假期、精選亞洲，都用同一套「標題＋分類標籤＋卡片」；口碑熱銷與特惠促銷也沿用同樣的標題樣式。使用者學會一區，就看得懂下一區；到了手機上，同樣的區塊改為上下堆疊、卡片橫向滑動。「主題企劃」再以品牌紅色帶襯底，讓長頁面有了節奏。')}
