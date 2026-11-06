@@ -66,7 +66,7 @@ const sections = [
     id: 'pages', num: '03', zh: '館別架構：大館、小館到行程頁', toc: '館別架構', en: 'SITE STRUCTURE', long: true,
     content: `
       ${lead('首頁之下，行程分成三層：大館是地區（如東歐），小館是子地區（如克羅埃西亞・巴爾幹），最後是單一行程頁。每一層共用同一套元件，使用者從哪一層進來都不會迷路。')}
-      ${steps(['首頁', '大館：地區', '小館：子地區', '行程頁'])}
+      ${steps(['大館：地區', '小館：子地區', '行程頁'])}
       ${caseLabel('大館：改版前 → 改版後 REGION PAGE')}
       <div class="case-grid case-grid--2" style="align-items: start">
         ${caseScroll({ src: `${img}/pages-region-before.png`, alt: '大館改版前（東歐）', caption: '改版前' })}
