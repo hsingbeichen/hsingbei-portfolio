@@ -51,7 +51,7 @@ export const caseBody = ({ name, sections }) => `
     <div class="case-sections">
       ${sections.map((s) => `
         <section class="case-section reveal" id="${s.id}">
-          <h2 class="case-heading">
+          <h2 class="case-heading${s.long ? ' case-heading--long' : ''}">
             <span class="num">${s.num}</span><span class="zh">${s.zh}</span><span class="en">${s.en}</span>${s.aside ? `<span class="aside">${s.aside}</span>` : ''}
           </h2>
           ${s.content}

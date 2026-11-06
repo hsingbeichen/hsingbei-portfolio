@@ -63,7 +63,7 @@ const sections = [
     `,
   },
   {
-    id: 'pages', num: '03', zh: '找行程的三層架構', toc: '三層架構', en: 'SITE STRUCTURE',
+    id: 'pages', num: '03', zh: '館別架構：大館、小館到行程頁', toc: '館別架構', en: 'SITE STRUCTURE', long: true,
     content: `
       ${lead('首頁之下，行程分成三層：大館是地區（如東歐），小館是子地區（如克羅埃西亞・巴爾幹），最後是單一行程頁。每一層共用同一套元件，使用者從哪一層進來都不會迷路。')}
       ${steps(['首頁', '大館：地區', '小館：子地區', '行程頁'])}
