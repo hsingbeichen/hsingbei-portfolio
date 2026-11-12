@@ -93,19 +93,18 @@ const sections = [
   {
     id: 'rwd', num: '04', zh: 'RWD 規劃', en: 'RESPONSIVE',
     content: `
-      ${lead('同一套區塊，在手機上換一種讀法。')}
-      ${text('區塊改為上下堆疊；商品卡片改成橫向滑動，分類標籤也能左右滑；服務入口收成一排圓形圖示。導覽選單收進右上角，展開後依地區列出，會員與專區入口固定在底部。')}
-      ${caseLabel('首頁與導覽選單（手機版） MOBILE')}
-      <div class="case-grid case-grid--2">
-        ${phone(`${img}/home-after-mobile.jpg`, '改版後首頁（手機版）')}
-        ${phone(`${img}/rwd-menu-mobile.jpg`, '手機版導覽選單展開')}
-      </div>
-      ${caseLabel('不只縮小：匠子旅遊誌的篩選 FILTERS')}
-      <div class="case-grid" style="grid-template-columns: minmax(0, 1fr) 160px; align-items: start">
-        ${caseScroll({ src: `${img}/rwd-blog-desktop.png`, alt: '匠子旅遊誌（電腦版）', caption: '電腦版' })}
-        ${phone(`${img}/rwd-blog-mobile.png`, '匠子旅遊誌（手機版）')}
-      </div>
-      ${text('匠子旅遊誌的文章可依主題與國家篩選：電腦版的主題是一整排分類標籤；到了手機上，主題與國家並排成兩個下拉選單，不佔版面也一樣好篩。RWD 不是把電腦版縮小，而是替手機重新安排操作方式。')}
+      ${lead('RWD 不是把電腦版縮小，而是替手機重新安排操作方式。')}
+      ${[
+        { label: '卡片：不縮小，改成左右滑動', d: 'rwd-theme-desktop.jpg', m: 'rwd-theme-mobile.jpg' },
+        { label: '篩選：一排標籤，改成兩個下拉選單', d: 'rwd-filter-desktop.jpg', m: 'rwd-filter-mobile.jpg' },
+      ].map((r) => `
+        <div class="gt-rwd-pair">
+          <figure><img src="${img}/${r.d}" alt="${r.label}（電腦版）" loading="lazy" /><figcaption>電腦版</figcaption></figure>
+          <span class="gt-rwd-arrow" aria-hidden="true">→</span>
+          <figure><img src="${img}/${r.m}" alt="${r.label}（手機版）" loading="lazy" /><figcaption>手機版</figcaption></figure>
+          <p class="gt-rwd-note">${r.label}</p>
+        </div>
+      `).join('')}
     `,
   },
   {
@@ -122,11 +121,35 @@ const sections = [
         ${caseMedia({ src: `${img}/brand-logo-final.png`, alt: '三品牌 LOGO 定案', ratio: '157 / 126', fit: 'contain', caption: '定案' })}
       </div>
       ${caseLabel('延伸到子品牌網站：珍藏旅遊 SUB-BRAND SITE')}
-      <div class="case-grid" style="grid-template-columns: repeat(3, minmax(0, 1fr)) minmax(0, 0.4fr); align-items: start">
-        ${[1, 2, 3].map((n) => caseMedia({ src: `${img}/brand-treasure-tab-0${n}.png`, alt: `珍藏旅遊分頁切換 ${n}`, ratio: n === 1 ? '248 / 562' : '248 / 636', fit: 'contain' })).join('')}
-        ${caseMedia({ src: `${img}/brand-treasure-mobile.png`, alt: '珍藏旅遊手機版', ratio: '84 / 480', fit: 'contain' })}
+      <p class="gt-sub-lead">沿用巨匠的版面系統，只換品牌色與內容，就撐起了珍藏旅遊的網站。</p>
+      <div class="gt-compare">
+        <figure><img src="${img}/brand-compare-artisan.jpg" alt="巨匠旅遊官網首頁" loading="lazy" /><figcaption><b class="gt-dot" style="--c:#a00217"></b>巨匠旅遊</figcaption></figure>
+        <span class="gt-rwd-arrow" aria-hidden="true">→</span>
+        <figure><img src="${img}/brand-compare-treasure.jpg" alt="珍藏旅遊官網首頁" loading="lazy" /><figcaption><b class="gt-dot" style="--c:#3b1f6b"></b>珍藏旅遊</figcaption></figure>
       </div>
-      ${text('同一套網站架構換上珍藏旅遊的紫色與內容配置，就撐起了另一個品牌的網站；前三張是主視覺下方分頁切換時的內容變化，最右為手機版。')}
+      <p class="gt-sub-kicker">在同一套系統上，為珍藏的內容做的調整</p>
+      <div class="gt-sub">
+        <figure class="gt-sub-page"><img src="${img}/brand-treasure-tab-01.png" alt="珍藏旅遊官網（電腦版）" loading="lazy" /><figcaption>電腦版</figcaption></figure>
+        <div class="gt-sub-notes">
+          <div class="gt-sub-note">
+            <p class="gt-sub-title">Tab 收納兩種優惠區塊</p>
+            <div class="gt-sub-shots">
+              <img src="${img}/brand-treasure-tab-gifts.jpg" alt="貼心好禮分頁展開" loading="lazy" />
+              <img src="${img}/brand-treasure-tab-earlybird.jpg" alt="早鳥優惠分頁展開" loading="lazy" />
+            </div>
+            <p class="gt-sub-text">主視覺下方用 Tab 切換「貼心好禮」與「早鳥優惠」，兩種優惠共用同一塊版位，首頁不會越來越長，手機上也更好滑。</p>
+          </div>
+        </div>
+        <figure class="gt-sub-phone"><img src="${img}/brand-treasure-mobile.png" alt="珍藏旅遊官網（手機版）" loading="lazy" /><figcaption>手機版</figcaption></figure>
+        <div class="gt-sub-note gt-sub-note--wide">
+          <p class="gt-sub-title">用顏色區分地區</p>
+          <div class="gt-sub-pair">
+            <figure><img style="object-position: left bottom" src="${img}/brand-treasure-color-card.jpg" alt="電腦版：行程卡片角落的地區色塊" loading="lazy" /><figcaption>電腦版：卡片角落</figcaption></figure>
+            <figure><img src="${img}/brand-treasure-color-band.jpg" alt="手機版：整條地區色帶" loading="lazy" /><figcaption>手機版：整條色帶</figcaption></figure>
+          </div>
+          <p class="gt-sub-text">每個地區對應一個顏色：電腦版標在行程卡片的角落，手機版改成整條色帶當作分段，往下滑時一眼就知道換到下一個地區。</p>
+        </div>
+      </div>
     `,
   },
   {
