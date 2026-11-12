@@ -120,8 +120,8 @@ const sections = [
         ${caseMedia({ src: `${img}/brand-logo-versions.png`, alt: '三品牌 LOGO 版本演進與配色', ratio: '428 / 312', fit: 'contain', caption: '調整過程' })}
         ${caseMedia({ src: `${img}/brand-logo-final.png`, alt: '三品牌 LOGO 定案', ratio: '157 / 126', fit: 'contain', caption: '定案' })}
       </div>
-      ${caseLabel('延伸到子品牌網站：珍藏旅遊 SUB-BRAND SITE')}
-      <p class="gt-sub-lead">沿用巨匠的版面系統，只換品牌色與內容，就撐起了珍藏旅遊的網站。</p>
+      ${caseLabel('子品牌網站：珍藏旅遊 SUB-BRAND SITE')}
+      <p class="gt-sub-lead">沿用巨匠的版面系統，只換品牌色與內容就能上線。</p>
       <div class="gt-compare">
         <figure><img src="${img}/brand-compare-artisan.jpg" alt="巨匠旅遊官網首頁" loading="lazy" /><figcaption><b class="gt-dot" style="--c:#a00217"></b>巨匠旅遊</figcaption></figure>
         <span class="gt-rwd-arrow" aria-hidden="true">→</span>
